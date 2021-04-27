@@ -708,7 +708,6 @@ section {
 	height: 4.8rem;
 	width: 4.8rem;
 	line-height: 4.8rem;
-	background: #313131;
 	border-radius: 50%;
 	text-align: center;
 	color: #FFFFFF;
@@ -722,6 +721,11 @@ section {
 	left: .05rem;
 	top: .8rem;
 	font-size: 45px;
+}
+#work .timeline-ico img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 #work .timeline-header {
