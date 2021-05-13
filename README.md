@@ -1,2 +1,2 @@
 # shrenik-jain.github.io
-A summary of my professional career so far
+Here is my personal Portfolio
