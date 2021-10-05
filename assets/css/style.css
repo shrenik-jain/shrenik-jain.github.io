@@ -1576,3 +1576,37 @@ section {
   font-style: italic;
   margin-bottom: 0;
 }
+
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills .icon-box {
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 6px;
+}
+.skills .icon-box i {
+  float: left;
+  color: #ef6603;
+  font-size: 40px;
+}
+.skills .icon-box h4 {
+  margin-left: 70px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.skills .icon-box h4 a {
+  color: #556270;
+  transition: 0.3s;
+}
+.skills .icon-box p {
+  margin-left: 70px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.skills .icon-box:hover h4 a {
+  color: #ef6603;
+}
