@@ -705,8 +705,8 @@ section {
 	padding-top: 1.5rem;
 }
 #work .timeline-ico {
-	height: 4.8rem;
-	width: 4.8rem;
+	height: 5.0rem;
+	width: 5.0rem;
 	line-height: 4.8rem;
 	border-radius: 50%;
 	text-align: center;
@@ -720,7 +720,7 @@ section {
 	position: relative;
 	left: .05rem;
 	top: .8rem;
-	font-size: 45px;
+	font-size: 50px;
 }
 #work .timeline-ico img {
   height: 80px;
@@ -1609,4 +1609,34 @@ section {
 }
 .skills .icon-box:hover h4 a {
   color: #ef6603;
+}
+
+/*--------------------------------------------------------------
+# Github Stats
+--------------------------------------------------------------*/
+/* Two image containers */
+.github-stats-column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.github-stats-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.github-stats-single {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+@media (max-width: 991px) {
+  .github-stats-single {
+    width: 100%;
+  }
 }
