@@ -13,4 +13,4 @@ You can visit the website at *https://shrenik-jain.github.io/* which is hosted v
     - [Boxicons](https://boxicons.com/)
 
 - **Submission Form**
-    - [Formspree] (https://formspree.io/)
+    - [Formspree](https://formspree.io/)
