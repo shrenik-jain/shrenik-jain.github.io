@@ -5,7 +5,7 @@ You can visit the website at *https://shrenik-jain.github.io/* which is hosted v
 ---
 ## References:
 
-- **Tempelates**
+- **Templates**
     - [Bootstrap](https://getbootstrap.com)
 
 - **Fonts & Icons**
