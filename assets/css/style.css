@@ -1139,6 +1139,71 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Work Section
+--------------------------------------------------------------*/
+.work .work-list {
+  padding: 0 100px;
+}
+.work .work-list ul {
+  padding: 0;
+  list-style: none;
+}
+.work .work-list li + li {
+  margin-top: 15px;
+}
+.work .work-list li {
+  padding: 25px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+.work .collapse li {
+  padding: 7px;
+  position: relative;
+}
+.work .work-list a {
+  display: block;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+.work .work-list .icon-show, .work .work-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.work .work-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+.work .work-list .icon-show {
+  display: none;
+}
+.work .work-list a.collapsed {
+  color: #2c4964;
+}
+.work .work-list a.collapsed:hover {
+  color: #5846f9;
+}
+.work .work-list a.collapsed .icon-show {
+  display: inline-block;
+}
+.work .work-list a.collapsed .icon-close {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .work .work-list {
+    padding: 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
