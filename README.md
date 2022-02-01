@@ -1,12 +1,13 @@
 # Personal Website
 
-You can visit the website at *https://shrenik-jain.github.io/* which is hosted via Github pages.
+Visit the website at *https://shrenik-jain.github.io/* 
 
 ---
 ## References:
 
 - **Templates**
     - [Bootstrap](https://getbootstrap.com)
+    - [Darpan Jain Portfolio](https://darpan-jain.github.io/)
 
 - **Fonts & Icons**
     - [Google Fonts](https://fonts.google.com/)
