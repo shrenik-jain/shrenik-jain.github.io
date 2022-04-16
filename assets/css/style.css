@@ -1197,6 +1197,9 @@ section {
 .work .work-list a.collapsed .icon-close {
   display: none;
 }
+.work-text {
+padding-left: 100px;
+}
 @media (max-width: 1200px) {
   .work .work-list {
     padding: 0;

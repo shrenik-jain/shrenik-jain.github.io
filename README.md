@@ -1,7 +1,7 @@
 # Personal Website
 
-Visit the website at *https://shrenik-jain.github.io/* 
 
+Visit the website at *https://shrenik-jain.github.io/*
 ---
 ## References:
 
