@@ -48,5 +48,7 @@ This website serves as my personal corner on the internet where I showcase my pr
 
 If you have any questions, feel free to reach out to me:
 
-- Email: shrenikkjain81@gmail.com
+- Email: [shrenikkjain81@gmail.com](shrenikkjain81@gmail.com)
+- LinkedIn: [Shrenik Jain](https://www.linkedin.com/in/shrenik-jain-664bb9170/)
 - GitHub: [shrenik-jain](https://github.com/shrenik-jain)
+- Website: [shrenik-jain.github.io](https://shrenik-jain.github.io/)
