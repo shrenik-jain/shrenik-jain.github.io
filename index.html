@@ -6,948 +6,150 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Shrenik's Website</title>
-  <meta content="This is my personal portfolio summarizing my proffesional career so far" name="description">
-  <meta content="Personal, Portfolio, Machine, Deep, Learning, Engineer, Internship" name="keywords">
+  <meta content="This is my personal website summarizing my academic and proffesional career" name="description">
+  <meta content="Portfolio, Website, Machine, Deep, Learning, Engineer, Internship, NLP, Computer, Vision" name="keywords">
   <meta content="Shrenik Jain" name="author">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/website-logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/style2.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: Jan 09 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
-    <div class="container d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <div class="logo">
-        <a href="https://github.com/shrenik-jain"><i style="font-size: 36px" class="bx bxl-github bx-tada-hover">&nbsp;</i></a>
-        <a href="https://www.instagram.com/shrenik_jainn/"><i style="font-size: 37px" class="bx bxl-instagram bx-tada-hover">&nbsp;</i></a>
-        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170"><i style="font-size: 37px" class="bx bxl-linkedin-square bx-tada-hover">&nbsp;</i></a>
-        <a href="https://www.facebook.com/shrenik.jain.564"><i style="font-size: 36px" class="bx bxl-facebook-circle bx-tada-hover">&nbsp;</i></a>
-      </div>
+      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- <img src="assets/img/sj-logo-modified.png" alt=""> -->
+        <i class="bi bi-arrow-clockwise"></i>
+        <!-- <h1>Personal Website</h1> -->
+      </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <!-- <li><a class="nav-link scrollto active" href="#hero">HOME</a></li> -->
-          <li><a class="nav-link scrollto" href="#skills">SKILLS</a></li>
-          <li><a class="nav-link scrollto" href="#work">WORK</a></li>
-          <li><a class="nav-link scrollto " href="#schedule">CURRICULUM</a></li>
-          <li><a class="nav-link scrollto" href="#projects">PROJECTS</a></li>
-          <li><a class="nav-link scrollto " href="#certifications">CERTIFICATIONS</a></li>
-          <li><a class="nav-link scrollto" href="#contact">CONTACT</a></li>
-          <li><a class="nav-link scrollto" href="blog.html">BLOG</a></li>
+          <!-- <li><a href="index.html" class="active">Home</a></li> -->
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li class="dropdown"><a href="work.html"><span>Work</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="work.html#employment">EMPLOYMENT</a></li>
+              <li><a href="work.html#consulting">CONSULTING</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="academics.html"><span>Academics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="academics.html#education">EDUCATION</a></li>
+              <li><a href="academics.html#co-curricular">CO-CURRICULAR</a></li>
+              <li><a href="academics.html#certifications">CERTIFICATIONS</a></li>
+            </ul>
+          </li>
+          <li><a href="testimonials.html">Reviews</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <!-- <a href="https://x.com/shrenik_jainn?t=NQme0aWdJzqoK-hIfp-PAg&s=08" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/shrenik_jainn/" class="instagram"><i class="bi bi-instagram"></i></a> -->
+        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a>
+      </div>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">SHRENIK <span> JAIN</span></h2>
-          <p class="animate__animated fanimate__adeInUp">A dedicated Machine Learning Engineer with a passion for Artificial Intelligence. With a strong academic foundation and over 2 years of practical experience, I bring innovative solutions to the forefront of technology.</p>
-          <a href="https://drive.google.com/uc?export=download&id=1YE9Csl4OvUzrwNG1qxaDjqfkuR7wdnhH" class="btn-get-started animate__animated animate__fadeInUp scrollto">Resume</a>
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>I AM SHRENK JAIN, A<br>DATA SCIENTIST</h2>
+          <canvas id="c"></canvas>
+          <p>With a strong academic foundation and over 2 years of practical experience, I bring innovative solutions to the forefront of technology.</p>
+          <a href="contact.html" class="btn-get-started">CLICK & DRAG</a>
         </div>
       </div>
-
-      <!-- Slide 2 -->
-      <!-- <div class="carousel-item">
-          <div class="carousel-container">
-              <img class="animate__animated animate__fadeInDown" style="border-radius: 100%; border: solid 2px #ef6603" width="220" height="220" src="assets/img/profile.png" alt="">
-              <br>
-              <br>
-              <a href="https://drive.google.com/file/d/1mStlrc-i6Qcp68UDQjlFFFGT44p82zwV/view?usp=sharing" class="btn-get-started animate__animated animate__fadeInUp scrollto">Resume</a>
-            </div>
-        </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-      </a> -->
-      
     </div>
+  </section><!-- End Hero Section -->
 
-    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-      <defs>
-        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-      </defs>
-      <g class="wave1">
-        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
-      </g>
-      <g class="wave2">
-        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
-      </g>
-      <g class="wave3">
-        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
-      </g>
-    </svg>
+  <main id="main" data-aos="fade" data-aos-delay="1500">
 
-  </section><!-- End Hero -->
+    
 
-  <main id="main">
-
-
-    <!-- ***** Start Stream Start ***** -->
-
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Skills</h2>
-          <p>Areas of Expertise</p>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="start-stream">
-            <div class="col-lg-12">
-      
-              <div class="row">
-                <div class="col-lg-4", data-aos="fade-right">
-                  <div class="item">
-                    <div class="icon">
-                      <!-- <i class="bi bi-code-slash"></i> -->
-                      <img src="assets/img/icons/programming.png" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4><b>Programming Languages</b></h4>
-                    <p>Python&nbsp; / &nbsp;Java&nbsp; / &nbsp;C&nbsp; / &nbsp;C++&nbsp; / &nbsp;Julia&nbsp; / &nbsp;JavaScript&nbsp; / &nbsp;HTML&nbsp; / &nbsp;CSS</p>
-                  </div>
-                </div>
-                <div class="col-lg-4", data-aos="fade-right">
-                  <div class="item">
-                    <div class="icon">
-                      <img src="assets/img/icons/machine_learning.png" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4>Machine Learning</h4>
-                    <p>Tensorflow&nbsp; / &nbsp;PyTorch&nbsp; / &nbsp;Keras&nbsp; / &nbsp;CUDA&nbsp; /  &nbsp;OpenCV&nbsp; / &nbsp;NLTK&nbsp; / &nbsp;SpaCy / &nbsp;ONNX / &nbsp;TorchServe&nbsp; / &nbsp;TFServing&nbsp; / &nbsp;TritonServer&nbsp;</p>
-                  </div>
-                </div>
-                <div class="col-lg-4", data-aos="fade-right">
-                  <div class="item">
-                    <div class="icon">
-                      <img src="assets/img/icons/frameworks.png" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4>Frameworks</h4>
-                    <p>Docker&nbsp; / &nbsp;Kubernetes&nbsp; / &nbsp;Jenkins&nbsp; / &nbsp;Ansible&nbsp; / &nbsp;Onvif&nbsp; / &nbsp;Django&nbsp; / &nbsp;Flask&nbsp; / &nbsp;SpringBoot / &nbsp;FastAPI&nbsp;</p>
-                  </div>
-                </div>
-                
-                <div class="col-lg-4", data-aos="fade-left">
-                  <div class="item">
-                    <div class="icon">
-                      <img src="assets/img/icons/database.png" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4>Databases</h4>
-                    <p>SQL&nbsp; / &nbsp;NoSQL&nbsp; / &nbsp;MongoDB&nbsp; / &nbsp;IBM Db2&nbsp; / &nbsp;ElasticSearch</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4", data-aos="fade-left">
-                  <div class="item">
-                    <div class="icon">
-                      <img src="assets/img/icons/tools.png" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4>Tools and Technologies</h4>
-                    <p>Git&nbsp; / &nbsp;Github&nbsp; / &nbsp;BitBucket&nbsp; / &nbsp;GitBlit&nbsp; /  &nbsp;Postman API&nbsp; / &nbsp;Salesforce&nbsp; / &nbsp;Linux&nbsp; / &nbsp;Shell Script</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4", data-aos="fade-left">
-                  <div class="item">
-                    <div class="icon">
-                      <img src="assets/img/icons/cloud.jpeg" alt="" style="max-width: 40px; border-radius: 50%;">
-                    </div>
-                    <h4>Cloud Platforms</h4>
-                    <p>Google Cloud Platform (GCP)&nbsp; / &nbsp;Amazon Web Services (AWS)&nbsp; / &nbsp;Microsoft Azure</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ***** Start Stream End ***** -->
-
-
-    <!-- ======= Skills Section ======= -->
-    <!-- <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Skills</h2>
-          <p>Areas of Expertise</p>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6" data-aos="fade-right">
-            <div class="icon-box">
-              <i class="bi bi-code-slash"></i>
-              <h4><a href="#">PROGRAMMING LANGUAGES</a></h4>
-              <p>Python&nbsp; | &nbsp;C&nbsp; | &nbsp;C++&nbsp; | &nbsp;Julia&nbsp; | &nbsp;Java&nbsp; | &nbsp;JavaScript&nbsp; | &nbsp;HTML&nbsp; | &nbsp;CSS</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left">
-            <div class="icon-box">
-              <i class="bi bi-cpu"></i>
-              <h4><a href="#">MACHINE LEARNING</a></h4>
-              <p>Tensorflow&nbsp; | &nbsp;PyTorch&nbsp; | &nbsp;Keras&nbsp; | &nbsp;CUDA&nbsp; |  &nbsp;OpenCV&nbsp; | &nbsp;NLTK&nbsp; | &nbsp;SpaCy | &nbsp;Onnx | &nbsp;TorchServe&nbsp; | &nbsp;TFServing&nbsp; | &nbsp;TritonServer&nbsp;</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-right">
-            <div class="icon-box">
-              <i class="bi bi-diagram-3"></i>
-              <h4><a href="#">FRAMEWORKS</a></h4>
-              <p>Docker&nbsp; | &nbsp;Kubernetes&nbsp; | &nbsp;Jenkins&nbsp; | &nbsp;Ansible&nbsp; | &nbsp;Flask&nbsp; | &nbsp;SpringBoot | &nbsp;FastAPI&nbsp;</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-right">
-            <div class="icon-box">
-              <i class="bi bi-server"></i>
-              <h4><a href="#">DATABASES</a></h4>
-              <p>MySQL&nbsp; | &nbsp;MongoDB&nbsp; | &nbsp;IBM Db2</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left">
-            <div class="icon-box">
-              <i class="bx bxs-analyse"></i>
-              <h4><a href="#">CONCEPTS</a></h4>
-              <p>Opearting Systems&nbsp; | &nbsp;Database Management&nbsp; | &nbsp;Data Structures&nbsp; | &nbsp;Algorithms&nbsp; | &nbsp;Object Oriented Programming</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-right">
-            <div class="icon-box">
-              <i style="font-size: 55px;" class="bx bx-cloud-rain"></i>
-              <h4><a href="#">TOOLS & PLATFORMS</a></h4>
-              <p>Git&nbsp; | &nbsp;Github&nbsp; | &nbsp;BitBucket&nbsp; | &nbsp;GitBlit&nbsp; | &nbsp;GCP | &nbsp;AWS | &nbsp;Microsoft Azure | &nbsp;Postman API&nbsp; | &nbsp;Salesforce&nbsp; | &nbsp;Linux&nbsp; | &nbsp;Shell Script</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section> -->
-    <!-- End Skills Section -->
-
-
-  <!-- ================================================
-  Work Section
-  ================================================== -->
-
-    <section id="work" class="work">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Work Experience</h2>
-          <p>Work Experience</p>
-        </div>
-
-        <div class="work-list">
-          <ul>
-
-            <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-              <!-- <i class="bx bx-help-circle icon-help"></i> -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/pivotchain_light.jpeg" alt="Pivotchain Logo">
-              <div class="work-text">
-                <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#work-list-7"><h4>Pivotchain Solutions</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-7"><h5>Data Scientist</h5></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-7"><h6>July 2022 - Present</h6></a>
-              </div>
-              <div id="work-list-7" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <b>FULL-TIME</b>
-                  <ul style="list-style: disc;">
-                    <li>Pivotchain offers AI driven real time video surveillance and advanced analytics platform through a highly scalable plug-n-play solution, RAVEN which can be deployed across any existing surveillance network.</li>
-                    <li>Designed and implemented an end-to-end (from data collection to deployment) drone detection and perimeter breach microservice for the Defense Research and Development Organization, utilizing advanced computer vision techniques.</li>
-                    <li>Optimized the performance of the Face Recognition System by utilizing GPU acceleration, leading to a significant decrease in inference time by ∼54%, resulting in a faster and more accurate alert generation.</li>
-                    <li>Implemented Spatio-Temporal Autoencoders for classifying usual and unusual activities in alert videos generated by RAVEN, serving as an additional layer of machine intelligence before human intervention.</li>
-                    <li>Improvised subsisting code (APIs) by integrating concurrent design through asyncio resulting in decreased zombie processes and 3x faster execution time.</li>
-                    <li>Expertly handled data engineering of over 120,000 images, balancing classes and splitting datasets for improved YOLOv5 performance - higher mAP, reduced false positives, superior accuracy, and model generalization.</li>
-                    <li>Stress-tested model inferencing latency to maximize the available hardware and resource utilization, thereby reducing the turn-around time of the detection model.</li>
-                  </ul>
-                  <br>
-                  <br>
-                  <b>INTERNSHIP  &nbsp;&nbsp;&nbsp;[November 2021 - Jan 2022]</b>
-                  <ul style="list-style: disc;">
-                    <li>Built, containerized, and deployed applications using latest tools and technologies like Flask, Dockers and Kubernetes.</li>
-                    <li>Developed algorithms using deep learning models for predictive maintenance and experimentations leading to reduced latency and improved accuracy in the existing system.</li>
-                    <li>Improvised subsisting code by cythonizing python scripts resulting in roughly 6 times faster execution time.</li>
-                    <li>Optimized the Face Recognition System, by reducing its latency by ~33%</li>
-                    <li>Created analysis reports by fetching data from NoSQL databases to ease operations for the administration panel.</li>
-                    <li>Worked on serving the deep learning models as RESTful and/or gRPC web applications and endpoints.</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/qualys.png" alt="Qualys Logo">
-              <div class="work-text">
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-6" class="collapsed"><h4>Qualys Inc.</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-6"><h5>Software Engineer</h5></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-6"><h6>Jan 2022 - July 2022</h6></a>
-              </div>
-              <div id="work-list-6" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>Qualys is the leading provider of information security and compliance cloud solutions.</li>
-                    <li>Utilized Groovy scripts for multi-stage CI/CD pipeline builds and was actively involved in the entire pipeline setup and Jenkins configurations.</li>
-                    <li>Responsible for setting up the entire configuration management (including Ansible, Helm, Jenkins and Consul) for 2 new micro-services under Policy Compliance.</li>
-                    <li>Worked on containerizing maven applications using Docker and setting up clusters to deploy them using Kubernetes.</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/viit.png" alt="VIIT Logo">
-
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-5" class="collapsed"><h4>Vishwakarma Institute of Information Technology</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-5"><h5>Research Assistant</h5></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-5"><h6>July 2021 - December 2021</h6></a>
-
-              <div id="work-list-5" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>Spearheaded the research and development in the realm of Natural Language Processing for various applications and experimentations.</li>
-                  </ul>
-                  </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/validus_logo.png" alt="Validus Analytics Logo">
-              
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-4" class="collapsed"><h4>Validus Analytics LLP</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-4"><h5>Machine Learning Intern</h5></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-4"><h6>February 2021 - December 2021</h6></a>
-
-              <div id="work-list-4" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>Evaluated and inspected the program flow of generative models like Vector-Quantized and Convolutional Variational Autoencoders.</li>
-                    <li>Prepared a custom dataset by performing data augmentation on a dataset of 5000 RGB images to generate ~30,000 additional images.</li>
-                    <li>Customized and experimented with the CVAE model architecture to use it on the customized dataset to:
-                      (i) minimize the ELBO loss, (ii) improve the reconstructed image quality, (iii) measure the reconstructed image quality using SSI metric</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="500">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/ai_for_rural.png" alt="AI For Rural Logo">
-
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-3" class="collapsed"><h4>AI For Rural</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-3"><h5>Machine Learning Consultant</h5></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-3"><h6>September 2021 - November 2021</h6></a>
-
-              <div id="work-list-3" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>A not-for-profit transformation organization operating to build capacities of rural and vulnerable communities worldwide, through data-driven research and development.</li>
-                    <li>Researched and gathered data for the Mountain Communities.</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="600">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/exa.png" alt="Exa Mobility Logo">
-
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-2" class="collapsed"><h4>Exa Mobility</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-2"><h5>Content Writer</h5></a>
-              <a data-bs-toggle="collapse" data-bs-target="#work-list-2"><h6>September 2020 - November 2020</h6></a>
-
-              <div id="work-list-2" class="collapse" data-bs-parent=".work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>Spearheaded the research and development of website content along with senior team members, boosting the website traffic by ~15%.</li>
-                    <li>Operated with the marketing and content team to develop compelling infographics, proposals, and blog posts for B2B and B2C technology audiences.</li>
-                    <li>Headed, enhanced, and overhauled all content aspects for Exa's mobile application.</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="700">
-              <!-- <i class="bx bx-help-circle icon-help"></i>  -->
-              <img width="90" height="90" style="margin-right: 40px; float: left; border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/shinobi.png" alt="Shinobi Brands Logo">
-              <div class="work-text">
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-1" class="collapsed"><h4>Shinobi Brands</h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-1"><h5>Content Writer</h5></a>
-                <a data-bs-toggle="collapse" data-bs-target="#work-list-1"><h6>June 2019 - August 2019</h6></a>
-              </div>
-              <div id="work-list-1" class="collapse" data-bs-parent="work-list">
-                <p>
-                  <ul style="list-style: disc;">
-                    <li>Proactively identified and resolved gaps in the content development, support structure and improved workflow processes.</li>
-                    <li>Operated with strategic planners, business owners, and other creative team members to conceptualize, devise and produce brand stories.</li>
-                  </ul>
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End Work Section -->
-
-
-   <!-- ================================================
-    Curriculum Section
-   ================================================== -->
-<section id="schedule" class="section-with-bg">
-  <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Curriculum</h2>
-      <p>Curricular & Co-Curricular</p>
-    </div>
-
-    <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
-      <li class="nav-item">
-        <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Education</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Leadership</a>
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3</a>
-      </li> -->
-    </ul>
-
-    <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-
-      <!-- Education -->
-      <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
-        <div class="row schedule-item">
-          <div class="col-md-2">
-            <div class="speaker">
-              <img style="border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/viit.png" alt="VIIT Logo">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h4><span>Vishwakarma Institute of Information Technology, Pune, India</span></h4>
-            <p>
-              <b>Bachelor of Technology in Electronics & Telecommunication</b>
-              <br>
-              <b>CGPA: 9.47</b>
-              <br>
-              <br>
-              <b>Coursework</b>
-              <ul>
-                <li><b> Computer Science -</b> Data Structures and Algorithms, Design and Analysis of Algorithms, Cloud Computing </li>
-                <br>
-                <li><b> Electrical Engineering -</b> Signals & Systems, Image and Video Processing, Digital Signal Processing, Information Theory & Coding Techniques, Internet Of Things </li>
-                <br>
-                <li><b> Machine Learning -</b> Artificial Neural Networks, Machine Learning, Deep Learning </li>
-              </ul>
-            </p>
-          </div>
-        </div>
-
-        <div class="row schedule-item">
-          <div class="col-md-2">
-            <div class="speaker">
-            <img style="border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/choksey.png" alt="S.M. Choksey College Logo">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h4><span>S.M. Choksey Junior College, Pune</span></h4>
-            <p>
-              <b>Senior Secondary (HSC)
-              <br>
-              Percentage: 86.62%</b>
-              <br>
-              <br>
-              <b>Coursework</b>
-              <ul>
-                <li><b> Computer Science I -</b> Operating Systems, Data Structures, C++, HTML  </li>
-                <br>
-                <li><b> Computer Science II -</b> Introduction to Microporcessor, Assembly Language Programming, Introduction to Microcontroller, Networking Technology </li>
-              </ul>
-            </p>
-          </div>
-        </div>
-
-        <div class="row schedule-item">
-          <div class="col-md-2">
-            <div class="speaker">
-              <img style="border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/bishops.png" alt="Bishop's School Logo">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h4><span>The Bishop's School, Pune</span></h4>
-            <p>
-              <b>Secondary (ICSE)</b>
-              <br>
-              <b>Percentage: 94.00%</b>
-            </p>
-          </div>
-        </div>
-
-      </div>
-      <!-- End Education -->
-
-      <!-- Leadership-->
-      <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-
-        <div class="row schedule-item">
-          <div class="col-md-2">
-            <div class="speaker">
-              <img style="border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/finalytics.png" alt="Finalytics Logo">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h4><span>Finalytics</span></h4>
-            <p>
-              <b>Co-Founder</b>
-              <br>
-              <b>June 2021 - December 2021</b>
-              <br>
-              <br>
-              <ul>
-              <li>Finalytics is a group of data and finance enthusiasts wanting to build an exclusive community, a space where innovation meets engineering. </li>
-              <br>
-              <li>Organizing and managing various activities like brainstorming and pitching project ideas, building predictive analysis projects, exploring the applications of Machine Learning in FinTech sector and so forth.</li>
-              </ul>  
-            </p>
-          </div>
-        </div>
-
-        <div class="row schedule-item">
-          <div class="col-md-2">
-            <div class="speaker">
-              <img style="border-radius:50%; border:1px solid rgb(182, 179, 179);" src="assets/img/logos/edc.png" alt="EDC Logo">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h4><span>Entrepreneurship Development Cell</span></h4>
-            <p>
-              <b>Active Member, Sponsorship Team</b>
-              <br>
-              <b>August 2018 - November 2018</b>
-              <br>
-              <br>
-              <ul>
-              <li>Entrepreneurship Development Cell provides a platform for students to showcase their ideas and innovations and inculcates within them entrepreneurial skills and leadership qualities.</li>
-              <br>
-              <li>Through the brief period at EDC, I was an active member of the sponsorship team working for the economic empowerment of the cell.</li>
-              </ul>  
-            </p>
-          </div>
-        </div>
-
-      </div>
-      <!-- End Leadership -->
-
-      <!-- Schdule Day 3 -->
-      <!-- <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-
-        <div class="row schedule-item">
-          <div class="col-md-2"><time>10:00 AM</time></div>
-          <div class="col-md-10">
-            <div class="speaker">
-              <img src="assets/img/speakers/2.jpg" alt="Hubert Hirthe">
-            </div>
-            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-          </div>
-        </div>
-
-      </div> -->
-      <!-- End Schdule Day 3 -->
-
-    </div>
-
-  </div>
-
-</section><!-- End Schedule Section -->
-
-
-    <!-- ======= Project Section ======= -->
-    <section id="projects" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>The cure from boredom is curiosity</h2>
-          <p>Projects</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img style="height: 262px; width: 350px" src="assets/img/projects/music.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/shrenik-jain/melody-generator"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-              <div style="text-align: center" class="member-info">
-                <h4>Melody Generator</h4>
-                <span style="color: #ef6603">Python / Scipy </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img style="height: 262px; width: 350px" src="assets/img/projects/face_physiognomy.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/shrenik-jain/face-physiognomy"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-              <div style="text-align: center" class="member-info">
-                <h4 >Face Physiognomy</h4>
-                <span style="color: #ef6603">DCNN / TensorFlow / Docker</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img style="height: 262px; width: 350px" src="assets/img/projects/car_recognition.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/shrenik-jain/vehicle-color-recognition"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-              <div style="text-align: center" class="member-info">
-                <h4>Vehicle Color Recognition</h4>
-                <span style="color: #ef6603">Python / KNN / Haarcascades</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img style="height: 262px; width: 350px" src="assets/img/projects/sales.png" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://github.com/shrenik-jain/sales-prediction"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-              <div style="text-align: center" class="member-info">
-                <h4>Sales Prediction</h4>
-                <span style="color: #ef6603">Time Series Ananlysis / RNN / SARIMA</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- End Project Section -->
-
-
-    <section id="certifications" class="services">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Learning Should Never Stop</h2>
-          <p>Certifications</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="zoom-in-left">
-              <div class="icon"><img height="75" width="75" src="assets/img/logos/deep_learning.png"></div>
-              <h4 class="title"><a href="#certifications">Deep Learning Specialization</a></h4>
-              <p class="description">This program helps understand the capabilities, challenges, and consequences of deep learning. Built & trained neural network architectures such as CNNs, RNNs and LSTMs</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
-              <div class="icon"><img height="75" width="75" src="assets/img/logos/deep_learning.png"></div>
-              <h4 class="title"><a href="#certifications">TensorFlow in Practice</a></h4>
-              <p class="description">This hands-on module taught applied machine learning skills with TensorFlow to build & train powerful models. Learnt the necessary tools to build scalable AI-powered applications</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
-              <div class="icon"><img height="80" width="80" src="assets/img/logos/dell.png"></div>
-              <h4 class="title"><a href="#certifications">Artificial Intelligence</a></h4>
-              <p class="description">This course describes the concept of various ML methods and algorithms associated with each method. Learnt in-depth ML techniques and understood different algorithms.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
-              <div class="icon"><img height="70" width="70" src="assets/img/logos/microsoft.png"></div>
-              <h4 class="title"><a href="#certifications">AI Classroom</a></h4>
-              <p class="description">A series of online simu-live sessions delivered by Microsoft’s AI, machine learning and data science experts to gain basic skills of AI/ML and Data science</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><img height="90" width="70" src="assets/img/logos/duke.png"></div>
-              <h4 class="title"><a href="#certifications">Programming Foundations with JS, HTML & CSS</a></h4>
-              <p class="description">Learnt foundational programming concepts and how to solve problems. In addition, learnt basics of web development</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><img height="80" width="90" src="assets/img/logos/kaggle.png"></div>
-              <h4 class="title"><a href="#certifications">Intro to Machine Learning</a></h4>
-              <p class="description">A micro course explaining the core ideas in ML. Learnt how models work and some basics of data exploration. In addition, understood the concepts of Overfitting & Underfitting</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><img height="80" width="90" src="assets/img/logos/kaggle.png"></div>
-              <h4 class="title"><a href="#certifications">Intermediate Machine Learning</a></h4>
-              <p class="description">A micro course which explains how to handle missing and non numeric values, data leakage and much more. Worked on pipelines for deploying and testing complex models</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><img height="80" width="90" src="assets/img/logos/kaggle.png"></div>
-              <h4 class="title"><a href="#certifications">Introduction to Deep Learning</a></h4>
-              <p class="description">A hands-on micro course to use TensorFlow and Keras to build and train neural networks. Used Dropout & Batch Normalization to prevent Overfitting & stabalize trianing</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Certifications Section -->
-
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Testimonials</h2>
-          <p>What they are saying</p>
-        </div>
-
-        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Shrenik is knowledgeable, articulate, and a pleasure to work with. 
-                  He works as a Content Writer at Exa Mobility, and is someone who I 
-                  look forward to for curating content for our website as well as supplementary 
-                  articles. He brings integrity and intelligence to his work comprehensively.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                </p>
-                <h3>Kinza Fatima</h3>
-                <h4>Project Manager @ Raven Busines Systems LLC</h4>
-                <br>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had the opportunity to work with Shrenik during his time in Pivotchain Solutions and he has shown tremendous 
-                  growth in Python & Computer Vision related tasks. From improving performance of models to deploying a end to end 
-                  solution, his work has been highly appreciated by his seniors. He is highly energetic, driven, dedicated and an 
-                  excellent team player. With his dedication, attention to detail and ability to learn quickly, Shrenik will be an 
-                  asset any organisation.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  <br>
-                </p>
-                <h3>Siril Sam Abraham</h3>
-                <h4>Data Scientist @ Globant</h4>
-                <br>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Shrenik is a punctilious professional and an excellent resource for the deep learning domain, 
-                  who brings all the required skills and abilities to the table. He is diligent, organized and a 
-                  fast learner. He did a wonderful job completing the assigned tasks and meeting deadlines without 
-                  fail. Shrenik’s benign personality and a zeal to learn and take on new challenges makes him a 
-                  great asset and a pleasure to work with.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  <br>
-                  <br>
-                </p>
-                <h3>Jaffar Habshee</h3>
-                <h4>AI Engineer @ Honeywell</h4>
-                <br>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Reach Out</h2>
-          <p>Get in Touch</p>
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-lg-4" data-aos="fade-right">
-            <div class="info">
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>shrenikkjain81@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+91-9657096852</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-bar-chart"></i>
-                <h4>Visitors:</h4>
-                <!-- <a href='http://www.freevisitorcounters.com'></a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=3a71ef0a693d17cfec5a4ad72b5f8c5c12037d21'></script> -->
-                <p style="margin-top: -4% !important;">
-                  <script type="text/javascript" src="https://freevisitorcounters.com/en/home/counter/858358/t/3"></script>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-
-            <form action="https://formspree.io/f/meqnqnpe" method="POST" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <fieldset>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
-                  </fieldset>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <fieldset>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <fieldset>
-                  <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact" required>
-                </fieldset>
-              </div>
-              <div class="form-group mt-3">
-                <fieldset>
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </fieldset>
-              </div>
-              <div class="form-group mt-3">
-                <fieldset>
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </fieldset>
-              </div>
-            
-              <div class="text-center btn">
-                <fieldset>
-                  <button type="submit">Send Message</button>
-                </fieldset>
-              </div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" class="footer">
     <div class="container">
-      <h3>Reach Out</h3>
-      <p>You can get in touch with me if you want to collaborate on a project or want to hire me</p>
-      <div class="social-links">
-        <a href="https://github.com/shrenik-jain" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/shrenik_jainn/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      <div class="copyright">
+        CONTACT ME
+      </div>
+
+      <p>If you want to collaborate on a project or want to hire me</p>
+      <p class="resume">Link To My <a href="https://drive.google.com/uc?export=download&id=1YE9Csl4OvUzrwNG1qxaDjqfkuR7wdnhH">Resume</a></p>
+      
+      <div class="header-social-links">
+        <!-- <a href="https://x.com/shrenik_jainn?t=NQme0aWdJzqoK-hIfp-PAg&s=08" class="twitter">TWITTER</a>
+        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook">FACEBOOK</i></a>
+        <a href="https://www.instagram.com/shrenik_jainn/" class="instagram">INSTAGRAM</i></a>
+        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin">LINKEDIN</i></i></a>
+        <a href="https://github.com/shrenik-jain" class="linkedin">GITHUB</i></i></a> -->
+
+        <a href="https://x.com/shrenik_jainn?t=NQme0aWdJzqoK-hIfp-PAg&s=08" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/shrenik_jainn/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/curriculum.js"></script>
-
+  <script src="/assets/js/particles.js"></script>
 
 </body>
 

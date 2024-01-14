@@ -1,3 +1,11 @@
+Thanks for downloading this template!
+
+Template Name: PhotoFolio
+Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
+
+
 # Personal Website Repository
 
 
@@ -32,6 +40,8 @@ This website serves as my personal corner on the internet where I showcase my pr
 ## References:
 
 - **Templates**
+    - Template Name: PhotoFolio
+    - [Template URL](https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/)
     - [Bootstrap](https://getbootstrap.com)
     - [Darpan Jain Portfolio](https://darpan-jain.github.io/)
 
