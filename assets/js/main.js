@@ -179,14 +179,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sectionHeaders.forEach((header, index) => {
     header.addEventListener('click', function () {
-      // Close all sections
-      sectionContents.forEach(content => {
-        content.style.display = 'none';
-      });
-
       // Toggle the visibility of the clicked section's content
       const content = sectionContents[index];
       content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
+
+      // Close all other sections
+      sectionContents.forEach((otherContent, otherIndex) => {
+        if (otherIndex !== index) {
+          otherContent.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  sectionContents.forEach(content => {
+    content.addEventListener('click', function (event) {
+      // Prevent hiding when clicking on the content itself
+      event.stopPropagation();
     });
   });
 

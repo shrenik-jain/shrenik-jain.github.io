@@ -97,12 +97,15 @@ canvas{
 .section-header p {
   margin: 0;
   margin: 0;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   font-family: var(--font-secondary);
   color: #fff;
 }
 
+/*--------------------------------------------------------------
+# Work & Academics Sections & Section Header
+--------------------------------------------------------------*/
 .work-section-header {
   cursor: pointer;
   user-select: none;
@@ -110,6 +113,42 @@ canvas{
 
 .work-section-content {
   display: none;
+  margin-left: 140px;
+}
+
+.logo-container {
+  display: inline-block;
+  margin-right: 20px; 
+  padding-bottom: 15px;
+}
+
+.company-logo {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%;
+  margin-top: -25px;
+}
+
+.header-info {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (min-width: 768px) {
+  .work-section-header img {
+    float: left; 
+    margin-right: 20px; 
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 767px) {
+  .work-section-header img {
+    display: none;
+  }
+  .work-section-content {
+    margin-left: 0px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1304,22 +1343,4 @@ canvas{
   font-size: 20px;
   text-align: center;
   font-weight: 400;
-}
-
-.work-section {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.work-section-content {
-  display: none;
-}
-
-.work-section.active .work-section-content {
-  display: block;
-}
-
-.work-section-header {
-  cursor: pointer;
 }
