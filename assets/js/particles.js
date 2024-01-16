@@ -396,7 +396,8 @@ thing("Yo.");
         
         //This sets the color to draw with.
         // ctx.strokeStyle = "#00FFFF";
-        ctx.strokeStyle = "#CA2C92";
+        // ctx.strokeStyle = "#CA2C92";
+        ctx.strokeStyle = "#ef6603";
         
 
         //This calls the function to update the particle positions.

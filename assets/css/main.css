@@ -20,7 +20,8 @@
 /* Colors */
 :root {
   --color-default: #fafafa;
-  --color-primary: #27a776;
+  /* --color-primary: #27a776; */
+  --color-primary: #ef6603;
   --color-secondary: #161718;
 }
 
@@ -113,7 +114,8 @@ canvas{
 
 .work-section-content {
   display: none;
-  margin-left: 140px;
+  margin-left: 100px;
+  padding-bottom: 40px;
 }
 
 .logo-container {
