@@ -696,6 +696,7 @@ canvas{
   flex-direction: column;
   text-align: center;
   transition: 0.3s;
+  min-height: 450px;
 }
 
 .testimonials .testimonial-item .stars {
@@ -763,6 +764,7 @@ canvas{
 
   .testimonials .testimonial-item {
     margin: 40px 20px;
+    min-height: auto;
   }
 }
 
