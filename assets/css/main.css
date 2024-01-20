@@ -37,6 +37,7 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   background-color: #000;
+  overflow-y: auto;
 }
 
 a {
@@ -695,6 +696,7 @@ canvas{
   flex-direction: column;
   text-align: center;
   transition: 0.3s;
+  min-height: 450px;
 }
 
 .testimonials .testimonial-item .stars {
@@ -762,6 +764,7 @@ canvas{
 
   .testimonials .testimonial-item {
     margin: 40px 20px;
+    min-height: auto;
   }
 }
 
