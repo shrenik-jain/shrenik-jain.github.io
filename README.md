@@ -1,7 +1,7 @@
 # Personal Website Repository
 
 
-## Checkout My Website &nbsp; -> &nbsp; [shrenik-jain.github.io](https://shrenik-jain.github.io/)
+## You can checkout my website here &rarr; [shrenik-jain.github.io](https://shrenik-jain.github.io/)
 
 <br>
 
@@ -23,7 +23,7 @@ This website serves as my personal corner on the internet where I showcase my pr
 ## Features
 
 - **About Me:** Learn more about my background, skills, and experiences.
-- **Portfolio:** Browse through my projects, including descriptions and links to GitHub repositories.
+- **Projects:** Browse through my projects, including descriptions and links to GitHub repositories.
 - **Blog:** Read my latest blog posts where I share my insights, tutorials, and experiences in the tech world.
 - **Contact:** Get in touch with me through the provided contact information.
 
@@ -36,10 +36,11 @@ This website serves as my personal corner on the internet where I showcase my pr
     - [Template URL](https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/)
     - [Bootstrap](https://getbootstrap.com)
     - [Darpan Jain Portfolio](https://darpan-jain.github.io/)
+    - [Codepen.io](https://codepen.io/aecend/pen/WbONyK)
 
 - **Fonts & Icons**
     - [Google Fonts](https://fonts.google.com/)
-    - [Boxicons](https://boxicons.com/)
+    - [Bootstrap Icons](https://icons.getbootstrap.com/)
 
 - **Submission Form**
     - [Formspree](https://formspree.io/)
