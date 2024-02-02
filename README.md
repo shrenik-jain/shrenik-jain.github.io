@@ -29,11 +29,10 @@ This website serves as my personal corner on the internet where I showcase my pr
 
 <br>
 
-## References:
+## References
 
 - **Templates**
-    - Template Name: PhotoFolio
-    - [Template URL](https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/)
+    - [PhotoFolio](https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/)
     - [Bootstrap](https://getbootstrap.com)
     - [Darpan Jain Portfolio](https://darpan-jain.github.io/)
     - [Codepen.io](https://codepen.io/aecend/pen/WbONyK)
@@ -52,6 +51,9 @@ This website serves as my personal corner on the internet where I showcase my pr
 If you have any questions, feel free to reach out to me:
 
 - Email: [shrenikkjain81@gmail.com](shrenikkjain81@gmail.com)
-- LinkedIn: [Shrenik Jain](https://www.linkedin.com/in/shrenik-jain-664bb9170/)
-- GitHub: [shrenik-jain](https://github.com/shrenik-jain)
+- LinkedIn: [linkedin.com/shrenik-jain](https://www.linkedin.com/in/shrenik-jain-664bb9170/)
+- GitHub: [github.com/shrenik-jain](https://github.com/shrenik-jain)
 - Website: [shrenik-jain.github.io](https://shrenik-jain.github.io/)
+
+<br>
+<p align="right" ><i> Developed with 🧡 by <a href="https://shrenik-jain.github.io/">Shrenik Jain </i></a></p>
