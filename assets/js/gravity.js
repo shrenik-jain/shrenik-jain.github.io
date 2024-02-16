@@ -2348,25 +2348,28 @@ Particle.prototype = (function(o) {
 	canvas.addEventListener("dblclick", doubleClick, false);
 
 	// GUI
+	var guiWidth = Math.min(window.innerWidth - 30, 600); 
+	var gui = new dat.GUI({ width: guiWidth });
+	// gui.domElement.classList.add('center-top');
 
-	gui = new dat.GUI();
 	var f1 = gui.addFolder("Particles");
 	f1
-		.add(control, "particleNum", 0, 100000)
+		.add(control, "particleNum", 0, 3000)
 		.step(1)
-		.name("Particle Num")
+		.name("Particle Number")
 		.onChange(function() {
 			var n = (control.particleNum | 0) - particles.length;
 			if (n > 0) addParticle(n);
 			else if (n < 0) removeParticle(-n);
 		});
 
+
 	var f2 = gui.addFolder("Gravity");
 
 	f2
-		.add(GravityPoint, "RADIUS_LIMIT", 0, 100000)
+		.add(GravityPoint, "RADIUS_LIMIT", 0, 3000)
 		.step(1)
-		.name("Radius Limit Black Hole")
+		.name("Radius Limit Blackhole")
 		.onChange(function() {});
 
 	f2
@@ -2378,6 +2381,26 @@ Particle.prototype = (function(o) {
 		});
 
 	f2.add(GravityPoint, "interferenceToPoint").name("Interference Between Point");
+
+
+	var f3 = gui.addFolder("Usage");
+
+	f3
+		.add({ showInfo: function() {} }, 'showInfo')
+		.name("Click For Blackhole");
+
+	f3
+		.add({ showInfo: function() {} }, 'showInfo')
+		.name("Double Click Destroy");
+
+
+	var f4 = gui.addFolder("Home");
+
+	f4
+		.add({ goToHomePage: function() { window.location.href = "index.html"; } }, 'goToHomePage')
+		.name("Go Back Home");
+	
+	// document.body.appendChild(gui.domElement);
 	gui.close();
 
 	// Start Update
@@ -2409,10 +2432,11 @@ Particle.prototype = (function(o) {
 		bufferCtx.fillRect(0, 0, screenWidth, screenHeight);
 		bufferCtx.restore();
 
-		// パーティクルをバッファに描画
+		// Draw particles to buffer
 		// for (i = 0, len = particles.length; i < len; i++) {
 		//     particles[i].render(bufferCtx);
 		// }
+
 		len = particles.length;
 		bufferCtx.save();
 		bufferCtx.fillStyle = bufferCtx.strokeStyle = "#fff";
@@ -2435,7 +2459,7 @@ Particle.prototype = (function(o) {
 		bufferCtx.fill();
 		bufferCtx.restore();
 
-		// バッファをキャンバスに描画
+		// draw buffer to canvas
 		context.drawImage(bufferCvs, 0, 0);
 
 		requestAnimationFrame(loop);
