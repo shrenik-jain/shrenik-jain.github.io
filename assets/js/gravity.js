@@ -2387,11 +2387,11 @@ Particle.prototype = (function(o) {
 
 	f3
 		.add({ showInfo: function() {} }, 'showInfo')
-		.name("Click For Blackhole");
+		.name("Single Click: Blackhole");
 
 	f3
 		.add({ showInfo: function() {} }, 'showInfo')
-		.name("Double Click Destroy");
+		.name("Double Click: Destroy");
 
 
 	var f4 = gui.addFolder("Home");
