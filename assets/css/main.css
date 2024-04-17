@@ -80,25 +80,28 @@ mark {
   color: #000;
   padding: 0px 15px;
   border-radius: 10px;
-  text-shadow: 2px 2px #00ffff, -2px -2px #ff00c8;
+  text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
   animation: glitch 1s infinite;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  /* text-decoration-skip-ink: auto; */
 }
 
 @keyframes glitch {
   0% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #ff00c8;
+    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
   }
   25% {
-    text-shadow: -2px -2px #00ffff, 2px 2px #ff00c8;
+    text-shadow: -2px -2px #00ffff, 2px 2px #00BFFF;
   }
   50% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #ff00c8;
+    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
   }
   75% {
-    text-shadow: -2px -2px #00ffff, 2px 2px #ff00c8;
+    text-shadow: -2px -2px #00ffff, 2px 2px #00BFFF;
   }
   100% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #ff00c8;
+    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
   }
 }
 
