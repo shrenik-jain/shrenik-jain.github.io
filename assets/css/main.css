@@ -123,8 +123,8 @@ mark {
   padding: 0px 15px;
   border-radius: 10px;
   text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #aaa, 3px 3px 0 #888, 4px 4px 0 #666, 5px 5px 0 #444;
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
+  /* text-decoration: underline; */
+  /* text-underline-offset: 0.3em; */
 }
 
 /*--------------------------------------------------------------
