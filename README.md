@@ -10,7 +10,7 @@ This website serves as my personal corner on the internet where I showcase my pr
 - **Templates**
     - [PhotoFolio](https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/)
     - [Bootstrap](https://getbootstrap.com)
-    - [Darpan Jain Portfolio](https://darpan-jain.github.io/)
+    <!-- - [Darpan Jain Portfolio](https://darpan-jain.github.io/) -->
     - [Codepen.io](https://codepen.io/aecend/pen/WbONyK)
 
 - **Fonts & Icons**
@@ -19,6 +19,9 @@ This website serves as my personal corner on the internet where I showcase my pr
 
 - **Submission Form**
     - [Formspree](https://formspree.io/)
+
+- **Website Infographics**
+    - [Google Analytics](https://marketingplatform.google.com/about/analytics/)
 
 
 ## Using the Template
