@@ -1419,8 +1419,24 @@ mark {
   font-weight: 700;
 }
 
+.footer .header-social-links a:hover {
+  color: #2cbc85;
+}
+
 .footer .resume {
   font-size: 20px;
   text-align: center;
   font-weight: 400;
+}
+
+.resume button {
+  background: none; 
+  border: none; 
+  color: #ef6603; 
+  padding: 0;
+  font: inherit;
+}
+
+.resume button:hover {
+  color: #2cbc85;
 }
