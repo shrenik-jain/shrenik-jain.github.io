@@ -342,7 +342,7 @@ mark {
   margin: auto;
   width: 1px;
   height: 280px;
-  transition: all 0.8s ease 0s;
+  transition: all 0.5s ease 0s; /* Updated transition duration */
 }
 
 #preloader .line:before {
@@ -354,7 +354,7 @@ mark {
   width: 1px;
   height: 0%;
   transform: translateY(-50%);
-  animation: lineincrease 1000ms ease-in-out 0s forwards;
+  animation: lineincrease 500ms ease-in-out 0s forwards; /* Reduced to 500ms */
 }
 
 #preloader .line:after {
@@ -366,8 +366,8 @@ mark {
   width: 1px;
   height: 100%;
   transform: translateY(-100%);
-  animation: linemove 1200ms linear 0s infinite;
-  animation-delay: 2000ms;
+  animation: linemove 600ms linear 0s infinite; /* Reduced to 600ms */
+  animation-delay: 500ms; /* Aligning with new animation duration */
 }
 
 #preloader.loaded .line {
@@ -381,7 +381,7 @@ mark {
 
 #preloader.loaded:before,
 #preloader.loaded:after {
-  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+  animation: preloaderfinish 150ms ease-in-out 150ms forwards; /* Reduced to 150ms */
 }
 
 @keyframes lineincrease {
@@ -406,13 +406,14 @@ mark {
 
 @keyframes preloaderfinish {
   0% {
-    width: 5 0%;
+    width: 50%;
   }
 
   100% {
     width: 0%;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Header
