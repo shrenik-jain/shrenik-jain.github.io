@@ -8,20 +8,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.classList.add('loaded');
-      }, 1000);
-      setTimeout(() => {
-        preloader.remove();
-      }, 2000);
-    });
-  }
+/**
+ * Preloader
+ */
+const preloader = document.querySelector('#preloader');
+if (preloader) {
+  window.addEventListener('load', () => {
+    preloader.classList.add('loaded');
+
+    // Use a slight delay to ensure the preloader animation completes smoothly
+    setTimeout(() => {
+      preloader.remove();
+    }, 300); // Adjust as needed to ensure smooth transition
+  });
+}
+
 
   /**
    * Mobile nav toggle

@@ -22,6 +22,7 @@ This website serves as my personal corner on the internet where I showcase my pr
 
 - **Website Infographics**
     - [Google Analytics](https://marketingplatform.google.com/about/analytics/)
+    - [Google Tag Manager](https://tagmanager.google.com/)
 
 
 ## Using the Template
