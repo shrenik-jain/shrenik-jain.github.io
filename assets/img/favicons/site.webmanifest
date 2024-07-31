@@ -1,0 +1,19 @@
+{
+    "name": "SJ Website",
+    "short_name": "SJ Website",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ff5b3b",
+    "background_color": "#ff5b3b",
+    "display": "standalone"
+}

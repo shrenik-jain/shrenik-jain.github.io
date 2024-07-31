@@ -849,6 +849,7 @@ mark {
 --------------------------------------------------------------*/
 .gallery {
   margin-top: 40px;
+  margin: 50px;
 }
 
 .gallery .gallery-item {
@@ -868,7 +869,7 @@ mark {
   inset: 0;
   opacity: 0;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 3;
 }
 
@@ -1440,4 +1441,29 @@ mark {
 
 .resume button:hover {
   color: #2cbc85;
+}
+
+canvas {
+  display: block;
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: all;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto; 
 }
