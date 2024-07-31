@@ -849,6 +849,7 @@ mark {
 --------------------------------------------------------------*/
 .gallery {
   margin-top: 40px;
+  margin: 50px;
 }
 
 .gallery .gallery-item {
@@ -868,7 +869,7 @@ mark {
   inset: 0;
   opacity: 0;
   transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 3;
 }
 
