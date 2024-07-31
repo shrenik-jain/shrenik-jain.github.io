@@ -5,7 +5,7 @@ particlesJS(
         "value": 250
       },
       "color": {
-        "value": "#eee"
+        "value": ["#eee", "#2cbc85"]//, "ef6603"]
       },
       "shape": {
         "type": "circle"
@@ -18,7 +18,7 @@ particlesJS(
         }
       },
       "size": {
-        "value": 6,
+        "value": 7,
         "random": true,
         "anim": {
           "enable": false,
@@ -50,10 +50,9 @@ particlesJS(
       },
       "modes": {
         "push": {
-          "particles_nb": 10
+          "particles_nb": 30
         }
       }
     },
     "retina_detect": true
-  });
-  
+  });  
