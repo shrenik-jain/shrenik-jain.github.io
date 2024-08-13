@@ -75,56 +75,15 @@ canvas{
   }
 }
 
-/* mark {
-  background-color: #000;
-  color: #000;
-  padding: 0px 15px;
-  border-radius: 10px;
-  text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
-  animation: glitch 4s infinite;
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
-  text-decoration-skip-ink: auto;
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
-  }
-  25% {
-    text-shadow: -2px -2px #00ffff, 2px 2px #00BFFF;
-  }
-  50% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
-  }
-  75% {
-    text-shadow: -2px -2px #00ffff, 2px 2px #00BFFF;
-  }
-  100% {
-    text-shadow: 2px 2px #00ffff, -2px -2px #00BFFF;
-  }
-} */
-
-/* mark {
-  background-color: #00BFFF; 
-  color: #000; 
-  padding: 0px 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
-  text-shadow: 0 0 2px rgba(0, 191, 255, 0.5);
-} */
-
 mark {
-  font-size: 0.8em;
-  font-variant: small-caps;
-  font-weight: bold;
-  background-color: #000;
-  color: #FFF;
-  padding: 0px 15px;
-  border-radius: 10px;
-  text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #aaa, 3px 3px 0 #888, 4px 4px 0 #666, 5px 5px 0 #444;
-  /* text-decoration: underline; */
-  /* text-underline-offset: 0.3em; */
+  background-color: #000; 
+  color: aliceblue; 
+  font-size: 35px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -1466,4 +1425,13 @@ canvas {
   position: relative;
   z-index: 2;
   pointer-events: auto; 
+}
+
+.tech-stack {
+  font-size: 13px; 
+  font-weight: 400;
+  color: aliceblue; 
+  margin-top: 8px; 
+  margin-bottom: 0; 
+  text-transform: capitalize;
 }
