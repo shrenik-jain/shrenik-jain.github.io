@@ -1069,7 +1069,7 @@ h5 {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #5581ED;
 }
 
 .testimonials .swiper-slide {
@@ -1105,7 +1105,7 @@ h5 {
 }
 
 /*--------------------------------------------------------------
-# Pricing Section
+# Gallery Section
 --------------------------------------------------------------*/
 .gallery {
   margin-left: 50px;
@@ -1531,7 +1531,7 @@ h5 {
 }
 
 .hero  p b {
-  font-weight: 350;
+  font-weight: 390;
   color: #ffffff;
 }
 
@@ -1680,9 +1680,7 @@ h5 {
 }
 
 /* Common query for MacBook Pro, MacBook Air, Surface Pro, and Asus Zenbook Fold */
-@media all and (min-device-height: 1180px) and (max-device-height: 1368px) and 
-              (min-device-width: 820px) and (max-device-width: 1024px) {
-  
+@media all and (min-device-height: 1180px) and (max-device-height: 1368px) and (min-device-width: 820px) and (max-device-width: 1024px) {
   .footer {
     margin-top: 200px;
     min-height: 32vh;
@@ -1720,72 +1718,10 @@ canvas {
   pointer-events: auto; 
 }
 
-/* .mle {
+.mle {
   background: linear-gradient(270deg, #D46678 17.15%, #C46A90 38.31%, #A571BD  60.21%, #5481ED 86.94%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
-} */
-
-/* .mle {
-  background: linear-gradient(270deg, #D46678 17.15%, #C46A90 38.31%, #A571BD 60.21%, #5481ED 86.94%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  background-size: 200% 100%; 
-  animation: gradientBounce 2s ease-in-out infinite; 
-}
-
-@keyframes gradientBounce {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
-
-.mle {
-  background: linear-gradient(270deg, #D46678, #C46A90, #A571BD, #5481ED, #D46678);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  background-size: 300% 100%;
-  animation: gradientShift 1.5s linear infinite, subtlePulse 2s ease-in-out infinite;
-  position: relative;
-}
-
-/* Faster and smoother gradient animation */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Subtle Pulsating Effect */
-@keyframes subtlePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
 }
