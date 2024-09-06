@@ -209,3 +209,138 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function showJobDetails(section, jobId) {
+  // Remove active class from all items
+  document.querySelectorAll('.timeline-item').forEach(function(item) {
+      item.classList.remove('active');
+  });
+
+  // Add active class to the clicked item
+  const selectedTimelineItem = document.querySelector(`#${section}Timeline .timeline-item:nth-child(${jobId})`);
+  selectedTimelineItem.classList.add('active');
+
+  // Hide all job details
+  document.querySelectorAll('.job-details').forEach(function(detail) {
+    detail.classList.add('d-none');
+  });
+
+  document.querySelectorAll('.education-details').forEach(function(detail) {
+    detail.classList.add('d-none');
+  });
+
+  // Show the selected job details
+  document.getElementById(section + 'Details' + jobId).classList.remove('d-none');
+}
+
+document.getElementById('employmentBtn').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('consultingBtn').classList.remove('active');
+  document.getElementById('employmentTimeline').classList.remove('d-none');
+  document.getElementById('consultingTimeline').classList.add('d-none');
+  showJobDetails('employment', 1); // Show the first employment detail by default
+});
+
+document.getElementById('consultingBtn').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('employmentBtn').classList.remove('active');
+  document.getElementById('employmentTimeline').classList.add('d-none');
+  document.getElementById('consultingTimeline').classList.remove('d-none');
+  showJobDetails('consulting', 1); // Show the first consulting detail by default
+});
+document.getElementById('employmentBtnmob').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('consultingBtnmob').classList.remove('active');
+  document.getElementById('employmentmob').classList.remove('d-none');
+  document.getElementById('consultingmob').classList.add('d-none');
+  showJobDetails('employment', 1); // Show the first employment detail by default
+});
+
+document.getElementById('consultingBtnmob').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('employmentBtnmob').classList.remove('active');
+  document.getElementById('employmentmob').classList.add('d-none');
+  document.getElementById('consultingmob').classList.remove('d-none');
+  showJobDetails('consulting', 1); // Show the first consulting detail by default
+});
+
+function showJobDetails(section, jobId) {
+  // Remove active class from all items
+  document.querySelectorAll('.timeline-item').forEach(function(item) {
+      item.classList.remove('active');
+  });
+
+  // Add active class to the clicked item
+  const selectedTimelineItem = document.querySelector(`#${section}Timeline .timeline-item:nth-child(${jobId})`);
+  selectedTimelineItem.classList.add('active');
+
+  // Handle smaller screens
+  if (window.innerWidth <= 768) {
+    // Hide all job details first
+    document.querySelectorAll('.timeline-item .job-details').forEach(function(detail) {
+      detail.style.display = 'none';
+    });
+
+    document.querySelectorAll('.timeline-item .education-details').forEach(function(detail) {
+      detail.style.display = 'none';
+  });
+
+    // Show the selected job details below the selected timeline item
+    const selectedJobDetail = document.getElementById(section + 'Details' + jobId);
+    selectedJobDetail.style.display = 'block';
+  } else {
+    // Handle larger screens
+    document.querySelectorAll('.job-details').forEach(function(detail) {
+      detail.classList.add('d-none');
+    });
+
+    document.querySelectorAll('.education-details').forEach(function(detail) {
+      detail.classList.add('d-none');
+  });
+
+    // Show the selected job details on the right for larger screens
+    document.getElementById(section + 'Details' + jobId).classList.remove('d-none');
+  }
+}
+
+// Event listeners for the buttons
+document.getElementById('employmentBtnmob').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('consultingBtnmob').classList.remove('active');
+  document.getElementById('employmentmob').classList.remove('d-none');
+  document.getElementById('consultingmob').classList.add('d-none');
+  showJobDetails('employment', 1); // Show the first employment detail by default
+});
+
+document.getElementById('consultingBtnmob').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('employmentBtnmob').classList.remove('active');
+  document.getElementById('employmentmob').classList.add('d-none');
+  document.getElementById('consultingmob').classList.remove('d-none');
+  showJobDetails('consulting', 1); // Show the first consulting detail by default
+});
+// Event listeners for the buttons
+document.getElementById('employmentBtn').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('consultingBtn').classList.remove('active');
+  document.getElementById('employmentTimeline').classList.remove('d-none');
+  document.getElementById('consultingTimeline').classList.add('d-none');
+  showJobDetails('employment', 1); // Show the first employment detail by default
+});
+
+document.getElementById('consultingBtn').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('employmentBtn').classList.remove('active');
+  document.getElementById('employmentTimeline').classList.add('d-none');
+  document.getElementById('consultingTimeline').classList.remove('d-none');
+  showJobDetails('consulting', 1); // Show the first consulting detail by default
+});
+
+// Ensure the details are shown on load based on screen size
+window.addEventListener('load', function () {
+  if (window.innerWidth <= 768) {
+    showJobDetails('employment', 1);
+  } else {
+    showJobDetails('employment', 1);
+  }
+});

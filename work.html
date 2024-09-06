@@ -44,6 +44,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet'>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -79,16 +81,16 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li class="dropdown"><a href="work.html" class="active"><span>Work</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="work.html" class="active underline">Work</a></li>
+          <!-- <li class="dropdown"><a href="work.html" class="active"><span>Work</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="work.html#employment">EMPLOYMENT</a></li>
               <li><a href="work.html#consulting">CONSULTING</a></li>
             </ul>
-          </li>
+          </li> -->
           <li class="dropdown"><a href="academics.html"><span>Academics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="academics.html#education">EDUCATION</a></li>
-              <li><a href="academics.html#co-curricular">CO-CURRICULAR</a></li>
               <li><a href="academics.html#certifications">CERTIFICATIONS</a></li>
             </ul>
           </li>
@@ -99,12 +101,10 @@
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <!-- <a href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <!-- <a href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href="https://www.instagram.com/shrenik_jainn" class="instagram"><i class="bi bi-instagram"></i></a> -->
-        <!-- <a title="Reddit" href="https://www.reddit.com/user/shrenikk_jain" class="reddit"><i class="bi bi-reddit"></i></a> -->
-        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></a>
+        <!-- <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+        <!-- <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></a> -->
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="32" height="32"></a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="github"><img src="assets/img/icons/github.svg" alt="Github" width="32" height="32"></a>
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -112,365 +112,599 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" data-aos="fade" data-aos-delay="200">
+  <!-- <main id="main" data-aos="fade" data-aos-delay="200">
 
-    <!-- ======= End Page Header ======= -->
+    <!- - ======= End Page Header ======= - ->
     <div class="page-header d-flex align-items-center", id="employment">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-up"><mark>Employment</mark></h2>
-            <!-- <a class="cta-btn" href="contact.html">Resume</a> -->
+            <h2 data-aos="fade-up">Employment</h2>
+            <!- - <a class="cta-btn" href="contact.html">Resume</a> - ->
           </div>
         </div>
       </div>
     </div>
-    <!-- End Page Header -->
+    <!- - End Page Header - ->
 
-    <!-- ======= First Work Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+  </main><!- - End #main - -> -->
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/pivotchain_light.jpeg" class="company-logo" alt="Pivotchain Solutions Logo - Green hexagonal abstract design">
-          </div>
-          <div class="header-info">
-            <h2>Jul 2022 - Aug 2024</h2>
-            <p>Machine Learning Engineer, <a title="pivotchain.com" style="font-weight: 600; color: green;" href="https://pivotchain.com/">Pivotchain Solutions</a></p>
-          </div>
+  <main id="main" data-aos="fade" data-aos-delay="200"> 
+
+    <!-- Desktop row -->
+    <div class="container my-5 deskrow">
+        <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
+        <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
+            <button id="employmentBtn" class="employmentbtn btn-warning active">Employment</button>
+            <button id="consultingBtn" class="consultbtn btn-dark">Consulting</button>
         </div>
+  
+        <div class="row">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div id="employmentTimeline" class="timeline">
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Led the research and design of the Raven-AI System, developing algorithms for malicious event 
-                identification to promptly recognize suspicious activities (perimeter intrusion, unauthorized 
-                entry, camera tampering, license plate recognition, and crowd dynamics), thereby enhancing the 
-                security standards.
-              </li>
-            </p>
-            <p>
-              <li>
-                Employed ConvLSTM-based Spatio Temporal Autoencoder to verify AI-generated video clips, capturing 
-                spatial and temporal representations for accurate true/false positive classification of 10,000+ 
-                potential security events per day.
-              </li>
-            </p>
-            <p>
-              <li>
-                Developed a Video Management System adhering to the ONVIF standard, integrating capabilities 
-                such as multiobject tracking, ANPR, and facial recognition, enabling intelligent management of 
-                surveillance equipment across the network infrastructure and reducing incident response time by 30%.
-              </li>
-            </p>
-            <p>
-              <li>
-              Leveraged advanced streaming protocols such as RTSP, RTMP, HTTP, HTTPS, and WebSocket for 
-              real-time live streaming from cameras.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
+                    <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jul 2022 - Aug 2024</div>
+                            <div class="timeline-bar"></div> <!-- Line next to date -->
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/pivotchain.png" alt="pivotchain logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Pivotchain Solutions</h5>
+                                        <a title="pivotchain.com" href="https://pivotchain.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Engineer</p>
+                                <p class="company-desc">Full Time - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
 
-      </div>
-    </section><!-- End First Work -->
+                    <div class="timeline-item" onclick="showJobDetails('employment', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jan 2022 - Jul 2022</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/qualys.png" alt="qualys logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Qualys Inc.</h5>
+                                        <a title="qualys.com" href="https://www.qualys.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Software Development Intern</p>
+                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <br>
+                    <div class="timeline-item" onclick="showJobDetails('employment', 3)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jul 2021 - Dec 2021</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute</h5>
+                                        <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Research Engineer</p>
+                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- ======= Second Work Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+                    <div class="timeline-item" onclick="showJobDetails('employment', 4)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Feb 2021 - Dec 2021</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/validus.png" alt="validus logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Validus Analytics LLP</h5>
+                                        <a title="validusanalytics.in" href="https://validusanalytics.in/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Intern</p>
+                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div><!-- Repeat for other employment companies -->
+                </div>
+  
+                <div id="consultingTimeline" class="timeline d-none">
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Aug 2023 - Mar 2024</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/pixstory.png" alt="pixstory logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Pixstory</h5>
+                                        <a title="pixstory.com" href="https://www.pixstory.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Consultant</p>
+                                <p class="company-desc">Part Time - Remote</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/qualys.png" class="company-logo" alt="Qualys Logo - Circular red 'Q' symbol on blue background">
-          </div>
-          <div class="header-info">
-            <h2>Jan 2022 - Jul 2022</h2>
-            <p>Software Development Intern, <a title="qualys.com" style="font-weight: 600; color: rgb(230, 44, 44);" href="https://www.qualys.com/">Qualys Inc.</a></p>
-          </div>
-        </div>
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Sep 2021 - Nov 2021</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/ai_for_rural.png" alt="ai_for_rural logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">AI For Rural</h5>
+                                        <a title="linkedin/aiforrural" href="https://www.linkedin.com/company/aiforrural/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Software Development Consultant</p>
+                                <p class="company-desc">Part Time - Remote</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Qualys is the leading provider of information security and compliance cloud solutions.
-              </li>
-            </p>
-            <p>
-              <li>
-                Designed multi-stage CI/CD pipelines using Groovy-based declarative pipelines and containerized 
-                builds, to streamline workflows and cut average deployment time from 30 minutes to 10 minutes.
-              </li>
-            </p>
-            <p>
-              <li>
-                Led the deployment orchestration of policy-compliant microservices across 3 major environments, 
-                ensuring consistent, scalable, and auditable rollouts.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 3)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jul 2020 - Oct 2020</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/exa.png" alt="exa logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Exa Mobility</h5>
+                                        <a title="exa-mobility.com" href="https://www.exa-mobility.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Content Creator</p>
+                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
 
-      </div>
-    </section><!-- End Second Work -->
-
-    <br>
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 4)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Sep 2019 - Nov 2019</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/shinobi.png" alt="shinobi logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Shinobi Brands</h5>
+                                        <a title="linkedin.com/shinobibrands" href="https://www.linkedin.com/company/shinobibrands/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Content Creator</p>
+                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div><!-- Repeat for other consulting companies -->
+                </div>
+            </div>
+  
+            <div class="col-lg-6 order-lg-2 order-1">
+                <div id="employmentDetails1" class="job-details p-4 bg-dark text-white">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/pivotchain.png" alt="pivotchain logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Pivotchain Solutions</h5>
+                                <a title="pivotchain.com" href="https://pivotchain.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                            </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jul 2022 - Aug 2024</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Machine Learning Engineer</p> 
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Led the design of the RAVEN-AI System, developing Computer Vision algorithms for malicious event recognition, providing users with an intelligent surveillance platform, reducing missed security threats by 65% and incident response time by 50%.</li>
+                        <br>
+                        <li>Employed ConvLSTM-based Spatio Temporal Autoencoder to verify AI-generated video clips, capturing spatial and temporal representations for accurate true/false positive classification of 10,000+ potential security events per day.</li>
+                        <br>
+                        <li>Developed an ONVIF-compliant Video Management System integrating multiobject tracking, ANPR, and facial recognition, improving object tracking accuracy across 10 diverse environmental conditions.</li>
+                        <br>
+                        <li>Leveraged advanced streaming protocols such as RTSP, RTMP, HTTP, HTTPS, and WebSocket for real-time live streaming from cameras.</li>
+                    </ul>
+                </div>
     
-    <!-- ======= Third Work Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+                <div id="employmentDetails2" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/qualys.png" alt="qualys logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Qualys Inc.</h5>    
+                                <a title="qualys.com" href="https://www.qualys.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jan 2022 - July 2022</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Software Development Intern</p>    
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Designed multi-stage CI/CD pipelines using Groovy-based declarative pipelines and containerized builds, to streamline workflows and cut average deployment time from 30 minutes to 10 minutes.</li>
+                        <br>
+                        <li>Led the deployment orchestration of policy-compliant microservices across 3 major environments using Kubernetes, ensuring 95% uptime (equating to less than 2 hours of downtime per quarter).</li>
+                    </ul>
+                </div>
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/viit.png" class="company-logo" alt="Vishwakarma Institute Logo">
-          </div>
-          <div class="header-info">
-            <h2>Jul 2021 - Dec 2021</h2>
-            <p>Research Engineer, <a title="viit.ac.in" style="font-weight: 600; color: royalblue;" href="https://www.viit.ac.in/">Vishwakarma Institute</a></p>
-          </div>
-        </div>
+                <div id="employmentDetails3" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Vishwakarma Institute</h5>   
+                                <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jan 2021 - Dec 2021</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Research Engineer</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Led the development of a research paper summarization system using BERT-based encoder to capture contextual semantics and generate abstractive summaries.</li>
+                        <br>
+                        <li>Researched extensively on transformers & multi-head self-attention for enhanced language understanding and generation.</li>
+                    </ul>
+                </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Led the development of a research paper summarization system using BERT-based encoder to capture 
-                contextual semantics and generate abstractive summaries.
-              </li>
-            </p>
-            <p>
-              <li>
-                Researched extensively on transformers & multi-head self-attention for enhanced language 
-                understanding and generation.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End Third Work -->
-
-    <br>
+                <div id="employmentDetails4" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/validus.png" alt="validus logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Validus Analytics LLP</h5>
+                                <a title="validusanalytics.in" href="https://validusanalytics.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Feb 2021 - Dec 2021</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Machine Learning Intern</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Analyzed Vector-Quantized VAEs (VQ-VAEs) and Convolutional VAEs (Conv-VAEs) for unsupervised learning of complex data via latent representations and generative modeling.</li>
+                        <br>
+                        <li>Implemented ConvVAE-based generative modeling for dataset enhancement, expanding a critical training dataset from 50,000 to 150,000 samples while maintaining high perceptual integrity (SSIM > 0.85).</li>
+                    </ul>
+                </div>
     
-    <!-- ======= Fourth Work Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+                <div id="consultingDetails1" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/pixstory.png" alt="pixstory logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Pixstory</h5>
+                                <a title="pixstory.com" href="https://www.pixstory.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Aug 2023 - Mar 2024</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Machine Learning Consultant</p>  
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Contributed to building a RAG-based Conversational Search System using Large Language Models (LLMs), improving search relevance and increasing average user session duration by 2 minutes.</li>
+                        <br>
+                        <li>Optimized system throughput and hardware efficiency by 3x through the introduction of asynchronous requests and parallelized execution, reducing average query response time from 2 seconds to 600 milliseconds.</li>
+                    </ul>
+                </div>
+    
+                <div id="consultingDetails2" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/ai_for_rural.png" alt="ai_for_rural logo" class="me-2"> 
+                            <div>
+                                <h5 class="company-name">AI For Rural</h5> 
+                                <a title="linkedin.com/aiforrural" href="https://www.linkedin.com/company/aiforrural/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Sep 2021 - Nov 2021</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Software Development Consultant</p>
+                        
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Implemented efficient data preprocessing and visualization pipelines for insightful data handling, intuitive data exploration, and pattern analysis.</li>
+                        <br>
+                        <li>Developed RESTful APIs and integrated them with various data sources, enabling real-time data updates and reducing data retrieval time by 40% for critical information.</li>
+                    </ul>
+                </div>
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/validus_logo.png" class="company-logo" alt="Validus Analytics LLP Logo">
-          </div>
-          <div class="header-info">
-            <h2>Feb 2021 - Dec 2021</h2>
-            <p>Machine Learning Intern, <a title="validusanalytics.in" style="font-weight: 600; color: rgb(236, 65, 65);" href="https://validusanalytics.in/">Validus Analytics LLP</a></p>
-          </div>
+                <div id="consultingDetails3" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/exa.png" alt="exa logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Exa Mobility</h5>
+                                <a title="exa-mobility.com" href="https://www.exa-mobility.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jul 2020 - Oct 2020</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Content Creator</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Pioneered innovative strategies in researching and crafting website content alongside esteemed senior colleagues, resulting in a remarkable surge of approximately 20% in website traffic.</li>
+                        <br>
+                        <li>Collaborated dynamically with the marketing and content team to conceptualize and produce captivating infographics, proposals, and blog posts tailored for both B2B and B2C technology audiences.</li>
+                        <br>
+                        <li>Orchestrated a creative revolution, spearheading the revitalization of the mobile application through imaginative content enhancements and comprehensive overhauls.</li>
+                    </ul>
+                </div>
+
+                <div id="consultingDetails4" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/shinobi.png" alt="shinobi logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Shinobi Brands</h5>
+                                <a title="linkedin.com/shinobibrands" href="https://www.linkedin.com/company/shinobibrands/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Sep 2019 - Nov 2019</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Content Creator</p><br>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Innovatively identified and rectified deficiencies within the content development support structure, optimizing workflow processes for enhanced efficiency.</li>
+                        <br>
+                        <li>Collaborated synergistically with strategic planners, business stakeholders, and fellow creatives to ideate, conceptualize, and bring to life compelling brand narratives.</li>
+                    </ul>
+                </div><!-- Add other job details divs for consulting companies -->
+            </div>
         </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Analyzed Vector-Quantized VAEs (VQ-VAEs) and Convolutional VAEs (Conv-VAEs) for unsupervised 
-                learning of complex data via latent representations and generative modeling.
-              </li>
-            </p>
-            <p>
-              <li>
-                Implemented ConvVAE-based generative modeling for dataset enhancement, expanding a critical 
-                training dataset from 50,000 to 150,000 samples while maintaining high perceptual integrity 
-                (SSIM > 0.85).
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End Fourth Work -->
-
-
-    <!-- ======= Consulting Page Header ======= -->
-    <div class="page-header d-flex align-items-center" id="consulting">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-up"><mark>Consulting</mark></h2>
-            <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Consulting Page Header -->
 
-    <!-- ======= First Consulting Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/pixstory.png" class="company-logo" alt="Pixstory Logo - Black tilted infinity on yellow background">
-          </div>
-          <div class="header-info">
-            <h2>Aug 2023 - Mar 2024</h2>
-            <p>Machine Learning Consultant, <a title="pixstory.com" style="font-weight: 600; color: yellow;" href="https://www.pixstory.com/">Pixstory</a></p>
-          </div>
+    <!-- Mobile row -->
+    <div class="container my-5 mobrow">
+        <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
+        <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
+            <button id="employmentBtnmob" class="employmentbtnmob btn-warning active">Employment</button>
+            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Consulting</button>
         </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Contributed to building a RAG-based Interactive Query System leveraging Large Language Models 
-                (LLMs) for generating responses contextualized to user queries.
-              </li>
-            </p>
-            <p>
-              <li>
-                Introduced asynchronous requests into the system to optimize resource utilization through 
-                efficient multiplexing, and parallelizing execution, resulting in a 3x improvement in system 
-                throughput and hardware efficiency.
-              </li>
-            </p>
-          </ul>
-          <hr>
+        <div id="employmentmob">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 order-2">
+            
+                    <!-- =======  Mobile First Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/pivotchain.png" class="company-logo" alt="pivotchain logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jul 2022 - Aug 2024</h2>
+                                    <p>Machine Learning Engineer</p>
+                                    <h5>Pivotchain Solutions</h5>
+                                    <a title="pivotchain.com" href="https://pivotchain.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Led the design of the RAVEN-AI System, developing Computer Vision algorithms for malicious event recognition, providing users with an intelligent surveillance platform, reducing missed security threats by 65% and incident response time by 50%.</li>
+                                    <br>
+                                    <li>Employed ConvLSTM-based Spatio Temporal Autoencoder to verify AI-generated video clips, capturing spatial and temporal representations for accurate true/false positive classification of 10,000+ potential security events per day.</li>
+                                    <br>
+                                    <li>Developed an ONVIF-compliant Video Management System integrating multiobject tracking, ANPR, and facial recognition, improving object tracking accuracy across 10 diverse environmental conditions.</li>
+                                    <br>
+                                    <li>Leveraged advanced streaming protocols such as RTSP, RTMP, HTTP, HTTPS, and WebSocket for real-time live streaming from cameras.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section><!-- End First Mobile Section -->
+
+                    <!-- =======  Mobile Second Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/qualys.png" class="company-logo" alt="qualys logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jan 2022 - Jul 2022</h2>
+                                    <p>Software Development Intern</p>
+                                    <h5>Qualys Inc.</h5>
+                                    <a title="qualys.com" href="https://www.qualys.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Designed multi-stage CI/CD pipelines using Groovy-based declarative pipelines and containerized builds, to streamline workflows and cut average deployment time from 30 minutes to 10 minutes.</li>
+                                    <br>
+                                    <li>Led the deployment orchestration of policy-compliant microservices across 3 major environments using Kubernetes, ensuring 95% uptime (equating to less than 2 hours of downtime per quarter).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Second Mobile Section -->
+
+                    <!-- =======  Mobile Thrid Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/vishwakarma.png" class="company-logo" alt="vishwakarma logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jul 2021 - Dec 2021</h2>
+                                    <p>Research Engineer</p>
+                                    <h5>Vishwakarma Institute</h5>
+                                    <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Led the development of a research paper summarization system using BERT-based encoder to capture contextual semantics and generate abstractive summaries.</li>
+                                    <br>
+                                    <li>Researched extensively on transformers & multi-head self-attention for enhanced language understanding and generation.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Thrid Mobile Section -->
+
+                    <!-- =======  Mobile fourth Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/validus.png" class="company-logo" alt="validus logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Feb 2021 - Dec 2021</h2>
+                                    <p>Machine Learning Intern</p>
+                                    <h5>Validus Analytics LLP</h5>
+                                    <a title="validusanalytics.in" href="https://validusanalytics.in/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Analyzed Vector-Quantized VAEs (VQ-VAEs) and Convolutional VAEs (Conv-VAEs) for unsupervised learning of complex data via latent representations and generative modeling.</li>
+                                    <br>
+                                    <li>Implemented ConvVAE-based generative modeling for dataset enhancement, expanding a critical training dataset from 50,000 to 150,000 samples while maintaining high perceptual integrity (SSIM > 0.85).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End fourth Mobile Section -->
+
+                </div>
+            </div>   
         </div>
 
-      </div>
-    </section><!-- End First Consulting -->
+        <div id="consultingmob" class=" d-none">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 order-2">
+            
+                    <!-- =======  Mobile C First Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/pixstory.png" class="company-logo" alt="pixstory logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Aug 2023 - Mar 2024</h2>
+                                    <p>Machine Learning Consultant</p>
+                                    <h5>Pixstory</h5>
+                                    <a title="pixstory.com" href="https://www.pixstory.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Contributed to building a RAG-based Conversational Search System using Large Language Models (LLMs), improving search relevance and increasing average user session duration by 2 minutes.</li>
+                                    <br>
+                                    <li>Optimized system throughput and hardware efficiency by 3x through the introduction of asynchronous requests and parallelized execution, reducing average query response time from 2 seconds to 600 milliseconds.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End First Mobile Section -->
 
-    <br>
+                    <!-- =======  Mobile C Second Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/ai_for_rural.png" class="company-logo" alt="ai_for_rural logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Sep 2021 - Nov 2021</h2>
+                                    <p>Software Dev Consultant</p>
+                                    <h5>AI For Rural</h5>
+                                    <a title="linkedin.com/aiforrural" href="https://www.linkedin.com/company/aiforrural/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Implemented efficient data preprocessing and visualization pipelines for insightful data handling, intuitive data exploration, and pattern analysis.</li>
+                                    <br>
+                                    <li>Developed RESTful APIs and integrated them with various data sources, enabling real-time data updates and reducing data retrieval time by 40% for critical information.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Second Mobile Section -->
 
-    <!-- ======= Second Consulting Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+                    <!-- =======  Mobile C Thrid Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/exa.png" class="company-logo" alt="exa logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jul 2020 - Oct 2020</h2>
+                                    <p>Content Creator</p>
+                                    <h5>Exa Mobility</h5>
+                                    <a title="exa-mobility.com" href="https://www.exa-mobility.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Pioneered innovative strategies in researching and crafting website content alongside esteemed senior colleagues, resulting in a remarkable surge of approximately 20% in website traffic.</li>
+                                    <br>
+                                    <li>Collaborated dynamically with the marketing and content team to conceptualize and produce captivating infographics, proposals, and blog posts tailored for both B2B and B2C technology audiences.</li>
+                                    <br>
+                                    <li>Orchestrated a creative revolution, spearheading the revitalization of the mobile application through imaginative content enhancements and comprehensive overhauls.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Thrid Mobile Section -->
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/ai_for_rural.png" class="company-logo" alt="AI For Rural Logo - Name wriiten on green background">
-          </div>
-          <div class="header-info">
-            <h2>Sep 2021 - Nov 2021</h2>
-            <p>Machine Learning Consultant, <a style="font-weight: 600; color: greenyellow;">AI For Rural</a></p>
-          </div>
+                    <!-- =======  Mobile C fourth Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/shinobi.png" class="company-logo" alt="shinobi logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Sep 2019 - Nov 2019</h2>
+                                    <p>Content Creator</p>
+                                    <h5>Shinobi Brands</h5>
+                                    <a title="linkedin.com/shinobibrands" href="https://www.linkedin.com/company/shinobibrands/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Innovatively identified and rectified deficiencies within the content development support structure, optimizing workflow processes for enhanced efficiency.</li>
+                                    <br>
+                                    <li>Collaborated synergistically with strategic planners, business stakeholders, and fellow creatives to ideate, conceptualize, and bring to life compelling brand narratives.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End fourth Mobile Section -->
+                
+                </div>
+            </div>   
         </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Developed RESTful APIs and integrated them with various data sources, enabling real-time data 
-                updates and reducing data retrieval time by 40% for critical information.
-              </li>
-            </p>
-            <p>
-              <li>
-                Implemented efficient data preprocessing and visualization pipelines for insightful data handling, 
-                intuitive data exploration, and pattern analysis.
-              </li>
-            </p>
-            <p>
-              <li>
-                Implemented unsupervised learning techniques like K-Means Clustering and Support Vector 
-                Machines (SVMs) for robust outlier identification, ensuring data quality for downstream 
-                machine learning pipelines.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
+    </div>
 
-      </div>
-    </section><!-- End Second Consulting -->
-
-    <br>
-
-    <!-- ======= Third Consulting Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/exa.png" class="company-logo" alt="Exa Mobility Logo">
-          </div>
-          <div class="header-info">
-            <h2>Jul 2020 - Oct 2020</h2>
-            <p>Content Creator, <a style="font-weight: 600; color: rgb(223, 12, 12);">Exa Mobility</a></p>
-          </div>
-        </div>
-
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Pioneered innovative strategies in researching and crafting website content alongside esteemed senior 
-                colleagues, resulting in a remarkable surge of approximately 20% in website traffic.
-              </li>
-            </p>
-            <p>
-              <li>
-                Collaborated dynamically with the marketing and content team to conceptualize and produce captivating 
-                infographics, proposals, and blog posts tailored for both B2B and B2C technology audiences.
-              </li>
-            </p>
-            <p>
-              <li>
-                Orchestrated a creative revolution, spearheading the revitalization of the mobile application through 
-                imaginative content enhancements and comprehensive overhauls.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End Third Consulting -->
-
-    <br>
-
-    <!-- ======= Fourth Consulting Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/shinobi.png" class="company-logo" alt="Shinobi Brands Logo: Illustraction of a Ninja">
-          </div>
-          <div class="header-info">
-            <h2>Sep 2021 - Nov 2021</h2>
-            <p>Content Creator, <a style="font-weight: 600; color: rgb(231, 33, 33);">Shinobi Brands</a></p>
-          </div>
-        </div>
-
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Innovatively identified and rectified deficiencies within the content development support structure, 
-                optimizing workflow processes for enhanced efficiency.
-              </li>
-            </p>
-            <p>
-              <li>
-                Collaborated synergistically with strategic planners, business stakeholders, and fellow creatives to ideate, 
-                conceptualize, and bring to life compelling brand narratives.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End Fourth Consulting -->
-
-
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -479,23 +713,32 @@
         CONTACT ME
       </div>
 
-      <p>Feel free to reach out to me for collaboration inquiries, employment prospects or just to say a quick hi!</p>
-
+      <p>
+        Feel free to reach out to me for collaboration inquiries, employment prospects or  drop in to say hello! 👋
+        <br>You can also fill out the form in the <a href="contact.html">contact</a> section, or drop me an email. 📧
+      </p>
       <!-- <p class="resume">You can access my resume <a title="Download" href="https://drive.google.com/uc?export=download&id=1b2txcaQsT2c3mUk3gcKIe005fbxYo4-f">here</a></p> -->
       <p class="resume">You can access my resume <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
       
       <div class="header-social-links">
-        <!-- <a href="https://x.com/shrenik_jainn" class="twitter">TWITTER</a>
-        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook">FACEBOOK</i></a>
-        <a href="https://www.instagram.com/shrenik_jainn" class="instagram">INSTAGRAM</i></a>
-        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin">LINKEDIN</i></i></a>
-        <a href="https://github.com/shrenik-jain" class="linkedin">GITHUB</i></i></a> -->
-
-        <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <!-- <a title="Facebook" href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a> -->
+        <!-- <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a title="Facebook" href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a>
         <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram"><i class="bi bi-instagram"></i></a>
         <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a> -->
+
+        <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter">
+          <img src="assets/img/icons/twitter.svg" alt="Twitter" width="40" height="40">
+        </a>
+        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram">
+            <img src="assets/img/icons/instagram.svg" alt="Instagram" width="40" height="40">
+        </a>
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin">
+            <img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="40" height="40">
+        </a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="github">
+            <img src="assets/img/icons/github.svg" alt="Github" width="40" height="40">
+        </a>
       </div>
     </div>
   </footer><!-- End Footer -->
