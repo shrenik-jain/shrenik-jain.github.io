@@ -305,7 +305,7 @@ canvas{
 
 .job-details {
   border-radius: 15px;
-  height: 550px;
+  height: 520px;
   width: 100%;
   max-width: 600px;
   border-radius: 15px;
@@ -319,7 +319,7 @@ canvas{
 
 .education-details {
   border-radius: 15px;
-  height: 550px;
+  height: 520px;
   width: 100%;
   max-width: 600px;
   border-radius: 15px;
@@ -1141,7 +1141,9 @@ h5 {
 }
 
 .gallery-links a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
 
 .gallery .gallery-links .preview-link,
@@ -1541,7 +1543,9 @@ h5 {
 }
 
 .hero p a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
 
 .hero .btn-get-started {
@@ -1597,7 +1601,9 @@ h5 {
 }
 
 .footer p a:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 .footer p {
@@ -1654,7 +1660,9 @@ h5 {
 }
 
 .resume button:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
 
 /* Media query for screens smaller than 768px */
