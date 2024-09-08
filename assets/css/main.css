@@ -129,7 +129,8 @@ canvas{
 .work-section-header {
   cursor: pointer;
   user-select: none;
-  padding: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
 }
 
 .work-section-content {
@@ -436,6 +437,28 @@ h5 {
   color: #fff;
   margin: 0;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .employmentbtn.active, .employmentbtnmob.active,
+  .employmentbtn, .employmentbtnmob,
+  .consultbtn, .consultbtnmob,
+  .consultbtn.active, .consultbtnmob.active {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .employmentbtn.active, .employmentbtnmob.active,
+  .employmentbtn, .employmentbtnmob,
+  .consultbtn, .consultbtnmob,
+  .consultbtn.active, .consultbtnmob.active {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
 }
 
 .deskrow {
