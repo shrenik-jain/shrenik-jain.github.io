@@ -66,26 +66,26 @@ particlesJS(
     "dots", {
     "particles": {
       "number": {
-        "value": 250
+        "value": 150
       },
       "color": {
-        "value": ["#eee", "#2cbc85"]//, "ef6603"]
+        "value": ["#eee", "#5481ED"]
       },
       "shape": {
-        "type": "circle"
+        "type": "triangle"
       },
       "opacity": {
-        "value": 0.2,
+        "value": 0.25,
         "random": true,
         "anim": {
           "enable": false
         }
       },
       "size": {
-        "value": 7,
+        "value": 3,
         "random": true,
         "anim": {
-          "enable": false,
+          "enable": true,
         }
       },
       "line_linked": {
@@ -93,7 +93,7 @@ particlesJS(
       },
       "move": {
         "enable": true,
-        "speed": 3,
+        "speed": 2,
         "direction": "none",
         "random": true,
         "straight": false,
@@ -115,10 +115,10 @@ particlesJS(
       },
       "modes": {
         "push": {
-          "particles_nb": 50
+          "particles_nb": 20
         },
         "repulse": {
-          "distance": 50,
+          "distance": 20,
           "duration": 1
         }
       }

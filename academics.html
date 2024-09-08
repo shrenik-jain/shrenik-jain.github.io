@@ -30,20 +30,22 @@
   <!-- Favicons -->
   <!-- <link href="assets/img/favicon.png" rel="icon"> -->
   <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
   <link rel="manifest" href="assets/img/favicons/site.webmanifest">
-  <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#ef6603">
+  <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5581ed">
   <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#ef6603">
+  <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ef6603">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet'>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -69,9 +71,9 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <img src="assets/img/logo.png" alt="">
-        <!-- <i class="bi bi-house"></i>
-        <h1>Personal Website</h1> -->
+        <img src="assets/img/icons/logo" alt="">
+        <!-- <i class="bi bi-house"></i> -->
+        <!-- <h1>Personal Website</h1> -->
       </a>
 
       <nav id="navbar" class="navbar">
@@ -79,32 +81,27 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li class="dropdown"><a href="work.html"><span>Work</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="work.html">Work</a></li>
+          <!-- <li class="dropdown"><a href="work.html"><span>Work</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="work.html#employment">EMPLOYMENT</a></li>
               <li><a href="work.html#consulting">CONSULTING</a></li>
             </ul>
-          </li>
-          <li class="dropdown"><a href="academics.html" class="active"><span>Academics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          </li> -->
+          <li class="dropdown"><a href="academics.html" class="active underline"><span>Academics</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="academics.html#education">EDUCATION</a></li>
-              <li><a href="academics.html#co-curricular">CO-CURRICULAR</a></li>
               <li><a href="academics.html#certifications">CERTIFICATIONS</a></li>
             </ul>
           </li>
           <li><a href="testimonials.html">Testaments</a></li>
-          <!-- <li><a href="blog.html">Blog</a></li> -->
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
       <div class="header-social-links">
-        <!-- <a href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-        <!-- <a href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href="https://www.instagram.com/shrenik_jainn" class="instagram"><i class="bi bi-instagram"></i></a> -->
-        <!-- <a title="Reddit" href="https://www.reddit.com/user/shrenikk_jain" class="reddit"><i class="bi bi-reddit"></i></a> -->
-        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></a>
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="32" height="32"></a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="github"><img src="assets/img/icons/github.svg" alt="Github" width="32" height="32"></a>
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -112,262 +109,451 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" data-aos="fade" data-aos-delay="200">
+  <!-- <main id="main" data-aos="fade" data-aos-delay="200">
 
-    <!-- ======= End Education Header ======= -->
-    <div class="page-header d-flex align-items-center", id="education">
+    <!- - ======= End Page Header ======= - ->
+    <div class="page-header d-flex align-items-center", id="employment">
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-up"><mark>Education</mark></h2>
-            <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
+            <h2 data-aos="fade-up">Employment</h2>
+            <!- - <a class="cta-btn" href="contact.html">Resume</a> - ->
           </div>
         </div>
       </div>
     </div>
-    <!-- End Education Header -->
+    <!- - End Page Header - ->
 
-    <!-- ======= First Education Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+  </main><!- - End #main - -> -->
 
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/ucsd.png" class="academics-logo" alt="University of California San Diego (UCSD) Logo">
-          </div>
-          <div class="header-info">
-            <!-- <h2>Master of Science in Electrical & Computer Engineering</h2> -->
-            <p><a title="ucsd.edu" style="font-weight: 600; color: #FFCD00;" href="https://ucsd.edu/">University of California, San Deigo</a></p>
-            <h5>Master of Science in Electrical & Computer Engineering</h5>
-            <h5>Track: Machine Learning & Data Science</h5>
-            <!-- <h6>CGPA 9.47</h6> -->
-          </div>
+  <main id="main" data-aos="fade" data-aos-delay="200"> 
+
+    <!-- Desktop row -->
+    <div class="container my-5 deskrow">
+        <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
+        <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
+            <button id="employmentBtn" class="employmentbtn btn-warning active">Education</button>
+            <button id="consultingBtn" class="consultbtn btn-dark">Co-Curricular</button>
+        </div>
+  
+        <div class="row">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div id="employmentTimeline" class="timeline">
+
+                    <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Sep 2024 - Present</div>
+                            <div class="timeline-bar"></div> <!-- Line next to date -->
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Uni of California San Deigo</h5>
+                                        <a title="ucsd.edu" href="https://ucsd.edu/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">MS in Electrical & Computer Engineering</p>
+                                <p class="company-desc">Track: Machine Learning & Data Science</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="showJobDetails('employment', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jul 2018 - May 2022</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute, India</h5>
+                                        <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">BTech in Electrical Engineering</p>
+                                <p class="company-desc">Track: Electronics & Telecommunications</p>
+                            </div>
+                        </div>
+                    </div><!-- Repeat for other universities -->
+
+                </div>
+  
+                <div id="consultingTimeline" class="timeline d-none">
+
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jun 2021 - Dec 2021</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/finalytics.png" alt="finalytics logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Finalytics</h5>
+                                        <a title="linkedin.com/finalytics-comm" href="https://www.linkedin.com/company/finalytics-comm/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Co-Founder</p>
+                                <p class="company-desc">Part Time - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="showJobDetails('consulting', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Aug 2018 - Nov 2018</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/edc.png" alt="edc logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Entrepreneurship Dev Cell</h5>
+                                        <a title="edcviit.com" href="https://edcviit.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Member, Sponsorship Team</p>
+                                <p class="company-desc">Volunteer - Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div><!-- Repeat for other co-curriculars -->
+
+                </div>
+            </div>
+  
+            <div class="col-lg-6 order-lg-2 order-1">
+
+                <div id="employmentDetails1" class="education-details p-4 bg-dark text-white">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2"><div>
+                            <h5 class="company-name">Uni of California San Deigo</h5>
+                                <a title="ucsd.edu" href="https://ucsd.edu/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Sep 2024 - Present</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">MS in Electrical & Computer Engineering</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <h6>Track: Machine Learning and Data Science</h6>
+                        <h6>GPA: Not Yet Out</h6>
+                        <br>
+                        <h6>Academic Coursework</h6>
+                        <li><b>CSE 258 - Reccomender Systems and Web Mining</b><br> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                        <br>
+                        <li><b>ECE 285 - Game Theory and Multiagent Systems</b><br>Delves into advanced topics in game theory, focusing on the mathematical rigor and analytical depth.</li>
+                        <br>
+                        <li><b>ECE 271A - Statistical Learning</b><br>Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li>
+                    </ul>
+                </div>
+    
+                <div id="employmentDetails2" class="education-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Vishwakarma Institute, India</h5>    
+                                <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jul 2018 - May 2022</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">BTech in Electrical Engineering</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <h6>Track: Electronics and Telecommunications</h6>
+                        <h6>GPA: 3.98/4.00</h6>
+                        <br>
+                        <h6>Academic Coursework</h6>
+                        <li><b>Machine Learning -</b> Artificial Neural Networks, Machine Learning, Deep Learning, Image and Video Processing</li>
+                        <br>
+                        <li><b>Mathematics -</b> Probability & Statistics, Calculus, Linear & Vector Algebra</li>
+                        <br>
+                        <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</li>
+                    </ul>
+                </div><!-- Add other job details divs for universities -->
+    
+                <div id="consultingDetails1" class="education-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/finalytics.png" alt="finalytics logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Finalytics</h5>
+                                <a title="linkedin.com/finalytics-comm/" href="https://www.linkedin.com/company/finalytics-comm/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jun 2021 - Dec 2021</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Co-Founder</p>  
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Finalytics is a group of Artificial Intelligence and Finance enthusiasts wanting to headstart their career, and build an exclusive community, a space where innovation meets engineering.</li>
+                        <br>
+                        <li>Led the organizing and managing of workshops that have brought together students, providing a dynamic platform to explore ML-based projects that can translate into tangible financial insights.</li>
+                    </ul>
+                </div>
+    
+                <div id="consultingDetails2" class="education-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/edc.png" alt="edc logo" class="me-2"> 
+                            <div>
+                                <h5 class="company-name">Entrepreneurship Dev Cell</h5> 
+                                <a title="edcviit.com" href="https://edcviit.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Aug 2018 - Nov 2018</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Member, Sponsorship Team</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Entrepreneurship Development Cell (EDC) provides a platform for students to showcase their ideas and innovations and inculcates within them entrepreneurial skills and leadership qualities.</li>
+                        <br>
+                        <li>Through the brief period at EDC, I was an active member of the sponsorship team working for the economic empowerment of the cell.</li>
+                    </ul>
+                </div><!-- Add other job details divs for co-curricular -->
+
+            </div>
         </div>
 
-
-        <div class="work-section-content">
-          <p><i>Coursework</i></p>
-          <p><i> - Reccommender Systems and Web Mining, Game Theory and Multiagent Systems, Statistical Learning - I</i></p>
-          <!-- <p><i>1. Machine Learning - &nbsp; Reccommender Systems and Web Mining</i></p> -->
-          <!-- <p><i>2. Mathematics - &nbsp; Statistical Learning - 1</i></p> -->
-          <!-- <p><i>4. Computer Science - &nbsp; Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</i></p> -->
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End First Education -->
-
-    <br>
-
-    <!-- ======= Second Education Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/viit.png" class="academics-logo" alt="Vishwakarma Institute of Information Technology (VIIT), Pune Logo">
-          </div>
-          <div class="header-info">
-            <!-- <h2>BTech in Electrical Engineering</h2> -->
-            <p><a title="viit.ac.in" style="font-weight: 600; color: royalblue;" href="https://www.viit.ac.in/">Vishwakarma Institute, India</a></p>
-            <h5>Bachelor of Technology in Electrical Engineering</h5>
-            <h6>GPA 9.47/10.0</h6>
-          </div>
-        </div>
-
-
-        <div class="work-section-content">
-          <p><i>Coursework</i></p>
-          <p><i>1. Machine Learning - &nbsp; Artificial Neural Networks, Machine Learning, Deep Learning, Image and Video Processing</i></p>
-          <p><i>2. Mathematics - &nbsp; Probability & Statistics, Calculus, Linear & Vector Algebra</i></p>
-          <p><i>4. Computer Science - &nbsp; Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</i></p>
-          <hr>
-        </div>
-
-      </div>
-    </section><!-- End Second Education -->
-
-
-    <!-- ======= Co-Curricular Page Header ======= -->
-    <div class="page-header d-flex align-items-center" id="co-curricular">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-up"><mark>Co-Curricular</mark></h2>
-            <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- Co-Curricular Page Header -->
 
-    <!-- ======= First Co-Curricular Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/finalytics.png" class="academics-logo" alt="Finalytics Logo">
-          </div>
-          <div class="header-info">
-            <h2>June 2021 - Dec 2021</h2>
-            <p>Co-Founder, <a style="font-weight: 600; color: royalblue;">Finalytics</a></p>
-          </div>
+    <!-- Mobile row -->
+    <div class="container my-5 mobrow">
+        <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
+        <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
+            <button id="employmentBtnmob" class="employmentbtnmob btn-warning active">Education</button>
+            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Co-Curricular</button>
         </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                Finalytics is a group of Artificial Intelligence and Finance enthusiasts wanting to build an exclusive 
-                community, a space where innovation meets engineering.
-              </li>
-            </p>
-            <p>
-              <li>
-                I have led organizing and managing of workshops that have brought together students, providing a dynamic 
-                platform to explore ML-based projects that can translate into tangible financial insights.
-              </li>
-            </p>
-          </ul>
-          <hr>
+        <div id="employmentmob">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 order-2">
+            
+                    <!-- =======  Mobile First Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/ucsd.png" class="company-logo" alt="ucsd logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Sep 2024 - Present</h2>
+                                    <p>Uni of California San Deigo</p>
+                                    <h5>MS in Electrical & Computer Engineering</h5>
+                                    <a title="ucsd.edu" href="https://ucsd.edu/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <p>Track: Machine Learning and Data Science</p>
+                                    <p>GPA: Not Yet Out</p>
+                                    <hr style="color: #9b9b9b;">
+                                    <p>Academic Coursework</p>
+                                    <li><b>CSE 258 - Reccomender Systems and Web Mining:</b> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                                    <br>
+                                    <li><b>ECE 285 - Game Theory and Multiagent Systems:</b> Delves into advanced topics in game theory, focusing on the mathematical rigor and analytical depth.</li>
+                                    <br>
+                                    <li><b>ECE 271A - Statistical Learning:</b> Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </section><!-- End First Mobile Section -->
+
+                    <!-- =======  Mobile Second Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/vishwakarma.png" class="company-logo" alt="vishwakarma logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jul 2018 - May 2022</h2>
+                                    <p>Vishwakarma Institute, India</p>
+                                    <h5>BTech in Electrical Engineering</h5>
+                                    <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <p>Track: Electronics and Telecommunications</p>
+                                    <p>GPA: 3.98/4.00</p>
+                                    <hr style="color: #9b9b9b;">
+                                    <p>Academic Coursework</p>
+                                    <li><b>Machine Learning -</b> Artificial Neural Networks, Machine Learning, Deep Learning, Image and Video Processing</li>
+                                    <br>
+                                    <li><b>Mathematics -</b> Probability & Statistics, Calculus, Linear & Vector Algebra</li>
+                                    <br>
+                                    <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Second Mobile Section -->
+
+                </div>
+            </div>   
         </div>
 
-      </div>
-    </section><!-- End First Co-Curricular -->
+        <div id="consultingmob" class=" d-none">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 order-2">
+            
+                    <!-- =======  Mobile C First Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/finalytics.png" class="company-logo" alt="finalytics logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jun 2021 - Dec 2021</h2>
+                                    <p>Co-Founder</p>
+                                    <h5>Finalytics</h5>
+                                    <a title="linkedin.com/finalytics-comm" href="https://www.linkedin.com/company/finalytics-comm/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Finalytics is a group of Artificial Intelligence and Finance enthusiasts wanting to headstart their career, and build an exclusive community, a space where innovation meets engineering.</li>
+                                    <br>
+                                    <li>Led the organizing and managing of workshops that have brought together students, providing a dynamic platform to explore ML-based projects that can translate into tangible financial insights.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End First Mobile Section -->
 
-    <!-- <br> -->
-
-    <!-- ======= Second Co-Curricular Section ======= -->
-    <section class="sample-page">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header work-section-header">
-          <div class="logo-container">
-            <img src="assets/img/logos/edc.png" class="academics-logo" alt="Entrepreneurship Development Cell, VIIT Logo">
-          </div>
-          <div class="header-info">
-            <h2>Aug 2018 - Nov 2018</h2>
-            <p>Sponsorship Team, <a title="edcviit.com" style="font-weight: 600; color: skyblue;" href="https://edcviit.com/">Entrepreneurship Dev Cell</a></p>
-          </div>
+                    <!-- =======  Mobile C Second Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/edc.png" class="company-logo" alt="edc logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Aug 2018 - Nov 2018</h2>
+                                    <p>Member, Sponsorship Team</p>
+                                    <h5>Entrepreneurship Dev Cell</h5>
+                                    <a title="edcviit.com" href="https://edcviit.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Entrepreneurship Development Cell (EDC) provides a platform for students to showcase their ideas and innovations and inculcates within them entrepreneurial skills and leadership qualities.</li>
+                                    <br>
+                                    <li>Through the brief period at EDC, I was an active member of the sponsorship team working for the economic empowerment of the cell.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Second Mobile Section -->
+                
+                </div>
+            </div>   
         </div>
 
-        <div class="work-section-content">
-          <ul>
-            <p>
-              <li>
-                EDC provides a platform for students to showcase their ideas and innovations and inculcates within them 
-                entrepreneurial skills and leadership qualities.
-              </li>
-            </p>
-            <p>
-              <li>
-                Through the brief period at EDC, I was an active member of the sponsorship team working for the economic 
-                empowerment of the cell.
-              </li>
-            </p>
-          </ul>
-          <hr>
-        </div>
+    </div>
+  </main>
 
-      </div>
-    </section><!-- End Second Co-Curricular -->
-
+  <main id="certifications" data-aos="fade" data-aos-delay="200">
 
     <!-- ======= Pricing Section ======= -->
-    <div class="page-header d-flex align-items-center" id="certifications">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-up"><mark>Certifications</mark></h2>
-            <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
-          </div>
+    <div class="d-flex align-items-start" id="certifications">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-left">
+                <div class="col-lg-6 text-left">
+                    <h2 class="work-title" data-aos="fade-up">Certifications</h2>
+                    <!-- <a class="cta-btn" href="contact.html">Available for hire</a> -->
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
+  
     <section id="pricing" class="pricing">
-      <div class="container">
+        <div class="container">
+            <div class="row gy-4 gx-lg-5" >
 
-        <div class="row gy-4 gx-lg-5" >
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Advanced NLP</h3>
+                    <h4>UMass Amherst</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
 
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Advanced NLP</h3>
-              <h4>UMass Amherst</h4>
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Deep Learning Specialization</h3>
+                    <h4>Coursera</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>TensorFlow in Practice</h3>
+                    <h4>Coursera</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>LangChain For Your Data</h3>
+                    <h4>Deeplearning.ai</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>LangChain For LLM Apps</h3>
+                    <h4>Deeplearning.ai</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Artificial Intelligence</h3>
+                    <h4>Dell Tech</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>AI Classroom</h3>
+                    <h4>Microsoft</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Introduction to Machine Learning</h3>
+                    <h4>Kaggle</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Intermediate Machine Learning</h3>
+                    <h4>Kaggle</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pricing-item d-flex justify-content-between">
+                    <h3>Introduction to Deep Learning</h3>
+                    <h4>Kaggle</h4>
+                    </div>
+                </div><!-- End Pricing Item -->
+
             </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Deep Learning Specialization</h3>
-              <h4>Coursera</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>TensorFlow in Practice</h3>
-              <h4>Coursera</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>LangChain For Your Data</h3>
-              <h4>Deeplearning.ai</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>LangChain For LLM Apps</h3>
-              <h4>Deeplearning.ai</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Artificial Intelligence</h3>
-              <h4>Dell Tech</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>AI Classroom</h3>
-              <h4>Microsoft</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Introduction to Machine Learning</h3>
-              <h4>Kaggle</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Intermediate Machine Learning</h3>
-              <h4>Kaggle</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="pricing-item d-flex justify-content-between">
-              <h3>Introduction to Deep Learning</h3>
-              <h4>Kaggle</h4>
-            </div>
-          </div><!-- End Pricing Item -->
-
         </div>
     </section><!-- End Pricing Section -->
 
-
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -376,23 +562,32 @@
         CONTACT ME
       </div>
 
-      <p>Feel free to reach out to me for collaboration inquiries, employment prospects or just to say a quick hi!</p>
-
+      <p>
+        Feel free to reach out to me for collaboration inquiries, employment prospects or  drop in to say hello! 👋
+        <br>You can also fill out the form in the <a href="contact.html">contact</a> section, or drop me an email. 📧
+      </p>
       <!-- <p class="resume">You can access my resume <a title="Download" href="https://drive.google.com/uc?export=download&id=1b2txcaQsT2c3mUk3gcKIe005fbxYo4-f">here</a></p> -->
       <p class="resume">You can access my resume <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
       
       <div class="header-social-links">
-        <!-- <a href="https://x.com/shrenik_jainn" class="twitter">TWITTER</a>
-        <a href="https://www.facebook.com/shrenik.jain.564" class="facebook">FACEBOOK</i></a>
-        <a href="https://www.instagram.com/shrenik_jainn" class="instagram">INSTAGRAM</i></a>
-        <a href="http://www.linkedin.com/in/shrenik-jain-664bb9170" class="linkedin">LINKEDIN</i></i></a>
-        <a href="https://github.com/shrenik-jain" class="linkedin">GITHUB</i></i></a> -->
-
-        <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <!-- <a title="Facebook" href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a> -->
+        <!-- <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a title="Facebook" href="https://www.facebook.com/shrenik.jain.564" class="facebook"><i class="bi bi-facebook"></i></a>
         <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram"><i class="bi bi-instagram"></i></a>
         <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a> -->
+
+        <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter">
+          <img src="assets/img/icons/twitter.svg" alt="Twitter" width="40" height="40">
+        </a>
+        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram">
+            <img src="assets/img/icons/instagram.svg" alt="Instagram" width="40" height="40">
+        </a>
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin">
+            <img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="40" height="40">
+        </a>
+        <a title="Github" href="https://github.com/shrenik-jain" class="github">
+            <img src="assets/img/icons/github.svg" alt="Github" width="40" height="40">
+        </a>
       </div>
     </div>
   </footer><!-- End Footer -->
