@@ -35,4 +35,4 @@ If you have any questions, suggestions, or feedback, feel free to reach out to m
 
 <br>
 
-<p align="right" ><i> Developed with 🧡 by <b><a href="https://shrenik-jain.github.io/">Shrenik Jain </i></a></b></p>
+<p align="right" ><i> Developed by <b><a href="https://shrenik-jain.github.io/">Shrenik Jain </i></a></b></p>
