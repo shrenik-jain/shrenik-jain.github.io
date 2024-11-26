@@ -1,4 +1,4 @@
-# [WELCOME TO MY DIGITAL NEXUS!](https://shrenik-jain.github.io)
+# [WELCOME TO MY DIGI-SPACE!](https://shrenik-jain.github.io)
 
 This website serves as my personal corner on the internet where I showcase my projects, share my thoughts, and provide information about myself. It's a representation of my skills, experiences, and interests. Through this repository, you can explore the website's source code, design, and functionalities.
 
