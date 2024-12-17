@@ -1506,6 +1506,27 @@ h5 {
   }
 }
 
+.personal-info a{
+  color: #5581ED;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.personal-info a:hover {
+  text-decoration-line: underline;
+  text-decoration-color: #5581ED;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+@media (min-width: 1280px) {
+  .contact .personal-info {
+    margin-left: -58px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
