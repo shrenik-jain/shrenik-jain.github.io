@@ -7,7 +7,7 @@ This website serves as my personal corner on the internet where I showcase my pr
 
 ## References
 
-Inspired by [Darpan Jain's Website](https://darpanjain.com/), do check him out!
+Inspired by [**Darpan Jain's Website**](https://darpanjain.com/), do check him out!
 
 - **Fonts & Icons**
     - [Google Fonts](https://fonts.google.com/)
