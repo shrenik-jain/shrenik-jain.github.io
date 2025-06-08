@@ -136,16 +136,18 @@
         <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
             <button id="employmentBtn" class="employmentbtn btn-warning active">Employment</button>
-            <button id="consultingBtn" class="consultbtn btn-dark">Consulting</button>
+            <button id="researchBtn" class="researchbtn btn-dark">Research</button>
+            <button id="consultingBtn" class="consultbtn btn-dark">Consultant</button>
         </div>
   
         <div class="row">
             <div class="col-lg-6 order-lg-1 order-2">
+                
+                <!-- Employment Timeline -->
                 <div id="employmentTimeline" class="timeline">
-
                     <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">June 2025 - Present</div>
+                            <div class="timeline-date">Jun 2025 - Present</div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -156,48 +158,12 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Machine Learning Intern</p>
-                                <p class="company-desc">Internship - San Francisco Bay Area, California</p>
+                                <p class="company-desc">San Francisco Bay Area, California</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item active" onclick="showJobDetails('employment', 2)">
-                        <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2024 - Present</div>
-                            <div class="timeline-bar"></div> <!-- Line next to date -->
-                            <div class="timeline-content ms-3">
-                                <div class="d-flex align-items-start">
-                                    <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
-                                    <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Spatiotemporal ML Lab</h5>
-                                        <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
-                                    </div>
-                                </div>
-                                <p class="company-pos">Machine Learning Researcher</p>
-                                <p class="company-desc">Full Time - San Diego, California</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--<div class="timeline-item active" onclick="showJobDetails('employment', 2)">
-                        <div class="d-flex position-relative">
-                            <div class="timeline-date">Oct 2024 - Present</div>
-                            <div class="timeline-bar"></div> <!- - Line next to date - ->
-                            <div class="timeline-content ms-3">
-                                <div class="d-flex align-items-start">
-                                    <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2">
-                                    <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Cosman Lab (UC San Diego)</h5>
-                                        <a title="ucsd.edu/pcosman" href="http://code.ucsd.edu/pcosman/" class="view-website">Visit website &#8599;</a>
-                                    </div>
-                                </div>
-                                <p class="company-pos">Machine Learning Researcher</p>
-                                <p class="company-desc">Full Time - San Diego, California</p>
-                            </div>
-                        </div>
-                    </div>-->
-
-                    <div class="timeline-item" onclick="showJobDetails('employment', 3)">
+                    <div class="timeline-item" onclick="showJobDetails('employment', 2)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Jul 2022 - Aug 2024</div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
@@ -210,12 +176,12 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Machine Learning Engineer</p>
-                                <p class="company-desc">Full Time - Pune, Maharashtra</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('employment', 4)">
+                    <div class="timeline-item" onclick="showJobDetails('employment', 3)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Jan 2022 - Jul 2022</div>
                             <div class="timeline-bar"></div> 
@@ -228,30 +194,12 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Software Development Intern</p>
-                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('employment', 5)">
-                        <div class="d-flex position-relative">
-                            <div class="timeline-date">Jul 2021 - Dec 2021</div>
-                            <div class="timeline-bar"></div> 
-                            <div class="timeline-content ms-3">
-                                <div class="d-flex align-items-start">
-                                    <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
-                                    <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute</h5>
-                                        <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
-                                    </div>
-                                </div>
-                                <p class="company-pos">Machine Learning Researcher</p>
-                                <p class="company-desc">Internship - Pune, Maharashtra</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item" onclick="showJobDetails('employment', 6)">
+                    <div class="timeline-item" onclick="showJobDetails('employment', 4)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Feb 2021 - Dec 2021</div>
                             <div class="timeline-bar"></div> 
@@ -264,12 +212,70 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Machine Learning Intern</p>
-                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
                             </div>
                         </div>
                     </div><!-- Repeat for other employment companies -->
                 </div>
-  
+                
+                <!-- Research Timeline -->
+                <div id="researchTimeline" class="timeline d-none">
+                    <div class="timeline-item" onclick="showJobDetails('research', 1)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Sep 2024 - Present</div>
+                            <div class="timeline-bar"></div> <!-- Line next to date -->
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Spatiotemporal ML Lab</h5>
+                                        <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Researcher</p>
+                                <p class="company-desc">San Diego, California</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="timeline-item active" onclick="showJobDetails('research', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Sep 2024 - Dec 2024</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Cosman Lab (UC San Diego)</h5>
+                                        <a title="ucsd.edu/pcosman" href="http://code.ucsd.edu/pcosman/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Researcher</p>
+                                <p class="company-desc">San Diego, California</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="timeline-item" onclick="showJobDetails('research', 2)">
+                        <div class="d-flex position-relative">
+                            <div class="timeline-date">Jul 2021 - Dec 2021</div>
+                            <div class="timeline-bar"></div> 
+                            <div class="timeline-content ms-3">
+                                <div class="d-flex align-items-start">
+                                    <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                                    <div style="margin-left: 5px;">
+                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute</h5>
+                                        <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                    </div>
+                                </div>
+                                <p class="company-pos">Machine Learning Researcher</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div><!-- Repeat for other research companies -->
+                </div>
+                
+                <!-- Consulting Timeline -->
                 <div id="consultingTimeline" class="timeline d-none">
                     <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
                         <div class="d-flex position-relative">
@@ -284,7 +290,7 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Machine Learning Consultant</p>
-                                <p class="company-desc">Part Time - Remote</p>
+                                <p class="company-desc">Remote, India</p>
                             </div>
                         </div>
                     </div>
@@ -302,7 +308,7 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Software Development Consultant</p>
-                                <p class="company-desc">Part Time - Remote</p>
+                                <p class="company-desc">Remote, India</p>
                             </div>
                         </div>
                     </div>
@@ -320,7 +326,7 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Content Creator</p>
-                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
                             </div>
                         </div>
                     </div>
@@ -338,15 +344,16 @@
                                     </div>
                                 </div>
                                 <p class="company-pos">Content Creator</p>
-                                <p class="company-desc">Internship - Pune, Maharashtra</p>
+                                <p class="company-desc">Pune, Maharashtra</p>
                             </div>
                         </div>
                     </div><!-- Repeat for other consulting companies -->
                 </div>
             </div>
-  
+            
             <div class="col-lg-6 order-lg-2 order-1">
 
+                <!-- Employment Details -->
                 <div id="employmentDetails1" class="job-details p-4 bg-dark text-white">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
@@ -357,42 +364,17 @@
                             </div>
                             </div>
                         <div class="date-range rounded-pill bg-dark px-3 py-1">
-                            <span>June 2025 - Present</span>
+                            <span>Jun 2025 - Present</span>
                         </div>
                     </div>
                     <p class="mb-2 job-desc-pos">Machine Learning Intern</p> 
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Part of the Video Codecs Team at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
-                        <br>
-                        <!-- <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li> -->
+                        <li>Working with the Video Codecs Team at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
                     </ul>
                 </div>
 
                 <div id="employmentDetails2" class="job-details p-4 bg-dark text-white">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
-                            <div>
-                                <h5 class="company-name">Spatiotemporal ML Lab</h5>
-                                <a title="roseyu.com" href="https://roseyu.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
-                            </div>
-                            </div>
-                        <div class="date-range rounded-pill bg-dark px-3 py-1">
-                            <span>Sep 2024 - Present</span>
-                        </div>
-                    </div>
-                    <p class="mb-2 job-desc-pos">Machine Learning Researcher</p> 
-                    <hr style="color: #9b9b9b;">
-                    <ul class="mt-3 job-desc">
-                        <li>Assisting Dr. Rose Yu at UC San Diego with various initiatives at her lab.</li>
-                        <br>
-                        <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li>
-                    </ul>
-                </div>
-
-
-                <div id="employmentDetails3" class="job-details p-4 bg-dark text-white">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/pivotchain.png" alt="pivotchain logo" class="me-2">
@@ -418,7 +400,7 @@
                     </ul>
                 </div>
     
-                <div id="employmentDetails4" class="job-details p-4 bg-dark text-white d-none">
+                <div id="employmentDetails3" class="job-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/qualys.png" alt="qualys logo" class="me-2">
@@ -428,7 +410,7 @@
                             </div>
                         </div>
                         <div class="date-range rounded-pill bg-dark px-3 py-1">
-                            <span>Jan 2022 - July 2022</span>
+                            <span>Jan 2022 - Jul 2022</span>
                         </div>
                     </div>
                     <p class="mb-2 job-desc-pos">Software Development Intern</p>    
@@ -440,29 +422,7 @@
                     </ul>
                 </div>
 
-                <div id="employmentDetails5" class="job-details p-4 bg-dark text-white d-none">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <div class="d-flex align-items-center">
-                            <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
-                            <div>
-                                <h5 class="company-name">Vishwakarma Institute</h5>   
-                                <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
-                            </div>
-                        </div>
-                        <div class="date-range rounded-pill bg-dark px-3 py-1">
-                            <span>Jan 2021 - Dec 2021</span>
-                        </div>
-                    </div>
-                    <p class="mb-2 job-desc-pos">Machine Learning Researcher</p>
-                    <hr style="color: #9b9b9b;">
-                    <ul class="mt-3 job-desc">
-                        <li>Spearheaded the development of a research paper summarization system using a BERT-based encoder, improving ROUGE-1 scores from 0.35 to 0.46 compared to baseline extractive summarization methods.</li>
-                        <br>
-                        <li>Conducted research on transformers and multi-head self-attention mechanisms, for enhanced language modeling.</li>
-                    </ul>
-                </div>
-
-                <div id="employmentDetails6" class="job-details p-4 bg-dark text-white d-none">
+                <div id="employmentDetails4" class="job-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/validus.png" alt="validus logo" class="me-2">
@@ -481,6 +441,52 @@
                         <li>Analyzed Vector-Quantized VAEs (VQ-VAEs) and Convolutional VAEs (Conv-VAEs) for unsupervised learning of complex data via latent representations and generative modeling.</li>
                         <br>
                         <li>Implemented ConvVAE-based generative modeling for dataset enhancement, expanding a critical training dataset from 50,000 to 150,000 samples while maintaining high perceptual integrity (SSIM > 0.85).</li>
+                    </ul>
+                </div>
+                <!-- Employement Details End -->
+                
+                <!-- Research Details -->
+                <div id="researchDetails1" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Spatiotemporal ML Lab</h5>
+                                <a title="roseyu.com" href="https://roseyu.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                            </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Sep 2024 - Present</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Machine Learning Researcher</p> 
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Assisting Dr. Rose Yu at UC San Diego with various initiatives at her lab.</li>
+                        <br>
+                        <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li>
+                    </ul>
+                </div>
+    
+                <div id="researchDetails2" class="job-details p-4 bg-dark text-white d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
+                            <div>
+                                <h5 class="company-name">Vishwakarma Institute</h5>   
+                                <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
+                            </div>
+                        </div>
+                        <div class="date-range rounded-pill bg-dark px-3 py-1">
+                            <span>Jul 2021 - Dec 2021</span>
+                        </div>
+                    </div>
+                    <p class="mb-2 job-desc-pos">Machine Learning Researcher</p>
+                    <hr style="color: #9b9b9b;">
+                    <ul class="mt-3 job-desc">
+                        <li>Spearheaded the development of a research paper summarization system using a BERT-based encoder, improving ROUGE-1 scores from 0.35 to 0.46 compared to baseline extractive summarization methods.</li>
+                        <br>
+                        <li>Conducted research on transformers and multi-head self-attention mechanisms, for enhanced language modeling.</li>
                     </ul>
                 </div>
     
@@ -584,7 +590,8 @@
         <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
             <button id="employmentBtnmob" class="employmentbtnmob btn-warning active">Employment</button>
-            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Consulting</button>
+            <button id="researchBtnmob" class="researchbtnmob btn-dark">Research</button>
+            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Consultant</button>
         </div>
 
         <div id="employmentmob">
@@ -599,7 +606,7 @@
                                     <img src="assets/img/logos/sie.svg" class="company-logo" alt="sony interactive entertainment logo">
                                 </div>
                                 <div class="header-info">
-                                    <h2>June 2025 - Present</h2>
+                                    <h2>Jun 2025 - Present</h2>
                                     <p>Machine Learning Intern</p>
                                     <h5>Sony Interactive Entertainment</h5>
                                     <a title="sie.com" href="https://sonyinteractive.com/en/" class="view-website">Visit website &#8599;</a>
@@ -607,39 +614,15 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Part of the Video Codecs Team at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
+                                    <li>Working with the Video Codecs Team at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
                                     <br>
                                     <!-- <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li> -->
                                 </ul>
                             </div>
                         </div>
                     </section><!-- End First Mobile Section -->
-
-                    <!-- =======  Mobile Second Section ======= -->
-                    <section class="sample-page">
-                        <div class="container" data-aos="fade-up">
-                            <div class="section-header work-section-header">
-                                <div class="logo-container">
-                                    <img src="assets/img/logos/stml.png" class="company-logo" alt="stml logo">
-                                </div>
-                                <div class="header-info">
-                                    <h2>Sep 2024 - Present</h2>
-                                    <p>Machine Learning Researcher</p>
-                                    <h5>Spatiotemporal ML Lab</h5>
-                                    <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
-                                </div>
-                            </div>
-                            <div class="work-section-content">
-                                <ul class="mt-3 job-desc">
-                                    <li>Assisting Dr. Rose Yu at UC San Diego with various initiatives at her lab.</li>
-                                    <br>
-                                    <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section><!-- End Second Mobile Section -->
             
-                    <!-- =======  Mobile Third Section ======= -->
+                    <!-- =======  Mobile Second Section ======= -->
                     <section class="sample-page">
                         <div class="container" data-aos="fade-up">
                             <div class="section-header work-section-header">
@@ -665,9 +648,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </section><!-- End Third Mobile Section -->
+                    </section><!-- End Second Mobile Section -->
 
-                    <!-- =======  Mobile Fourth Section ======= -->
+                    <!-- =======  Mobile Third Section ======= -->
                     <section class="sample-page">
                         <div class="container" data-aos="fade-up">
                             <div class="section-header work-section-header">
@@ -689,33 +672,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </section><!-- End Fourth Mobile Section -->
+                    </section><!-- End Third Mobile Section -->
 
-                    <!-- =======  Mobile Fifth Section ======= -->
-                    <section class="sample-page">
-                        <div class="container" data-aos="fade-up">
-                            <div class="section-header work-section-header">
-                                <div class="logo-container">
-                                    <img src="assets/img/logos/vishwakarma.png" class="company-logo" alt="vishwakarma logo">
-                                </div>
-                                <div class="header-info">
-                                    <h2>Jul 2021 - Dec 2021</h2>
-                                    <p>Machine Learning Researcher</p>
-                                    <h5>Vishwakarma Institute</h5>
-                                    <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
-                                </div>
-                            </div>
-                            <div class="work-section-content">
-                                <ul class="mt-3 job-desc">
-                                    <li>Spearheaded the development of a research paper summarization system using a BERT-based encoder, improving ROUGE-1 scores from 0.35 to 0.46 compared to baseline extractive summarization methods.</li>
-                                    <br>
-                                    <li>Conducted research on transformers and multi-head self-attention mechanisms, for enhanced language modeling.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section><!-- End Fifth Mobile Section -->
-
-                    <!-- =======  Mobile Sixth Section ======= -->
+                    <!-- =======  Mobile Fourth Section ======= -->
                     <section class="sample-page">
                         <div class="container" data-aos="fade-up">
                             <div class="section-header work-section-header">
@@ -737,8 +696,64 @@
                                 </ul>
                             </div>
                         </div>
-                    </section><!-- End Sixth Mobile Section -->
+                    </section><!-- End Fourth Mobile Section -->
 
+                </div>
+            </div>   
+        </div>
+
+        <div id="researchmob" class=" d-none">
+            <div class="row">
+                <div class="col-lg-6 order-lg-1 order-2">
+            
+                    <!-- =======  Mobile R First Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/stml.png" class="company-logo" alt="stml logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Sep 2024 - Present</h2>
+                                    <p>Machine Learning Researcher</p>
+                                    <h5>Spatiotemporal ML Lab</h5>
+                                    <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Assisting Dr. Rose Yu at UC San Diego with various initiatives at her lab.</li>
+                                    <br>
+                                    <li>Conducted research for <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, improving predictive accuracy by 30% through CRPS loss integration for stochastic representation and uncertainty quantification.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End First Mobile Section -->
+
+                    <!-- =======  Mobile R Second Section ======= -->
+                    <section class="sample-page">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-header work-section-header">
+                                <div class="logo-container">
+                                    <img src="assets/img/logos/vishwakarma.png" class="company-logo" alt="vishwakarma logo">
+                                </div>
+                                <div class="header-info">
+                                    <h2>Jul 2021 - Dec 2021</h2>
+                                    <p>Machine Learning Researcher</p>
+                                    <h5>Vishwakarma Institute</h5>
+                                    <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
+                                </div>
+                            </div>
+                            <div class="work-section-content">
+                                <ul class="mt-3 job-desc">
+                                    <li>Spearheaded the development of a research paper summarization system using a BERT-based encoder, improving ROUGE-1 scores from 0.35 to 0.46 compared to baseline extractive summarization methods.</li>
+                                    <br>
+                                    <li>Conducted research on transformers and multi-head self-attention mechanisms, for enhanced language modeling.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><!-- End Second Mobile Section -->
+                
                 </div>
             </div>   
         </div>

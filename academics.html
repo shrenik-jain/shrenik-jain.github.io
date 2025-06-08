@@ -135,15 +135,15 @@
     <div class="container my-5 deskrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
-            <button id="employmentBtn" class="employmentbtn btn-warning active">Education</button>
-            <button id="consultingBtn" class="consultbtn btn-dark">Co-Curricular</button>
+            <button id="schoolBtn" class="schoolbtn btn-warning active">Education</button>
+            <button id="cocurricularBtn" class="cocurricularbtn btn-dark">Co-Curricular</button>
         </div>
   
         <div class="row">
             <div class="col-lg-6 order-lg-1 order-2">
-                <div id="employmentTimeline" class="timeline">
+                <div id="schoolTimeline" class="timeline">
 
-                    <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
+                    <div class="timeline-item active" onclick="showJobDetails('school', 1)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Sep 2024 - Present</div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
@@ -161,7 +161,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('employment', 2)">
+                    <div class="timeline-item" onclick="showJobDetails('school', 2)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Aug 2018 - May 2022</div>
                             <div class="timeline-bar"></div> 
@@ -182,9 +182,9 @@
 
                 </div>
   
-                <div id="consultingTimeline" class="timeline d-none">
+                <div id="cocurricularTimeline" class="timeline d-none">
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 1)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Oct 2024 - Present</div>
                             <div class="timeline-bar"></div> 
@@ -202,7 +202,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 2)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 2)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Jun 2021 - Dec 2021</div>
                             <div class="timeline-bar"></div> 
@@ -220,7 +220,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 3)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 3)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Aug 2018 - Nov 2018</div>
                             <div class="timeline-bar"></div> 
@@ -243,7 +243,7 @@
   
             <div class="col-lg-6 order-lg-2 order-1">
 
-                <div id="employmentDetails1" class="education-details p-4 bg-dark text-white">
+                <div id="schoolDetails1" class="education-details p-4 bg-dark text-white">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2"><div>
@@ -268,20 +268,11 @@
                         <br>
                         <!-- <li><b>ECE 271A - Statistical Learning</b><br>Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li> -->
                         <!-- <br> -->
-                        <li><b>DSC 291 - Machine Learning for Few Labels</b><br> Covers ML with limited labels, including few-shot, self-supervised, and reinforcement learning, focusing on their foundations, and practical use cases.
-
-
-
-
-
-
-
-
-                        </li>
+                        <li><b>DSC 291 - Machine Learning for Few Labels</b><br> Covers ML with limited labels, including few-shot, self-supervised, and reinforcement learning, focusing on their foundations, and practical use cases.</li>
                     </ul>
                 </div>
     
-                <div id="employmentDetails2" class="education-details p-4 bg-dark text-white d-none">
+                <div id="schoolDetails2" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
@@ -309,7 +300,7 @@
                     </ul>
                 </div><!-- Add other job details divs for universities -->
 
-                <div id="consultingDetails1" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails1" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/gpsa.png" alt="gpsa logo" class="me-2">
@@ -335,7 +326,7 @@
                     </ul>
                 </div>
     
-                <div id="consultingDetails2" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails2" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/finalytics.png" alt="finalytics logo" class="me-2">
@@ -359,7 +350,7 @@
                     </ul>
                 </div>
     
-                <div id="consultingDetails3" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails3" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/edc.png" alt="edc logo" class="me-2"> 
@@ -390,11 +381,11 @@
     <div class="container my-5 mobrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
-            <button id="employmentBtnmob" class="employmentbtnmob btn-warning active">Education</button>
-            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Co-Curricular</button>
+            <button id="schoolBtnmob" class="schoolbtnmob btn-warning active">Education</button>
+            <button id="cocurricularBtnmob" class="cocurricularbtn btn-dark">Co-Curricular</button>
         </div>
 
-        <div id="employmentmob">
+        <div id="schoolmob">
             <div class="row">
                 <div class="col-lg-6 order-lg-1 order-2">
             
@@ -465,7 +456,7 @@
             </div>   
         </div>
 
-        <div id="consultingmob" class=" d-none">
+        <div id="cocurricularmob" class=" d-none">
             <div class="row">
                 <div class="col-lg-6 order-lg-1 order-2">
 
@@ -724,7 +715,7 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main_academics.js"></script>
 
 </body>
 
