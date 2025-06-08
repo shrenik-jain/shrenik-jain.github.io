@@ -233,6 +233,10 @@ canvas{
 .timeline-item:not(.active):hover {
   background-color: rgba(46, 44, 44, 0.5); 
   border-radius: 10px;
+  border: 1px dotted var(--Gradient, var(--color-outline));
+  /* border-left: 1px dotted var(--Gradient, var(--color-outline)); */
+  /* border-right: 1px dotted var(--Gradient, var(--color-outline)); */
+  /* transition: background-color 0.3s ease, border-color 0.3s ease; */
 }
 
 .timeline-item img {
@@ -440,7 +444,11 @@ h5 {
 }
 
 .researchbtn, .researchbtnmob {
-  border: var(--color-outline) 2px solid;
+  /* border: var(--color-outline) 2px solid; */
+  border-left: var(--color-outline) 0.5px solid;
+  border-right: var(--color-outline) 0.5px solid;
+  border-top: var(--color-outline) 2px solid;
+  border-bottom: var(--color-outline) 2px solid;
   border-radius: 0 0 0 0;
   background: #000;
   display: inline-flex;
@@ -454,7 +462,11 @@ h5 {
 }
 
 .researchbtn.active, .researchbtnmob.active {
-  border: var(--color-outline) 2px solid;
+  /* border: var(--color-outline) 2px solid; */
+  border-left: var(--color-outline) 0.5px solid;
+  border-right: var(--color-outline) 0.5px solid;
+  border-top: var(--color-outline) 2px solid;
+  border-bottom: var(--color-outline) 2px solid;
   border-radius: 0 0 0 0;
   background: var(--color-outline);
   display: inline-flex;
