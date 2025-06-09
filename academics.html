@@ -74,7 +74,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <img src="assets/img/icons/logo" alt="">
+        <!-- <img src="assets/img/icons/logo" alt=""> -->
         <!-- <i class="bi bi-house"></i> -->
         <!-- <h1>Personal Website</h1> -->
       </a>
@@ -135,15 +135,15 @@
     <div class="container my-5 deskrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
-            <button id="employmentBtn" class="employmentbtn btn-warning active">Education</button>
-            <button id="consultingBtn" class="consultbtn btn-dark">Co-Curricular</button>
+            <button id="schoolBtn" class="schoolbtn btn-warning active">Education</button>
+            <button id="cocurricularBtn" class="cocurricularbtn btn-dark">Co-Curricular</button>
         </div>
   
         <div class="row">
             <div class="col-lg-6 order-lg-1 order-2">
-                <div id="employmentTimeline" class="timeline">
+                <div id="schoolTimeline" class="timeline">
 
-                    <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
+                    <div class="timeline-item active" onclick="showJobDetails('school', 1)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Sep 2024 - Present</div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
@@ -161,19 +161,19 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('employment', 2)">
+                    <div class="timeline-item" onclick="showJobDetails('school', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jul 2018 - May 2022</div>
+                            <div class="timeline-date">Aug 2018 - May 2022</div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
                                     <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
                                     <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute, India</h5>
+                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute</h5>
                                         <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
                                     </div>
                                 </div>
-                                <p class="company-pos">BTech Electrical Engineering</p>
+                                <p class="company-pos">BS Electrical Engineering</p>
                                 <p class="company-pos"></p>
                                 <p class="company-desc">Track: Electronics & Telecommunications</p>
                             </div>
@@ -182,9 +182,9 @@
 
                 </div>
   
-                <div id="consultingTimeline" class="timeline d-none">
+                <div id="cocurricularTimeline" class="timeline d-none">
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 1)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Oct 2024 - Present</div>
                             <div class="timeline-bar"></div> 
@@ -202,7 +202,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 2)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 2)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Jun 2021 - Dec 2021</div>
                             <div class="timeline-bar"></div> 
@@ -220,7 +220,7 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="showJobDetails('consulting', 3)">
+                    <div class="timeline-item" onclick="showJobDetails('cocurricular', 3)">
                         <div class="d-flex position-relative">
                             <div class="timeline-date">Aug 2018 - Nov 2018</div>
                             <div class="timeline-bar"></div> 
@@ -243,7 +243,7 @@
   
             <div class="col-lg-6 order-lg-2 order-1">
 
-                <div id="employmentDetails1" class="education-details p-4 bg-dark text-white">
+                <div id="schoolDetails1" class="education-details p-4 bg-dark text-white">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/ucsd.png" alt="ucsd logo" class="me-2"><div>
@@ -262,41 +262,45 @@
                         <h6>GPA: 3.70/4.00</h6>
                         <br>
                         <h6>Academic Coursework</h6>
-                        <li><b>CSE 258 - Reccomender Systems and Web Mining</b><br> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                        <li><b>ECE 285 - Deep Generative Models</b><br> Fundamentals and state-of-the-art techniques in generative modeling, covering key architectures such as VAEs, GANs, Diffusion Models, and LLMs.</li>
                         <br>
-                        <li><b>ECE 271A - Statistical Learning</b><br>Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li>
+                        <li><b>CSE 258 - Recommender Systems and Web Mining</b><br> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                        <br>
+                        <!-- <li><b>ECE 271A - Statistical Learning</b><br>Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li> -->
+                        <!-- <br> -->
+                        <li><b>DSC 291 - Machine Learning for Few Labels</b><br> Covers ML with limited labels, including few-shot, self-supervised, and reinforcement learning, focusing on their foundations, and practical use cases.</li>
                     </ul>
                 </div>
     
-                <div id="employmentDetails2" class="education-details p-4 bg-dark text-white d-none">
+                <div id="schoolDetails2" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
                             <div>
-                                <h5 class="company-name">Vishwakarma Institute, India</h5>    
+                                <h5 class="company-name">Vishwakarma Institute</h5>    
                                 <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
                             </div>
                         </div>
                         <div class="date-range rounded-pill bg-dark px-3 py-1">
-                            <span>Jul 2018 - May 2022</span>
+                            <span>Aug 2018 - May 2022</span>
                         </div>
                     </div>
-                    <p class="mb-2 job-desc-pos">BTech in Electrical Engineering</p>
+                    <p class="mb-2 job-desc-pos">BS in Electrical Engineering</p>
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
                         <h6>Track: Electronics and Telecommunications</h6>
-                        <h6>GPA: 3.98/4.00</h6>
+                        <h6>GPA: 4.00/4.00</h6>
                         <br>
                         <h6>Academic Coursework</h6>
                         <li><b>Machine Learning -</b> Artificial Neural Networks, Machine Learning, Deep Learning, Image and Video Processing</li>
                         <br>
                         <li><b>Mathematics -</b> Probability & Statistics, Calculus, Linear & Vector Algebra</li>
                         <br>
-                        <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</li>
+                        <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, Internet of Things (IoT), Information Theory</li>
                     </ul>
                 </div><!-- Add other job details divs for universities -->
 
-                <div id="consultingDetails1" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails1" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/gpsa.png" alt="gpsa logo" class="me-2">
@@ -314,7 +318,7 @@
                     <ul class="mt-3 job-desc">
                         <li>Working with the financial wing of the Graduate and Professional Student Association to support students facing financial constraints, enabling them to participate in academic conferences.</li>
                         <br>
-                        <li>Coordinated the administration of over 500 travel grant applications annually, ensuring all applications were reviewed and processed efficiently.</li>
+                        <li>Coordinated the administration of over 1500 travel grant applications annually, ensuring all applications were reviewed and processed efficiently.</li>
                         <br>
                         <li>Liaised with students, faculty, and the financial department to resolve queries and provide guidance on application submission and fund disbursement.</li>
                         <br>
@@ -322,7 +326,7 @@
                     </ul>
                 </div>
     
-                <div id="consultingDetails2" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails2" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/finalytics.png" alt="finalytics logo" class="me-2">
@@ -340,11 +344,13 @@
                     <ul class="mt-3 job-desc">
                         <li>Finalytics is a group of Artificial Intelligence and Finance enthusiasts wanting to headstart their career, and build an exclusive community, a space where innovation meets engineering.</li>
                         <br>
-                        <li>Led the organizing and managing of workshops that have brought together students, providing a dynamic platform to explore ML-based projects that can translate into tangible financial insights.</li>
+                        <li>Led initiatives to brainstorm, pitch, and execute projects on predictive analytics and machine learning applications in financial modeling, enhancing members' technical and domain expertise.</li>
+                        <br>
+                        <li>Mentored 30+ team members in ML workflows and financial analysis, empowering the group to deliver innovative projects that bridged academic theory with practical implementation. </li>
                     </ul>
                 </div>
     
-                <div id="consultingDetails3" class="education-details p-4 bg-dark text-white d-none">
+                <div id="cocurricularDetails3" class="education-details p-4 bg-dark text-white d-none">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/edc.png" alt="edc logo" class="me-2"> 
@@ -375,11 +381,11 @@
     <div class="container my-5 mobrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
         <div style="padding: 30px 0 30px;" class="d-flex justify-content-left mb-4">
-            <button id="employmentBtnmob" class="employmentbtnmob btn-warning active">Education</button>
-            <button id="consultingBtnmob" class="consultbtnmob btn-dark">Co-Curricular</button>
+            <button id="schoolBtnmob" class="schoolbtnmob btn-warning active">Education</button>
+            <button id="cocurricularBtnmob" class="cocurricularbtn btn-dark">Co-Curricular</button>
         </div>
 
-        <div id="employmentmob">
+        <div id="schoolmob">
             <div class="row">
                 <div class="col-lg-6 order-lg-1 order-2">
             
@@ -403,9 +409,13 @@
                                     <p>GPA: 3.70/4.00</p>
                                     <hr style="color: #9b9b9b;">
                                     <p>Academic Coursework</p>
-                                    <li><b>CSE 258 - Reccomender Systems and Web Mining:</b> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                                    <li><b>ECE 285 - Deep Generative Models:</b> Fundamentals and state-of-the-art techniques in generative modeling, covering key architectures such as VAEs, GANs, Diffusion Models, and LLMs.</li>
                                     <br>
-                                    <li><b>ECE 271A - Statistical Learning:</b> Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li>
+                                    <li><b>CSE 258 - Recommender Systems and Web Mining:</b> Focuses on advanced techniques in recommender systems, and predictive analytics, emphasizing practical application of machine learning research.</li>
+                                    <br>
+                                    <!-- <li><b>ECE 271A - Statistical Learning:</b> Introduces to pattern recognition and statistical learning, covering key concepts like Bayesian Theory, and Parameter Estimation.</li> -->
+                                    <!-- <br> -->
+                                    <li><b>DSC 291 - Machine Learning for Few Labels:</b> Covers ML with limited labels, including few-shot, self-supervised, and reinforcement learning, focusing on their foundations, and practical use cases.</li>
                                 </ul>
                             </div>
 
@@ -420,23 +430,23 @@
                                     <img src="assets/img/logos/vishwakarma.png" class="company-logo" alt="vishwakarma logo">
                                 </div>
                                 <div class="header-info">
-                                    <h2>Jul 2018 - May 2022</h2>
-                                    <p>Vishwakarma Institute, India</p>
-                                    <h5>BTech in Electrical Engineering</h5>
+                                    <h2>Aug 2018 - May 2022</h2>
+                                    <p>Vishwakarma Institute</p>
+                                    <h5>BS in Electrical Engineering</h5>
                                     <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
                                 </div>
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
                                     <p>Track: Electronics and Telecommunications</p>
-                                    <p>GPA: 3.98/4.00</p>
+                                    <p>GPA: 4.00/4.00</p>
                                     <hr style="color: #9b9b9b;">
                                     <p>Academic Coursework</p>
                                     <li><b>Machine Learning -</b> Artificial Neural Networks, Machine Learning, Deep Learning, Image and Video Processing</li>
                                     <br>
                                     <li><b>Mathematics -</b> Probability & Statistics, Calculus, Linear & Vector Algebra</li>
                                     <br>
-                                    <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, IoT, Information Theory</li>
+                                    <li><b>Computer Science -</b> Data Structures and Design of Algorithms, Cloud Computing, Internet of Things (IoT), Information Theory</li>
                                 </ul>
                             </div>
                         </div>
@@ -446,7 +456,7 @@
             </div>   
         </div>
 
-        <div id="consultingmob" class=" d-none">
+        <div id="cocurricularmob" class=" d-none">
             <div class="row">
                 <div class="col-lg-6 order-lg-1 order-2">
 
@@ -468,7 +478,7 @@
                                 <ul class="mt-3 job-desc">
                                     <li>Working with the financial wing of the Graduate and Professional Student Association to support students facing financial constraints, enabling them to participate in academic conferences.</li>
                                     <br>
-                                    <li>Coordinated the administration of over 500 travel grant applications annually, ensuring all applications were reviewed and processed efficiently.</li>
+                                    <li>Coordinated the administration of over 1500 travel grant applications annually, ensuring all applications were reviewed and processed efficiently.</li>
                                     <br>
                                     <li>Liaised with students, faculty, and the financial department to resolve queries and provide guidance on application submission and fund disbursement.</li>
                                     <br>
@@ -496,7 +506,9 @@
                                 <ul class="mt-3 job-desc">
                                     <li>Finalytics is a group of Artificial Intelligence and Finance enthusiasts wanting to headstart their career, and build an exclusive community, a space where innovation meets engineering.</li>
                                     <br>
-                                    <li>Led the organizing and managing of workshops that have brought together students, providing a dynamic platform to explore ML-based projects that can translate into tangible financial insights.</li>
+                                    <li>Led initiatives to brainstorm, pitch, and execute projects on predictive analytics and machine learning applications in financial modeling, enhancing members' technical and domain expertise.</li>
+                                    <br>
+                                    <li>Mentored 30+ team members in ML workflows and financial analysis, empowering the group to deliver innovative projects that bridged academic theory with practical implementation. </li>
                                 </ul>
                             </div>
                         </div>
@@ -670,7 +682,7 @@
         <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
         <a title="Github" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a> -->
 
-        <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter">
+        <a title="𝕏" href="https://x.com/shrenik_jainn" class="github">
           <img src="assets/img/icons/twitter.svg" alt="Twitter" width="40" height="40">
         </a>
         <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram">
@@ -703,7 +715,7 @@
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main_academics.js"></script>
 
 </body>
 

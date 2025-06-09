@@ -233,6 +233,10 @@ canvas{
 .timeline-item:not(.active):hover {
   background-color: rgba(46, 44, 44, 0.5); 
   border-radius: 10px;
+  border: 1px dotted var(--Gradient, var(--color-outline));
+  /* border-left: 1px dotted var(--Gradient, var(--color-outline)); */
+  /* border-right: 1px dotted var(--Gradient, var(--color-outline)); */
+  /* transition: background-color 0.3s ease, border-color 0.3s ease; */
 }
 
 .timeline-item img {
@@ -306,7 +310,7 @@ canvas{
 
 .job-details {
   border-radius: 15px;
-  height: 520px;
+  height: 540px;
   width: 100%;
   max-width: 600px;
   border-radius: 15px;
@@ -320,7 +324,7 @@ canvas{
 
 .education-details {
   border-radius: 15px;
-  height: 520px;
+  height: 540px;
   width: 100%;
   max-width: 600px;
   border-radius: 15px;
@@ -380,7 +384,7 @@ h5 {
   margin-left: -2px;
 }
 
-.employmentbtn.active, .employmentbtnmob.active {
+.employmentbtn.active, .employmentbtnmob.active, .schoolbtn.active, .schoolbtnmob.active {
   border: var(--color-outline) 2px solid;
   border-radius: 10px 0 0 10px;
   background: var(--color-outline);
@@ -395,7 +399,7 @@ h5 {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.employmentbtn,.employmentbtnmob {
+.employmentbtn,.employmentbtnmob, .schoolbtn, .schoolbtnmob {
   border: var(--color-outline) 2px solid;
   border-radius: 10px 0 0 10px;
   background: #000;
@@ -409,7 +413,7 @@ h5 {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.consultbtn, .consultbtnmob {
+.consultbtn, .consultbtnmob, .cocurricularbtn, .cocurricularbtnmob {
   border: var(--color-outline) 2px solid;
   border-radius: 0 10px 10px 0;
   background: #000;
@@ -423,9 +427,47 @@ h5 {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.consultbtn.active, .consultbtnmob.active {
+.consultbtn.active, .consultbtnmob.active, .cocurricularbtn.active, .cocurricularbtnmob.active {
   border: var(--color-outline) 2px solid;
   border-radius: 0 10px 10px 0;
+  background: var(--color-outline);
+  display: inline-flex;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.researchbtn, .researchbtnmob {
+  /* border: var(--color-outline) 2px solid; */
+  border-left: var(--color-outline) 0.5px solid;
+  border-right: var(--color-outline) 0.5px solid;
+  border-top: var(--color-outline) 2px solid;
+  border-bottom: var(--color-outline) 2px solid;
+  border-radius: 0 0 0 0;
+  background: #000;
+  display: inline-flex;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary);
+  color: #fff;
+  margin: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.researchbtn.active, .researchbtnmob.active {
+  /* border: var(--color-outline) 2px solid; */
+  border-left: var(--color-outline) 0.5px solid;
+  border-right: var(--color-outline) 0.5px solid;
+  border-top: var(--color-outline) 2px solid;
+  border-bottom: var(--color-outline) 2px solid;
+  border-radius: 0 0 0 0;
   background: var(--color-outline);
   display: inline-flex;
   padding: 15px 30px;
@@ -444,7 +486,13 @@ h5 {
   .employmentbtn.active, .employmentbtnmob.active,
   .employmentbtn, .employmentbtnmob,
   .consultbtn, .consultbtnmob,
-  .consultbtn.active, .consultbtnmob.active {
+  .consultbtn.active, .consultbtnmob.active,
+  .researchbtn, .researchbtnmob,
+  .researchbtn.active, .researchbtnmob.active,
+  .cocurricularbtn.active, .cocurricularbtnmob.active,
+  .cocurricularbtn, .cocurricularbtnmob, 
+  .schoolbtn.active, .schoolbtnmob.active,
+  .schoolbtn, .schoolbtnmob {
     padding: 10px 20px;
     font-size: 14px;
   }
@@ -455,7 +503,13 @@ h5 {
   .employmentbtn.active, .employmentbtnmob.active,
   .employmentbtn, .employmentbtnmob,
   .consultbtn, .consultbtnmob,
-  .consultbtn.active, .consultbtnmob.active {
+  .consultbtn.active, .consultbtnmob.active,
+  .researchbtn, .researchbtnmob,
+  .researchbtn.active, .researchbtnmob.active,
+  .cocurricularbtn.active, .cocurricularbtnmob.active,
+  .cocurricularbtn, .cocurricularbtnmob, 
+  .schoolbtn.active, .schoolbtnmob.active,
+  .schoolbtn, .schoolbtnmob {
     padding: 8px 15px;
     font-size: 12px;
   }

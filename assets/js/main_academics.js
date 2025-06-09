@@ -233,64 +233,35 @@ function showJobDetails(section, jobId) {
   document.getElementById(section + 'Details' + jobId).classList.remove('d-none');
 }
 
-document.getElementById('employmentBtn').addEventListener('click', function () {
+document.getElementById('schoolBtn').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('consultingBtn').classList.remove('active');
-  document.getElementById('researchBtn').classList.remove('active');
-  document.getElementById('employmentTimeline').classList.remove('d-none');
-  document.getElementById('consultingTimeline').classList.add('d-none');
-  document.getElementById('researchTimeline').classList.add('d-none');
-  showJobDetails('employment', 1); // Show the first employment detail by default
+  document.getElementById('cocurricularBtn').classList.remove('active');
+  document.getElementById('schoolTimeline').classList.remove('d-none');
+  document.getElementById('cocurricularTimeline').classList.add('d-none');
+  showJobDetails('school', 1); // Show the first school detail by default
 });
 
-document.getElementById('consultingBtn').addEventListener('click', function () {
+document.getElementById('cocurricularBtn').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('employmentBtn').classList.remove('active');
-  document.getElementById('researchBtn').classList.remove('active'); 
-  document.getElementById('employmentTimeline').classList.add('d-none');
-  document.getElementById('consultingTimeline').classList.remove('d-none');
-  document.getElementById('researchTimeline').classList.add('d-none'); 
-  showJobDetails('consulting', 1); // Show the first consulting detail by default
+  document.getElementById('schoolBtn').classList.remove('active');
+  document.getElementById('schoolTimeline').classList.add('d-none');
+  document.getElementById('cocurricularTimeline').classList.remove('d-none');
+  showJobDetails('cocurricular', 1); // Show the first cocurricular detail by default
+});
+document.getElementById('schoolBtnmob').addEventListener('click', function () {
+  this.classList.add('active');
+  document.getElementById('cocurricularBtnmob').classList.remove('active');
+  document.getElementById('schoolmob').classList.remove('d-none');
+  document.getElementById('cocurricularmob').classList.add('d-none');
+  showJobDetails('school', 1); // Show the first school detail by default
 });
 
-document.getElementById('researchBtn').addEventListener('click', function () {
+document.getElementById('cocurricularBtnmob').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('employmentBtn').classList.remove('active');
-  document.getElementById('consultingBtn').classList.remove('active');
-  document.getElementById('employmentTimeline').classList.add('d-none');
-  document.getElementById('consultingTimeline').classList.add('d-none');
-  document.getElementById('researchTimeline').classList.remove('d-none');
-  showJobDetails('research', 1); // Show the first research detail by default
-});
-
-document.getElementById('employmentBtnmob').addEventListener('click', function () {
-  this.classList.add('active');
-  document.getElementById('consultingBtnmob').classList.remove('active');
-  document.getElementById('researchBtnmob').classList.remove('active');
-  document.getElementById('employmentmob').classList.remove('d-none');
-  document.getElementById('consultingmob').classList.add('d-none');
-  document.getElementById('researchmob').classList.add('d-none');
-  showJobDetails('employment', 1); // Show the first employment detail by default
-});
-
-document.getElementById('consultingBtnmob').addEventListener('click', function () {
-  this.classList.add('active');
-  document.getElementById('employmentBtnmob').classList.remove('active');
-  document.getElementById('researchBtnmob').classList.remove('active');
-  document.getElementById('employmentmob').classList.add('d-none');
-  document.getElementById('consultingmob').classList.remove('d-none');
-  document.getElementById('researchmob').classList.add('d-none');
-  showJobDetails('consulting', 1); // Show the first consulting detail by default
-});
-
-document.getElementById('researchBtnmob').addEventListener('click', function () {
-  this.classList.add('active');
-  document.getElementById('employmentBtnmob').classList.remove('active');
-  document.getElementById('consultingBtnmob').classList.remove('active');
-  document.getElementById('employmentmob').classList.add('d-none');
-  document.getElementById('consultingmob').classList.add('d-none');
-  document.getElementById('researchmob').classList.remove('d-none');
-  showJobDetails('research', 1); // Show the first research detail by default
+  document.getElementById('schoolBtnmob').classList.remove('active');
+  document.getElementById('schoolmob').classList.add('d-none');
+  document.getElementById('cocurricularmob').classList.remove('d-none');
+  showJobDetails('cocurricular', 1); // Show the first cocurricular detail by default
 });
 
 function showJobDetails(section, jobId) {
@@ -333,61 +304,43 @@ function showJobDetails(section, jobId) {
 }
 
 // Event listeners for the buttons
-document.getElementById('employmentBtnmob').addEventListener('click', function () {
+document.getElementById('schoolBtnmob').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('consultingBtnmob').classList.remove('active');
-  document.getElementById('researchBtnmob').classList.remove('active');
-  document.getElementById('employmentmob').classList.remove('d-none');
-  document.getElementById('consultingmob').classList.add('d-none');
-  document.getElementById('researchmob').classList.add('d-none');
-  showJobDetails('employment', 1); // Show the first employment detail by default
+  document.getElementById('cocurricularBtnmob').classList.remove('active');
+  document.getElementById('schoolmob').classList.remove('d-none');
+  document.getElementById('cocurricularmob').classList.add('d-none');
+  showJobDetails('school', 1); // Show the first school detail by default
 });
 
-document.getElementById('consultingBtnmob').addEventListener('click', function () {
+document.getElementById('cocurricularBtnmob').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('employmentBtnmob').classList.remove('active');
-  document.getElementById('researchBtnmob').classList.remove('active');
-  document.getElementById('employmentmob').classList.add('d-none');
-  document.getElementById('consultingmob').classList.remove('d-none');
-  document.getElementById('researchmob').classList.add('d-none');
-  showJobDetails('consulting', 1); // Show the first consulting detail by default
+  document.getElementById('schoolBtnmob').classList.remove('active');
+  document.getElementById('schoolmob').classList.add('d-none');
+  document.getElementById('cocurricularmob').classList.remove('d-none');
+  showJobDetails('cocurricular', 1); // Show the first cocurricular detail by default
 });
 // Event listeners for the buttons
-document.getElementById('employmentBtn').addEventListener('click', function () {
+document.getElementById('schoolBtn').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('consultingBtn').classList.remove('active');
-  document.getElementById('researchBtn').classList.remove('active');
-  document.getElementById('employmentTimeline').classList.remove('d-none');
-  document.getElementById('consultingTimeline').classList.add('d-none');
-  document.getElementById('researchTimeline').classList.add('d-none');
-  showJobDetails('employment', 1); // Show the first employment detail by default
+  document.getElementById('cocurricularBtn').classList.remove('active');
+  document.getElementById('schoolTimeline').classList.remove('d-none');
+  document.getElementById('cocurricularTimeline').classList.add('d-none');
+  showJobDetails('school', 1); // Show the first school detail by default
 });
 
-document.getElementById('consultingBtn').addEventListener('click', function () {
+document.getElementById('cocurricularBtn').addEventListener('click', function () {
   this.classList.add('active');
-  document.getElementById('employmentBtn').classList.remove('active');
-  document.getElementById('researchBtn').classList.remove('active');
-  document.getElementById('employmentTimeline').classList.add('d-none');
-  document.getElementById('consultingTimeline').classList.remove('d-none');
-  document.getElementById('researchTimeline').classList.add('d-none');
-  showJobDetails('consulting', 1); // Show the first consulting detail by default
-});
-
-document.getElementById('researchBtn').addEventListener('click', function () {
-  this.classList.add('active');
-  document.getElementById('employmentBtn').classList.remove('active');
-  document.getElementById('consultingBtn').classList.remove('active');
-  document.getElementById('employmentTimeline').classList.add('d-none');
-  document.getElementById('consultingTimeline').classList.add('d-none');
-  document.getElementById('researchTimeline').classList.remove('d-none');
-  showJobDetails('research', 1); // Show the first research detail by default
+  document.getElementById('schoolBtn').classList.remove('active');
+  document.getElementById('schoolTimeline').classList.add('d-none');
+  document.getElementById('cocurricularTimeline').classList.remove('d-none');
+  showJobDetails('cocurricular', 1); // Show the first cocurricular detail by default
 });
 
 // Ensure the details are shown on load based on screen size
 window.addEventListener('load', function () {
   if (window.innerWidth <= 768) {
-    showJobDetails('employment', 1);
+    showJobDetails('school', 1);
   } else {
-    showJobDetails('employment', 1);
+    showJobDetails('school', 1);
   }
 });
