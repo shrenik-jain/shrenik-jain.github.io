@@ -231,12 +231,10 @@ canvas{
 }
 
 .timeline-item:not(.active):hover {
-  background-color: rgba(46, 44, 44, 0.5); 
-  border-radius: 10px;
-  border: 1px dotted var(--Gradient, var(--color-outline));
-  /* border-left: 1px dotted var(--Gradient, var(--color-outline)); */
-  /* border-right: 1px dotted var(--Gradient, var(--color-outline)); */
-  /* transition: background-color 0.3s ease, border-color 0.3s ease; */
+  /* background-color: rgba(46, 44, 44, 0.5); */
+  background-color: rgba(80, 78, 78, 0.5); 
+  border-radius: 12px;
+  transition: background-color 0.1s ease;
 }
 
 .timeline-item img {
@@ -452,7 +450,7 @@ h5 {
   border-radius: 0 0 0 0;
   background: #000;
   display: inline-flex;
-  padding: 15px 30px;
+  padding: 15px 36px;
   justify-content: center;
   align-items: center;
   font-family: var(--font-secondary);
@@ -470,7 +468,7 @@ h5 {
   border-radius: 0 0 0 0;
   background: var(--color-outline);
   display: inline-flex;
-  padding: 15px 30px;
+  padding: 15px 36px;
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -601,7 +599,8 @@ h5 {
 # Scroll top button
 --------------------------------------------------------------*/
 .scroll-top {
-  background: linear-gradient(240deg, #D46678 17.15%, #C46A90 38.31%, #A571BD  40.21%, #5481ED 80.94%);
+  /* background: linear-gradient(240deg, #D46678 17.15%, #C46A90 38.31%, #A571BD  40.21%, #5481ED 80.94%); */
+  background: linear-gradient(135deg, #D46678 0%, #C46A90 25%, #A571BD 50%, #5481ED 85%);
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -885,7 +884,8 @@ h5 {
     width: 20%; 
     height: 3px; 
     border-radius: 12px;
-    background-image: linear-gradient(270deg, #D46678 27.15%, #A571BD 40.21%, #5481ED 86.94%);
+    /* background-image: linear-gradient(270deg, #D46678 27.15%, #A571BD 40.21%, #5481ED 86.94%); */
+    background-image: linear-gradient(270deg, #5481ED 27.15%, #5481ED 40.21%, #5481ED 86.94%);
   }
   
   .navbar .dropdown ul {
@@ -1369,7 +1369,7 @@ h5 {
   padding: 4px 16px;
   border-radius: 16px;
   font-size: 13px;
-  margin: 3px 3px 3px 0;
+  margin: 3px 3px 5px 0;
   transition: all 0.3s ease;
   outline: 1px #5a5a5a solid;
 }
