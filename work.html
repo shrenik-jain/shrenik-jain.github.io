@@ -228,7 +228,7 @@
                                 <div class="d-flex align-items-start">
                                     <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
                                     <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Spatiotemporal ML Lab</h5>
+                                        <h5 style="margin-left: -1px;" class="company-name">Spatiotemporal Lab</h5>
                                         <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
                                 <div class="d-flex align-items-start">
                                     <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
                                     <div style="margin-left: 5px;">
-                                        <h5 style="margin-left: -1px;" class="company-name">Vishwakarma Institute</h5>
+                                        <h5 style="margin-left: -1px;" class="company-name">University of Pune</h5>
                                         <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
                                     </div>
                                 </div>
@@ -307,7 +307,7 @@
                                         <a title="linkedin/aiforrural" href="https://www.linkedin.com/company/aiforrural/" class="view-website">Visit website &#8599;</a>
                                     </div>
                                 </div>
-                                <p class="company-pos">Software Development Consultant</p>
+                                <p class="company-pos">Software Engineer Consultant</p>
                                 <p class="company-desc">Remote, India</p>
                             </div>
                         </div>
@@ -370,13 +370,13 @@
                     <p class="mb-2 job-desc-pos">Machine Learning Engineer</p> 
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Leading CV driven initiatives to enhance immersive gameplay experiences at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
+                        <li>Leading initiatives to enhance immersive gameplay experiences at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
                         <br>
-                        <li>Designed real-time post-processing enhancement algorithms, addressing blocking, blurring, and ringing artifacts, and enhancing temporal coherence in high-frame-rate gameplay, ensuring consistent visual quality for 120M+ monthly active users.</li>
+                        <li>Architected and productionized real-time video enhancement models using deblocking, deringing, deblurring, and flicker suppression for high frame-rate gameplay; met p95 per-frame latency for 120M+ monthly active users.</li>
                         <br>
-                        <li>Implemented single-step diffusion models for accelerated inference, achieving 15% gains in PSNR/PSNR-B and VMAF scores, enabling high-fidelity visual effects on constrained hardware while significantly reducing computational overhead. </li>
+                        <li>Distilled multi-step diffusion enhancer to a single-step, real-time model, delivering 20% QoE uplift (VMAF, PSNR), enabling high-fidelity visual effects on constrained hardware while significantly reducing computational overhead.</li>
                         <br>
-                        <li>Leveraged encoder-side statistics (e.g., QP values, CTU-level features, motion vectors) to condition enhancement networks, enabling content-adaptive inference and more precise artifact suppression.</li>
+                        <li>Prototyped a multimodal gameplay summarization system, using VLM-based event detection to segment key moments and an LLM to generate short titles and searchable tags; improved clip organization and reduced manual review time.</li>
                     </ul>
                 </div>
 
@@ -396,13 +396,13 @@
                     <p class="mb-2 job-desc-pos">Machine Learning Engineer</p> 
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Spearheaded the development of a scalable event monitoring system, leveraging representation learning with probabilistic anomaly scoring to flag suspicious activities in real-time, leading to a 50% reduction in containment time through optimized detection and response workflows.</li>
+                        <li>Spearheaded the development of a scalable event monitoring system, fusing fine-tuned detection models and representation learning with calibrated anomaly scoring to flag suspicious activities in real-time on constrained edge nodes, leading to a 50% reduction in containment time, improving precision-recall stability under scene shift.</li>
                         <br>
-                        <li>Implemented a spatiotemporal autoencoder for anomaly validation, learning normal motion patterns, and flagging deviations in security footage; significantly reduced false event escalations by 20% and improved operational trust in the system.</li>
+                        <li>Deployed a self-supervised spatiotemporal autoencoder that learned normality manifolds from videos and applied conformal one-class scoring to flag anomalies; reduced false escalations by 45% at fixed recall and increased operator trust.</li>
+                        <br>
+                        <li>Integrated Milvus backend as a vectorbase for embedding management, enabling efficient indexing, retrieval, and similarity search of feature embeddings in video streams, making ambiguous events searchable in sub-seconds.</li>
                         <br>
                         <li>Deployed models into production by packaging them into modular inference services, integrated with monitoring dashboards that generated real-time alerts, audit logs, and forensic search tools for enterprise clients.</li>
-                        <br>
-                        <li>Integrated a vector-store backend for embedding management, enabling efficient indexing, retrieval, and similarity search of feature embeddings in video streams, making ambiguous events searchable in sub-seconds.</li>
                     </ul>
                 </div>
     
@@ -422,7 +422,7 @@
                     <p class="mb-2 job-desc-pos">Software Engineer</p>
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Designed and automated CI/CD pipelines with containerized workflows, reducing deployment cycles from 30 → 10 minutes and enabling 200+ production releases per month.</li>
+                        <li>Implemented AWS-native CI/CD with CodePipeline, CodeBuild test gates, and automated rollouts, standardizing containerized deployments, reducing cycles from 30 to 10 minutes, and supporting 200+ monthly production releases.</li>
                         <br>
                         <li>Implemented observability pipelines (monitoring, logging, alerting) to track latency, failure rates, and resource utilization, ensuring stability under sustained high traffic.</li>
                     </ul>
@@ -444,9 +444,9 @@
                     <p class="mb-2 job-desc-pos">Machine Learning Engineer</p>
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Trained convolutional VAEs to synthesize distribution-consistent samples, expanding a limited corpus from 50K → 150K examples while maintaining perceptual similarity (SSIM > 0.85).</li>
+                        <li>Trained DDPM-style diffusion models (with DDIM sampling for faster generation) to synthesize distribution-consistent samples, expanding a limited corpus from 50K to 150K while maintaining perceptual similarity (SSIM > 0.85).</li>
                         <br>
-                        <li>Benchmarked VQ-VAEs against Conv-VAEs for unsupervised representation learning, evaluating latent space structure, reconstruction error, and generative quality across heterogeneous datasets.</li>
+                        <li>Benchmarked diffusion model variants across heterogeneous datasets, evaluating FID, SSIM, and denoising error to quantify generative quality and robustness.</li>
                     </ul>
                 </div>
                 <!-- Employement Details End -->
@@ -457,7 +457,7 @@
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/stml.png" alt="stml logo" class="me-2">
                             <div>
-                                <h5 class="company-name">Spatiotemporal ML Lab</h5>
+                                <h5 class="company-name">Spatiotemporal Lab</h5>
                                 <a title="roseyu.com" href="https://roseyu.com/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
                             </div>
                             </div>
@@ -472,7 +472,7 @@
                         <br>
                         <li>Conducted research on <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, focusing on improving uncertainty quantification and stochastic representation of geophysical processes.</li>
                         <br>
-                        <li>Implemented and evaluated an almost-fair CRPS loss function (adapted from recent literature) to address biases in standard CRPS variants, yielding a 10% gain in predictive accuracy while preserving calibrated uncertainty estimates.</li>
+                        <li>Implemented and evaluated an almost-fair CRPS loss function (adapted from recent literature) to address biases in standard CRPS variants, yielding a 30% gain in predictive accuracy while preserving calibrated uncertainty estimates.</li>
                         <br>
                         <li>Ran large-scale distributed training of forecasting models using data-parallel strategies across multi-node GPU clusters, analyzing the effect of loss function choice, sampling strategies, and noise schedules on forecast stability and calibration.</li>
                     </ul>
@@ -483,7 +483,7 @@
                         <div class="d-flex align-items-center">
                             <img src="assets/img/logos/vishwakarma.png" alt="vishwakarma logo" class="me-2">
                             <div>
-                                <h5 class="company-name">Vishwakarma Institute</h5>   
+                                <h5 class="company-name">University of Pune</h5>   
                                 <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website" style="padding-left:5px;">Visit website &#8599;</a>
                             </div>
                         </div>
@@ -516,11 +516,11 @@
                     <p class="mb-2 job-desc-pos">Machine Learning Consultant</p>  
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
-                        <li>Developed a retrieval-augmented generation system for conversational search, combining vector similarity retrieval with LLM-based re-ranking to improve semantic relevance and reduce hallucinations.</li>
+                        <li>Developed a retrieval-augmented generation system for conversational search, combining semantic vector similarity retrieval with LLM-based re-ranking to achieve grounded responses, and reduce hallucinations.</li>
                         <br>
-                        <li>Accelerated query serving by implementing concurrent request handling and parallel execution across the API-database pipeline, improving throughput and reducing average response latency from 3s to 600ms.</li>
+                        <li>Implemented Langfuse-based LLM monitoring, adding trace-level logging across retrieval, rerank, and generation, plus dashboards for latency, token spend, and failure modes, accelerating model iteration and debugging time to 30 minutes.</li>
                         <br>
-                        <li>Optimized database and data pipelines for metadata (6M+ JSON records), restructuring queries and indexing strategies to reduce retrieval times and support real-time analytics workloads.</li>
+                        <li>Developed a content moderation pipeline using a multi-task classification model to detect and filter policy-violating content across violence, hate speech, and NSFW categories, maintaining sub-200ms inference latency at scale for 50K MAU.</li>
                     </ul>
                 </div>
     
@@ -537,7 +537,7 @@
                             <span>Sep 2021 - Nov 2021</span>
                         </div>
                     </div>
-                    <p class="mb-2 job-desc-pos">Software Development Consultant</p>
+                    <p class="mb-2 job-desc-pos">Software Engineer Consultant</p>
                         
                     <hr style="color: #9b9b9b;">
                     <ul class="mt-3 job-desc">
@@ -626,13 +626,13 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Leading CV driven initiatives to enhance immersive gameplay experiences at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
+                                    <li>Leading initiatives to enhance immersive gameplay experiences at <a href="https://www.playstation.com/en-us/">PlayStation</a>.</li>
                                     <br>
-                                    <li>Designed real-time post-processing enhancement algorithms, addressing blocking, blurring, and ringing artifacts, and enhancing temporal coherence in high-frame-rate gameplay, ensuring consistent visual quality for 120M+ monthly active users.</li>
+                                    <li>Architected and productionized real-time video enhancement models using deblocking, deringing, deblurring, and flicker suppression for high frame-rate gameplay; met p95 per-frame latency for 120M+ monthly active users.</li>
                                     <br>
-                                    <li>Implemented single-step diffusion models for accelerated inference, achieving 15% gains in PSNR/PSNR-B and VMAF scores, enabling high-fidelity visual effects on constrained hardware while significantly reducing computational overhead. </li>
+                                    <li>Distilled multi-step diffusion enhancer to a single-step, real-time model, delivering 20% QoE uplift (VMAF, PSNR), enabling high-fidelity visual effects on constrained hardware while significantly reducing computational overhead.</li>
                                     <br>
-                                    <li>Leveraged encoder-side statistics (e.g., QP values, CTU-level features, motion vectors) to condition enhancement networks, enabling content-adaptive inference and more precise artifact suppression.</li>
+                                    <li>Prototyped a multimodal gameplay summarization system, using VLM-based event detection to segment key moments and an LLM to generate short titles and searchable tags; improved clip organization and reduced manual review time.</li>
                                 </ul>
                             </div>
                         </div>
@@ -654,13 +654,13 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Spearheaded the development of a scalable event monitoring system, leveraging representation learning with probabilistic anomaly scoring to flag suspicious activities in real-time, leading to a 50% reduction in containment time through optimized detection and response workflows.</li>
+                                    <li>Spearheaded the development of a scalable event monitoring system, fusing fine-tuned detection models and representation learning with calibrated anomaly scoring to flag suspicious activities in real-time on constrained edge nodes, leading to a 50% reduction in containment time, improving precision-recall stability under scene shift.</li>
                                     <br>
-                                    <li>Implemented a spatiotemporal autoencoder for anomaly validation, learning normal motion patterns, and flagging deviations in security footage; significantly reduced false event escalations by 20% and improved operational trust in the system.</li>
+                                    <li>Deployed a self-supervised spatiotemporal autoencoder that learned normality manifolds from videos and applied conformal one-class scoring to flag anomalies; reduced false escalations by 45% at fixed recall and increased operator trust.</li>
+                                    <br>
+                                    <li>Integrated Milvus backend as a vectorbase for embedding management, enabling efficient indexing, retrieval, and similarity search of feature embeddings in video streams, making ambiguous events searchable in sub-seconds.</li>
                                     <br>
                                     <li>Deployed models into production by packaging them into modular inference services, integrated with monitoring dashboards that generated real-time alerts, audit logs, and forensic search tools for enterprise clients.</li>
-                                    <br>
-                                    <li>Integrated a vector-store backend for embedding management, enabling efficient indexing, retrieval, and similarity search of feature embeddings in video streams, making ambiguous events searchable in sub-seconds.</li>
                                 </ul>
                             </div>
                         </div>
@@ -682,7 +682,7 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Designed and automated CI/CD pipelines with containerized workflows, reducing deployment cycles from 30 → 10 minutes and enabling 200+ production releases per month.</li>
+                                    <li>Implemented AWS-native CI/CD with CodePipeline, CodeBuild test gates, and automated rollouts, standardizing containerized deployments, reducing cycles from 30 to 10 minutes, and supporting 200+ monthly production releases.</li>
                                     <br>
                                     <li>Implemented observability pipelines (monitoring, logging, alerting) to track latency, failure rates, and resource utilization, ensuring stability under sustained high traffic.</li>
                                 </ul>
@@ -706,9 +706,9 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Trained convolutional VAEs to synthesize distribution-consistent samples, expanding a limited corpus from 50K → 150K examples while maintaining perceptual similarity (SSIM > 0.85).</li>
+                                    <li>Trained DDPM-style diffusion models (with DDIM sampling for faster generation) to synthesize distribution-consistent samples, expanding a limited corpus from 50K to 150K while maintaining perceptual similarity (SSIM > 0.85).</li>
                                     <br>
-                                    <li>Benchmarked VQ-VAEs against Conv-VAEs for unsupervised representation learning, evaluating latent space structure, reconstruction error, and generative quality across heterogeneous datasets.</li>
+                                    <li>Benchmarked diffusion model variants across heterogeneous datasets, evaluating FID, SSIM, and denoising error to quantify generative quality and robustness.</li>
                                 </ul>
                             </div>
                         </div>
@@ -732,17 +732,17 @@
                                 <div class="header-info">
                                     <h2>Sep 2024 - Present</h2>
                                     <p>Applied Research Engineer</p>
-                                    <h5>Spatiotemporal ML Lab</h5>
+                                    <h5>Spatiotemporal Lab</h5>
                                     <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
                                 </div>
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Assisting Dr. Rose Yu at UC San Diego with various CV driven initiatives at her lab.</li>
+                                    <li>Assisting Dr. Rose Yu at UC San Diego with various initiatives at her lab.</li>
                                     <br>
                                     <li>Conducted research on <a href="https://arxiv.org/abs/2306.01984">DYffusion</a>, a dynamics-informed diffusion model for spatiotemporal climate forecasting, focusing on improving uncertainty quantification and stochastic representation of geophysical processes.</li>
                                     <br>
-                                    <li>Implemented and evaluated an almost-fair CRPS loss function (adapted from recent literature) to address biases in standard CRPS variants, yielding a 10% gain in predictive accuracy while preserving calibrated uncertainty estimates.</li>
+                                    <li>Implemented and evaluated an almost-fair CRPS loss function (adapted from recent literature) to address biases in standard CRPS variants, yielding a 30% gain in predictive accuracy while preserving calibrated uncertainty estimates.</li>
                                     <br>
                                     <li>Ran large-scale distributed training of forecasting models using data-parallel strategies across multi-node GPU clusters, analyzing the effect of loss function choice, sampling strategies, and noise schedules on forecast stability and calibration.</li>
                                 </ul>
@@ -760,7 +760,7 @@
                                 <div class="header-info">
                                     <h2>Jul 2021 - Dec 2021</h2>
                                     <p>Applied Research Engineer</p>
-                                    <h5>Vishwakarma Institute</h5>
+                                    <h5>University of Pune</h5>
                                     <a title="viit.ac.in" href="https://www.viit.ac.in/" class="view-website">Visit website &#8599;</a>
                                 </div>
                             </div>
@@ -798,11 +798,11 @@
                             </div>
                             <div class="work-section-content">
                                 <ul class="mt-3 job-desc">
-                                    <li>Developed a retrieval-augmented generation system for conversational search, combining vector similarity retrieval with LLM-based re-ranking to improve semantic relevance and reduce hallucinations.</li>
+                                    <li>Developed a retrieval-augmented generation system for conversational search, combining semantic vector similarity retrieval with LLM-based re-ranking to achieve grounded responses, and reduce hallucinations.</li>
                                     <br>
-                                    <li>Accelerated query serving by implementing concurrent request handling and parallel execution across the API-database pipeline, improving throughput and reducing average response latency from 3s to 600ms.</li>
+                                    <li>Implemented Langfuse-based LLM monitoring, adding trace-level logging across retrieval, rerank, and generation, plus dashboards for latency, token spend, and failure modes, accelerating model iteration and debugging time to 30 minutes.</li>
                                     <br>
-                                    <li>Optimized database and data pipelines for metadata (6M+ JSON records), restructuring queries and indexing strategies to reduce retrieval times and support real-time analytics workloads.</li>
+                                    <li>Developed a content moderation pipeline using a multi-task classification model to detect and filter policy-violating content across violence, hate speech, and NSFW categories, maintaining sub-200ms inference latency at scale for 50K MAU.</li>
                                 </ul>
                             </div>
                         </div>
@@ -817,7 +817,7 @@
                                 </div>
                                 <div class="header-info">
                                     <h2>Sep 2021 - Nov 2021</h2>
-                                    <p>Software Dev Consultant</p>
+                                    <p>Software Engineer Consultant</p>
                                     <h5>AI For Rural</h5>
                                     <a title="linkedin.com/aiforrural" href="https://www.linkedin.com/company/aiforrural/" class="view-website">Visit website &#8599;</a>
                                 </div>
