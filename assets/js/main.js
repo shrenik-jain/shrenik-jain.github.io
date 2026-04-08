@@ -148,11 +148,15 @@ if (preloader) {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 40
+        spaceBetween: 20
       },
-
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 24
+      },
       1200: {
         slidesPerView: 3,
+        spaceBetween: 24
       }
     }
   });
