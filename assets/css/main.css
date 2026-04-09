@@ -209,6 +209,11 @@ canvas{
   -webkit-text-fill-color: transparent;
 }
 
+/* Section heading inside certifications block: same .work-title gradient, not hero spacing */
+.certifications-section .work-title {
+  padding-top: 0;
+}
+
 .timeline {
   position: relative;
 }
@@ -220,7 +225,12 @@ canvas{
   bottom: 0;
   left: 170px;
   width: 2px;
-  background: linear-gradient(180deg, rgba(85, 129, 237, 0.45) 0%, rgba(255, 255, 255, 0.06) 55%, rgba(255, 255, 255, 0.06) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(85, 129, 237, 0.58) 0%,
+    rgba(95, 130, 210, 0.38) 45%,
+    rgba(130, 150, 195, 0.22) 100%
+  );
 }
 
 .timeline-item {
@@ -522,99 +532,119 @@ h5 {
   margin-left: -2px;
 }
 
-/* Work / Academics: segmented mode tabs (Employment · Research · Consultant, etc.) */
+/* Work / Academics: connected tab strip (Employment | Research | Consultant, etc.) */
 .timeline-mode-tabs {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: stretch;
-  gap: 8px;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  gap: 0;
+  width: 100%;
+  max-width: 500px;
+  min-height: 42px;
+  margin-bottom: 3rem;
+  padding: 0 !important;
+  border: 1px solid rgba(132, 162, 224, 0.45);
+  border-radius: 10px;
+  background: rgba(8, 12, 22, 0.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 4px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .timeline-mode-tabs > button {
-  display: inline-flex;
+  flex: 1 1 0;
+  display: flex;
   justify-content: center;
   align-items: center;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 42px;
   appearance: none;
   -webkit-appearance: none;
-  border: 1px solid rgba(132, 162, 224, 0.35);
-  background: rgba(255, 255, 255, 0.05) !important;
+  margin: 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid rgba(132, 162, 224, 0.3);
+  background: rgba(255, 255, 255, 0.06) !important;
   background-image: none !important;
-  color: rgba(208, 217, 233, 0.82);
+  color: rgba(218, 226, 240, 0.88);
   font-family: var(--font-secondary);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  line-height: 1.25;
-  margin: 0;
-  padding: 12px 26px;
-  border-radius: 10px;
+  line-height: 1.2;
   cursor: pointer;
   white-space: nowrap;
   transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.12s ease;
+    color 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.timeline-mode-tabs > button:last-child {
+  border-right: none;
 }
 
 .timeline-mode-tabs > button:hover:not(.active):not(:disabled) {
-  color: #f0f4fb;
-  background: rgba(255, 255, 255, 0.09) !important;
-  border-color: rgba(148, 178, 240, 0.48);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .timeline-mode-tabs > button:focus-visible {
-  outline: 2px solid rgba(84, 129, 237, 0.9);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(84, 129, 237, 0.9);
+  z-index: 1;
+  position: relative;
 }
 
 .timeline-mode-tabs > button:active:not(.active):not(:disabled) {
-  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
 .timeline-mode-tabs > button.active {
   color: #fff !important;
   font-weight: 600;
-  border-color: rgba(255, 255, 255, 0.28);
-  background: linear-gradient(135deg, #6b94f2 0%, #5481ed 42%, #3d6ad4 100%) !important;
-  box-shadow: none;
+  background: linear-gradient(180deg, #7598f5 0%, #5481ed 45%, #3f6ad8 100%) !important;
+  background-size: 100% 100% !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Exactly two tabs (Academics): bar width = 2/3 of Work bar so each segment matches one Employment/Research/Consultant cell */
+.timeline-mode-tabs:has(> button:first-child:nth-last-child(2)) {
+  max-width: min(calc(500px * 2 / 3), calc(100% * 2 / 3));
 }
 
 @media (prefers-reduced-motion: reduce) {
   .timeline-mode-tabs > button {
     transition: none;
   }
-
-  .timeline-mode-tabs > button:active:not(.active):not(:disabled) {
-    transform: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
+  .timeline-mode-tabs {
+    margin-bottom: 2.75rem;
+  }
+
   .timeline-mode-tabs > button {
-    padding: 10px 18px;
-    font-size: 14px;
+    padding: 7px 10px;
+    font-size: 13px;
+    min-height: 40px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .timeline-mode-tabs > button {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
   .timeline-mode-tabs {
-    width: 100%;
+    max-width: none;
+    margin-bottom: 2.5rem;
   }
 
   .timeline-mode-tabs > button {
-    flex: 1 1 auto;
+    padding: 6px 8px;
+    font-size: 12px;
+    min-height: 38px;
   }
 }
 
@@ -1836,29 +1866,8 @@ h5 {
 # Certifications (academics.html)
 --------------------------------------------------------------*/
 .certifications-section {
-  padding: 2.5rem 0 4rem;
+  padding: 2rem 0 4rem;
   scroll-margin-top: 96px;
-}
-
-.certifications-section__inner {
-  max-width: 1140px;
-}
-
-.certifications-section__header {
-  margin-bottom: 2rem;
-  max-width: 40rem;
-}
-
-.certifications-section__title {
-  font-family: var(--font-primary);
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 0.65rem 0;
-  background: linear-gradient(115deg, #5481ED 27.15%, #A571BD 50.31%, #C46A90 70.21%, #D46678 86.94%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .certifications-section__lede {
@@ -1899,11 +1908,19 @@ h5 {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: rgba(85, 129, 237, 0.12);
-  border: 1px solid rgba(85, 129, 237, 0.22);
-  color: #7a9df5;
+  background: rgba(85, 129, 237, 0.1);
+  border: 1px solid rgba(132, 162, 224, 0.22);
   font-size: 1.35rem;
   line-height: 1;
+}
+
+/* Gradient on award glyph (Bootstrap Icons draw on ::before) */
+.cert-card__icon i::before {
+  background: linear-gradient(200deg, #e895a4 12%, #c46a90 42%, #6b94f2 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .cert-card__body {
@@ -1938,12 +1955,8 @@ h5 {
 }
 
 @media (max-width: 767px) {
-  .certifications-section__title {
-    font-size: 1.85rem;
-  }
-
   .certifications-section {
-    padding: 2rem 0 3.5rem;
+    padding: 1.5rem 0 3.5rem;
   }
 }
 
