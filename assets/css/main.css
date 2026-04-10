@@ -264,6 +264,13 @@ canvas{
 
 .timeline {
   position: relative;
+  /* Date column width; pill is right-aligned inside it */
+  --timeline-date-col: 180px;
+  /* Equal distance: pill column end → line center → company block start (margin = 2× gutter) */
+  --timeline-gutter: 36px;
+  --timeline-line-x: calc(var(--timeline-date-col) + var(--timeline-gutter));
+  /* Horizontal bridge: trim from pill side and company side */
+  --timeline-bridge-inset: 18px;
 }
 
 .timeline::before {
@@ -271,7 +278,7 @@ canvas{
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 170px;
+  left: calc(var(--timeline-line-x) - 1px);
   width: 2px;
   background: linear-gradient(
     180deg,
@@ -298,6 +305,30 @@ canvas{
 .timeline-item img {
   height: 48px;
   width: 48px;
+}
+
+/* Vertically center date pill with company info (taller column sets row height). */
+.timeline-item > .d-flex {
+  align-items: center;
+}
+
+/* Horizontal bridge: 2px solid, matches vertical track tone without gradient. */
+.timeline-item > .d-flex::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(var(--timeline-date-col) + var(--timeline-bridge-inset));
+  width: calc(var(--timeline-gutter) * 2 - 2 * var(--timeline-bridge-inset));
+  height: 2px;
+  transform: translateY(-50%);
+  background: rgba(85, 129, 237, 0.45);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.timeline-item.active > .d-flex::after {
+  display: none;
 }
 
 @keyframes timeline-highlight-in {
@@ -329,7 +360,7 @@ canvas{
   height: 100%;
   background-color: transparent;
   position: absolute;
-  left: 171px;
+  left: var(--timeline-line-x);
   top: 0;
   bottom: 0;
   transform: translateX(-50%);
@@ -367,24 +398,67 @@ canvas{
   }
 }
 
+/* Fixed-width column so the pill doesn’t shift the flex track; width matches --timeline-date-col */
+.timeline-date-slot {
+  flex: 0 0 var(--timeline-date-col);
+  width: var(--timeline-date-col);
+  max-width: var(--timeline-date-col);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .timeline-date {
-  width: 180px;
-  padding: 10px;
-  border-radius: 5px;
+  width: max-content;
+  max-width: 100%;
+  flex-shrink: 0;
+  padding: 3px 11px;
+  border-radius: 999px;
   text-align: left;
+  white-space: nowrap;
   font-weight: 400;
   color: #d0d9e9;
   position: relative;
-  font-size: 14px;
-  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.35;
+  margin-top: 0;
   font-family: var(--font-secondary);
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  /* Pill fill + same multi-stop rose→blue border language as brand accents / logo-adjacent UI */
+  background:
+    linear-gradient(var(--color-secondary), var(--color-secondary)) padding-box,
+    linear-gradient(
+        270deg,
+        #d46678 17.15%,
+        #c46a90 38.31%,
+        #a571bd 60.21%,
+        #5481ed 86.94%
+      )
+      border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Same dimensions as default .timeline-date; colors like job-details .date-range */
+.timeline-item.active .timeline-date {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.35;
+  padding: 3px 11px;
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(85, 129, 237, 0.35);
+  background: rgba(85, 129, 237, 0.14);
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
 }
 
 .timeline-content {
   padding: 10px;
   border-radius: 5px;
   flex-grow: 1;
-  margin-left: 140px;
+  /* 2× gutter: line sits midway between column end (180px) and content start; overrides .ms-3 !important */
+  margin-left: calc(var(--timeline-gutter) * 2) !important;
 }
 
 .timeline-content .company-pos {
