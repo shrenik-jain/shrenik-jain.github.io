@@ -145,6 +145,7 @@
 
     <!-- ======= End Page Header ======= -->
     <div class="page-header d-flex align-items-center">
+      <div class="page-header-waves" aria-hidden="true"></div>
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
@@ -163,63 +164,54 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        <div class="row gy-4 justify-content-center personal-info">
-
-          <div class="col-lg-2">
-            <div class="info-item d-flex">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h4>Location</h4>
-                <p>
-                  <a href="https://google.com/maps/?q=San%20Diego%2C%20California%2C%20United%20States">San Francisco, CA</a>
-                </p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-2">
-            <div class="info-item d-flex">
-              <i class="bi bi-calendar flex-shrink-0"></i>
-              <div>
-                <h4>Meeting</h4>
-                <p>
-                  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">Schedule Time</a>
-                </p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-2">
-            <div class="info-item d-flex">
-              <i class="bi bi-phone flex-shrink-0"></i>
-              <div>
-                <h4>Mobile</h4>
-                <p>
-                  <a href="tel:+18582411904">+1 (858) 241-1904</a>
-                </p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-2">
-            <div class="info-item d-flex">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h4>Email</h4>
-                <p>
-                  <a href="mailto:shrenikkjain81@gmail.com">shrenikkjain81@gmail.com</a>
-                </p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <div class="row justify-content-center mt-4">
-
+        <div class="row justify-content-center">
           <div class="col-lg-9">
-            <form action="https://formspree.io/f/meqnqnpe" method="post" role="form" class="php-email-form">
-              <div class="row">
+            <div class="personal-info contact-channels contact-channels-grid">
+
+              <div class="info-item contact-card h-100">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <div class="contact-card__body">
+                  <h4>Location</h4>
+                  <p>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=San%20Francisco%2C%20CA">San Francisco, CA</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item contact-card h-100">
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+                <div class="contact-card__body">
+                  <h4>Meeting</h4>
+                  <p>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">Schedule Time</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item contact-card h-100">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <div class="contact-card__body">
+                  <h4>Phone</h4>
+                  <p>
+                    <a href="tel:+18582411904">+1 (858) 241-1904</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item contact-card h-100">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                <div class="contact-card__body">
+                  <h4>Email</h4>
+                  <p>
+                    <a href="mailto:shrenikkjain81@gmail.com">shrenikkjain81@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <form action="https://formspree.io/f/meqnqnpe" method="post" role="form" class="php-email-form mt-4">
+              <div class="row gx-4">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
@@ -238,9 +230,9 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div style="margin-top: 40px;" class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center mt-4"><button type="submit"><span class="btn-cta-text">Send Message</span></button></div>
             </form>
-          </div><!-- End Contact Form -->
+          </div><!-- End col-lg-9: cards + form -->
 
         </div>
 
@@ -290,7 +282,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><span class="btn-cta-text"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></span></a>
 
   <div id="preloader">
     <div class="line"></div>
@@ -308,6 +300,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-waves.js"></script>
 
 </body>
 

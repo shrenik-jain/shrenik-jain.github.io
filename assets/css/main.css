@@ -25,11 +25,55 @@
   --color-primary: #ef6603;
   --color-secondary: #161718;
   --color-outline: #5481ED;
+  /* Buttons / scroll-top only — multi-stop rose → blue */
+  --gradient-cta-premium: linear-gradient(
+    122deg,
+    #e093a1 0%,
+    #d489a5 13%,
+    #c280b2 28%,
+    #aa88c8 45%,
+    #8d90dc 62%,
+    #7294eb 80%,
+    #5c87ee 94%,
+    #5481ed 100%
+  );
 }
 
 /* Smooth scroll behavior */
 :root {
   scroll-behavior: smooth;
+}
+
+/* Page shell — flat page bg on html; header uses a separate scrim so scroll text doesn’t bleed through */
+:root {
+  --page-bg-base: #000;
+  --header-scrim: rgba(2, 2, 4, 0.82);
+}
+
+/* Footer — premium charcoal stack */
+:root {
+  --footer-bg-base: #060606;
+  --footer-bg: linear-gradient(
+    180deg,
+    #161616 0%,
+    #0d0d0f 34%,
+    #080809 68%,
+    #030303 100%
+  );
+  --footer-bg-sheen: radial-gradient(
+    ellipse 95% 70% at 50% -35%,
+    rgba(255, 255, 255, 0.055),
+    transparent 52%
+  );
+}
+
+/*
+ * Solid background on html (not body) so the fixed navbar and page share one canvas —
+ * avoids the common 1px hairline between fixed-top and body background.
+ */
+html {
+  background-color: var(--page-bg-base);
+  min-height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -38,7 +82,11 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
-  background-color: #000;
+  margin: 0;
+  background-color: transparent;
+  background-image: none;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-y: auto;
 }
 
@@ -679,6 +727,21 @@ h5 {
   padding: 120px 0 80px 0;
   min-height: 30vh;
   position: relative;
+  overflow: hidden;
+}
+
+.page-header-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-header > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .page-header h2 {
@@ -711,22 +774,53 @@ h5 {
   font-family: var(--font-secondary);
   font-weight: 600;
   font-size: 14px;
-  color: #fff;
   display: inline-block;
   padding: 14px 30px;
   border-radius: 12px;
   letter-spacing: 1px;
-  transition: 0.3s;
   border: none;
   outline: 2px solid transparent;
-  background: linear-gradient(270deg, #D46678 15.15%, #C46A90 30.31%, #A571BD  45.21%, #5481ED 76.94%);
+  background: var(--gradient-cta-premium);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 3px 14px rgba(100, 115, 200, 0.22),
+    0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
-.page-header .cta-btn:hover {
+.page-header .cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   background: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.page-header .cta-btn .btn-cta-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  transition: color 0.3s ease 0.12s;
+}
+
+.page-header .cta-btn:hover::before,
+.page-header .cta-btn:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.page-header .cta-btn:hover .btn-cta-text,
+.page-header .cta-btn:focus-visible .btn-cta-text {
   color: #333333;
-  font-weight: 600;
-  border-radius: 12px;
+  transition-delay: 0.18s;
+}
+
+.page-header .cta-btn:hover,
+.page-header .cta-btn:focus-visible {
   outline: 2px solid var(--Gradient, var(--color-outline));
 }
 
@@ -748,8 +842,7 @@ h5 {
 # Scroll top button
 --------------------------------------------------------------*/
 .scroll-top {
-  /* background: linear-gradient(240deg, #D46678 17.15%, #C46A90 38.31%, #A571BD  40.21%, #5481ED 80.94%); */
-  background: linear-gradient(135deg, #D46678 0%, #C46A90 25%, #A571BD 50%, #5481ED 85%);
+  background: var(--gradient-cta-premium);
   position: fixed;
   visibility: hidden;
   opacity: 0;
@@ -759,20 +852,59 @@ h5 {
   width: 44px;
   height: 44px;
   border-radius: 50px;
-  transition: all 0.4s;
+  transition:
+    visibility 0.4s,
+    opacity 0.4s,
+    bottom 0.4s,
+    outline 0.35s ease;
   border: none;
   outline: 2px solid transparent;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.scroll-top i {
+.scroll-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.scroll-top .btn-cta-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  transition: color 0.3s ease 0.12s;
+}
+
+.scroll-top .btn-cta-text i {
   font-size: 24px;
-  color: #333333;
   line-height: 0;
 }
 
-.scroll-top:hover {
-  background: #fff;
+.scroll-top:hover::before,
+.scroll-top:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.scroll-top:hover .btn-cta-text,
+.scroll-top:focus-visible .btn-cta-text {
   color: #333333;
+  transition-delay: 0.18s;
+}
+
+.scroll-top:hover,
+.scroll-top:focus-visible {
   outline: 2px solid var(--Gradient, var(--color-outline));
 }
 
@@ -893,12 +1025,32 @@ h5 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+#header.header,
 .header {
-  transition: all 0.5s;
-  z-index: 997;
+  transition: background-color 0.25s ease, backdrop-filter 0.25s ease;
+  z-index: 1030;
   padding: 30px 0;
-  background-color: #000;
+  /* Solid-enough tint + blur so hero/body copy doesn’t show through while scrolling */
+  background: var(--header-scrim);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 0;
+  outline: none;
+  box-shadow: none;
 }
+
+@supports not (backdrop-filter: blur(1px)) {
+  #header.header,
+  .header {
+    background: rgba(2, 2, 4, 0.94);
+  }
+}
+
+/*
+ * Do NOT put transform/backface on .header for all breakpoints — it creates a containing
+ * block and breaks position:fixed on the mobile slide-out .navbar (menu clips / unreadable).
+ * Desktop-only GPU hint is below next to the wide nav rules.
+ */
 
 .header .logo {
   transition: 0.3s;
@@ -1178,6 +1330,13 @@ h5 {
 # Desktop Navigation
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
+  /* GPU layer only on desktop — avoids breaking mobile fixed slide-out nav (see .header comment) */
+  #header.header,
+  .header {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+
   /* Full-width bar: nav stays centered; social links align to the viewport edge (with padding) */
   .header .container-fluid {
     display: grid !important;
@@ -1388,6 +1547,10 @@ h5 {
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
+  .header .header-social-links {
+    display: none !important;
+  }
+
   .navbar {
     position: fixed;
     top: 0;
@@ -1404,7 +1567,7 @@ h5 {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.96);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -1419,8 +1582,8 @@ h5 {
     font-family: var(--font-primary);
     font-size: 13px;
     text-transform: uppercase;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
     letter-spacing: 1px;
     white-space: nowrap;
     transition: 0.3s;
@@ -2195,13 +2358,14 @@ h5 {
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
+.contact .info-item + .info-item {
   margin-top: 0;
 }
 
+/* Default (legacy) horizontal info rows */
 .contact .info-item i {
   font-size: 20px;
-  color: #5581ED;
+  color: #5581ed;
   float: left;
   width: 44px;
   height: 44px;
@@ -2232,9 +2396,128 @@ h5 {
 }
 
 .contact .info-item:hover i {
-  outline: 2px solid var(--Gradient, #D46678);
+  outline: 2px solid var(--Gradient, #d46678);
   color: #fff;
   transition: 0.1s;
+}
+
+/* Contact page — card grid; CSS Grid fills col-lg-9 (flex columns + nowrap links could shrink-wrap the row left) */
+.contact .personal-info.contact-channels.contact-channels-grid {
+  display: grid;
+  width: 100%;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .contact .personal-info.contact-channels.contact-channels-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .contact .personal-info.contact-channels.contact-channels-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.contact .contact-channels .info-item.contact-card {
+  float: none;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.85rem 0.45rem 0.75rem;
+  margin: 0;
+  max-width: 100%;
+  background: rgba(10, 12, 20, 0.92);
+  border: 1px solid rgba(132, 162, 224, 0.1);
+  border-radius: 11px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+/* Icon shell + glyph gradient — aligned with .cert-card__icon / .cert-card__icon i::before */
+.contact .contact-channels .info-item.contact-card i {
+  float: none;
+  margin: 0 0 0.5rem 0;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  color: transparent;
+  background: rgba(85, 129, 237, 0.1);
+  border: 1px solid rgba(132, 162, 224, 0.22);
+  border-radius: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.contact .contact-channels .info-item.contact-card i::before {
+  background: linear-gradient(200deg, #e895a4 12%, #c46a90 42%, #6b94f2 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact .contact-channels .info-item.contact-card:hover {
+    border-color: rgba(84, 129, 237, 0.3);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .contact .contact-channels .info-item.contact-card:hover i {
+    outline: none;
+    background: rgba(85, 129, 237, 0.16);
+    border-color: rgba(132, 162, 224, 0.35);
+    box-shadow: 0 2px 12px rgba(84, 129, 237, 0.18);
+  }
+}
+
+.contact .contact-channels .info-item.contact-card h4 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(218, 226, 240, 0.68);
+  margin-bottom: 0.35rem;
+}
+
+.contact .contact-channels .info-item.contact-card p {
+  margin-bottom: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.contact .contact-channels .info-item.contact-card p a {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.contact .contact-channels .contact-card__body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact .contact-channels .info-item.contact-card {
+    transition: none;
+  }
+
+  .contact .contact-channels .info-item.contact-card:hover {
+    transform: none;
+  }
 }
 
 .contact .php-email-form {
@@ -2289,54 +2572,119 @@ h5 {
 
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: none;
   font-size: 14px;
-  background-color: var(--color-secondary);
-  border: 1px solid #2e3133;
+  background-color: rgba(22, 24, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(248, 250, 255, 0.96);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.contact .php-email-form input::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: rgba(232, 236, 248, 0.45);
+  opacity: 1;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+.contact .php-email-form input:hover,
+.contact .php-email-form textarea:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(26, 28, 36, 0.98);
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: rgba(84, 129, 237, 0.45);
+  background-color: rgba(18, 20, 28, 0.98);
+  box-shadow: 0 0 0 2px rgba(84, 129, 237, 0.2);
+  outline: none;
   color: #fff;
 }
 
 .contact .php-email-form input {
-  height: 44px;
+  height: 46px;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 .contact .php-email-form textarea {
-  padding: 10px 12px;
+  padding: 12px 14px;
+  min-height: 140px;
+  line-height: 1.5;
+  resize: vertical;
 }
 
+/* Match .page-header .cta-btn — white fill sweeps in from the left on hover */
 .contact .php-email-form button[type=submit] {
-  background: linear-gradient(270deg, #D46678 17.15%, #C46A90 38.31%, #A571BD  60.21%, #5481ED 86.94%);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 12px;
+  letter-spacing: 1px;
   border: none;
   outline: 2px solid transparent;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 12px;
+  background: var(--gradient-cta-premium);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+  box-shadow:
+    0 3px 14px rgba(100, 115, 200, 0.24),
+    0 8px 26px rgba(0, 0, 0, 0.2);
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type=submit]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   background: #fff;
-  color: #333333;
-  font-weight: 600;
-  outline: 2px solid var(--Gradient, var(--color-outline));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
 }
 
-.contact .php-email-form ::placeholder {
-  color: #fff; 
-  opacity: 0.7;
-  font-family: var(--font-secondary);
-  font-weight: 100; 
-}
-
-.contact .php-email-form :-ms-input-placeholder { 
+.contact .php-email-form button[type=submit] .btn-cta-text {
+  position: relative;
+  z-index: 1;
   color: #fff;
-  font-family: var(--font-secondary); 
+  transition: color 0.3s ease 0.12s;
+}
+
+.contact .php-email-form button[type=submit]:hover::before,
+.contact .php-email-form button[type=submit]:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.contact .php-email-form button[type=submit]:hover .btn-cta-text,
+.contact .php-email-form button[type=submit]:focus-visible .btn-cta-text {
+  color: #333333;
+  transition-delay: 0.18s;
+}
+
+.contact .php-email-form button[type=submit]:hover,
+.contact .php-email-form button[type=submit]:focus-visible {
+  outline: 2px solid var(--Gradient, var(--color-outline));
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.contact .php-email-form :-ms-input-placeholder {
+  color: rgba(232, 236, 248, 0.45);
+  font-family: var(--font-secondary);
 }
 
 .contact .php-email-form ::-ms-input-placeholder {
-  color: #fff;
-  font-family: var(--font-secondary); 
+  color: rgba(232, 236, 248, 0.45);
+  font-family: var(--font-secondary);
 }
 
 
@@ -2366,7 +2714,7 @@ h5 {
 }
 
 @media (min-width: 1280px) {
-  .contact .personal-info {
+  .contact .personal-info:not(.contact-channels) {
     margin-left: -58px;
   }
 }
@@ -2378,8 +2726,7 @@ h5 {
   margin-top: 30px;
   width: 100%;
   min-height: 30vh;
-  background: #000;
-  background-size: cover;
+  background: transparent;
   position: relative;
   padding: 140px 0 60px 0;
 }
@@ -2445,20 +2792,67 @@ h5 {
   border-radius: 12px;
   letter-spacing: 1px;
   text-transform: capitalize;
-  transition: 0.2s;
-  color: #fff;
-  background: linear-gradient(115deg, #5481ED 35.15%, #A571BD 48.31%, #C46A90 75.21%, #D46678 90.94%);
+  background: var(--gradient-cta-premium);
   font-weight: 600;
   border: none;
   outline: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 3px 14px rgba(100, 115, 200, 0.22),
+    0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
-.hero .btn-get-started:hover {
-  color: #333333;
-  font-weight: 600;
-  border-radius: 12px;
+.hero .btn-get-started::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   background: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.hero .btn-get-started .btn-cta-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  transition: color 0.3s ease 0.12s;
+}
+
+.hero .btn-get-started:hover::before,
+.hero .btn-get-started:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.hero .btn-get-started:hover .btn-cta-text,
+.hero .btn-get-started:focus-visible .btn-cta-text {
+  color: #333333;
+  transition-delay: 0.18s;
+}
+
+.hero .btn-get-started:hover,
+.hero .btn-get-started:focus-visible {
   outline: 2px solid var(--Gradient, var(--color-outline));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-header .cta-btn::before,
+  .hero .btn-get-started::before,
+  .contact .php-email-form button[type=submit]::before,
+  .scroll-top::before {
+    transition: none;
+  }
+
+  .page-header .cta-btn .btn-cta-text,
+  .hero .btn-get-started .btn-cta-text,
+  .contact .php-email-form button[type=submit] .btn-cta-text,
+  .scroll-top .btn-cta-text {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2474,13 +2868,17 @@ h5 {
   margin-top: 150px;
   padding: 30px 100px;
   font-size: 14px;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
-  background-color: #071113;
+  background-color: var(--footer-bg-base);
+  background-image: var(--footer-bg-sheen), var(--footer-bg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-top: none;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
 }
 
 .footer .copyright {
   font-family: var(--font-header);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 30px;
   font-weight: 700;
   text-align: center;
@@ -2498,6 +2896,7 @@ h5 {
   font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 300;
+  color: rgba(210, 210, 212, 0.82);
   text-align: center;
   padding-top: 20px;
 }
@@ -2506,7 +2905,7 @@ h5 {
   padding-top: 6px;
   text-align: center;
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(218, 218, 220, 0.76);
 }
 
 .footer .header-social-links a {
@@ -2629,6 +3028,12 @@ body.page-home {
   /* Fixed header height estimate + same gutter as footer for even top/bottom rhythm */
   --home-header-clearance: 88px;
   --home-section-gap: 72px;
+  /*
+   * Space before footer lives INSIDE #hero padding-bottom so the #dots canvas (100% height)
+   * paints through it. Footer margin-top is 0 — margin sits outside the hero and showed
+   * as un-animated body background between sections.
+   */
+  --home-hero-footer-breathing: calc(var(--home-section-gap) * 1.85);
 
   min-height: 100vh;
   min-height: 100dvh;
@@ -2642,7 +3047,7 @@ body.page-home #main {
 }
 
 body.page-home .footer {
-  margin-top: var(--home-section-gap);
+  margin-top: 0;
   flex-shrink: 0;
 }
 
@@ -2656,7 +3061,7 @@ body.page-home #hero.hero {
   min-height: 0;
   width: 100%;
   padding-top: calc(var(--home-header-clearance) + var(--home-section-gap));
-  padding-bottom: var(--home-section-gap);
+  padding-bottom: var(--home-hero-footer-breathing);
   box-sizing: border-box;
 }
 
@@ -2677,7 +3082,7 @@ body.page-home #hero.hero {
 /* Homepage: avoid huge tablet footer gap; keep moderate spacing vs other pages */
 @media all and (min-device-height: 1180px) and (max-device-height: 1368px) and (min-device-width: 820px) and (max-device-width: 1024px) {
   body.page-home .footer {
-    margin-top: var(--home-section-gap);
+    margin-top: 0;
     min-height: 0;
   }
 
