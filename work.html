@@ -91,10 +91,21 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <!-- <i class="bi bi-house"></i>
-        <h1>Personal Website</h1> -->
+      <a href="index.html" class="logo d-flex align-items-center gap-2 me-auto me-lg-0" aria-label="Shrenik Jain — Home">
+        <span class="header-brand" aria-hidden="true">
+          <span class="header-brand-flip">
+            <span class="header-brand-flip-inner">
+              <span class="header-brand-face header-brand-face--front">
+                <span class="header-brand-name">
+                  <span class="header-brand-name__word">shrenik</span><span class="header-brand-name__sep">.</span><span class="header-brand-name__word header-brand-name__tld">jain</span>
+                </span>
+              </span>
+              <span class="header-brand-face header-brand-face--back">
+                <img class="header-brand-logo" src="assets/img/favicons/android-chrome-192x192.png" alt="" width="44" height="44" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -135,7 +146,7 @@
     <!-- Desktop row -->
     <div class="container my-5 deskrow">
         <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
-        <div class="timeline-mode-tabs py-4 mb-4" role="tablist" aria-label="Work experience categories">
+        <div class="timeline-mode-tabs" role="tablist" aria-label="Work experience categories">
             <button type="button" id="employmentBtn" class="employmentbtn active">Employment</button>
             <button type="button" id="researchBtn" class="researchbtn">Research</button>
             <button type="button" id="consultingBtn" class="consultbtn">Consultant</button>
@@ -148,7 +159,7 @@
                 <div id="employmentTimeline" class="timeline">
                     <div class="timeline-item active" onclick="showJobDetails('employment', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jun 2025 - Present</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jun 2025 - Present</div></div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -166,7 +177,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('employment', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jul 2022 - Aug 2024</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jul 2022 - Aug 2024</div></div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -184,7 +195,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('employment', 3)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jan 2022 - Jun 2022</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jan 2022 - Jun 2022</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -202,7 +213,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('employment', 4)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Feb 2021 - Dec 2021</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Feb 2021 - Dec 2021</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -223,7 +234,7 @@
                 <div id="researchTimeline" class="timeline d-none">
                     <div class="timeline-item" onclick="showJobDetails('research', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2024 - Present</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Sep 2024 - Mar 2026</div></div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -241,7 +252,7 @@
 
                     <!-- <div class="timeline-item active" onclick="showJobDetails('research', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2024 - Dec 2024</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Sep 2024 - Dec 2024</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -259,7 +270,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('research', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jul 2021 - Dec 2021</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jul 2021 - Dec 2021</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -280,7 +291,7 @@
                 <div id="consultingTimeline" class="timeline d-none">
                     <div class="timeline-item" onclick="showJobDetails('consulting', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Aug 2023 - Mar 2024</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Aug 2023 - Mar 2024</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -298,7 +309,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('consulting', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2021 - Nov 2021</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Sep 2021 - Nov 2021</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -316,7 +327,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('consulting', 3)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jul 2020 - Oct 2020</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jul 2020 - Oct 2020</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -334,7 +345,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('consulting', 4)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2019 - Nov 2019</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Sep 2019 - Nov 2019</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -463,7 +474,7 @@
                             </div>
                             </div>
                         <div class="date-range rounded-pill px-3 py-1">
-                            <span>Sep 2024 - Present</span>
+                            <span>Sep 2024 - Mar 2026</span>
                         </div>
                     </div>
                     <p class="mb-2 job-desc-pos">Applied Research Engineer</p>
@@ -601,7 +612,7 @@
     <!-- Mobile row -->
     <div class="container my-5 mobrow">
         <h2 class="text-left fw-bold mb-4 work-title">Work Experience</h2>
-        <div class="timeline-mode-tabs py-4 mb-4" role="tablist" aria-label="Work experience categories">
+        <div class="timeline-mode-tabs" role="tablist" aria-label="Work experience categories">
             <button type="button" id="employmentBtnmob" class="employmentbtnmob active">Employment</button>
             <button type="button" id="researchBtnmob" class="researchbtnmob">Research</button>
             <button type="button" id="consultingBtnmob" class="consultbtnmob">Consultant</button>
@@ -731,7 +742,7 @@
                                     <img src="assets/img/logos/stml.png" class="company-logo" alt="stml logo">
                                 </div>
                                 <div class="header-info">
-                                    <h2>Sep 2024 - Present</h2>
+                                    <h2>Sep 2024 - Mar 2026</h2>
                                     <p>Applied Research Engineer</p>
                                     <h5>Spatiotemporal Lab</h5>
                                     <a title="roseyu.com" href="https://roseyu.com/" class="view-website">Visit website &#8599;</a>
@@ -928,7 +939,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><span class="btn-cta-text"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></span></a>
 
   <div id="preloader">
     <div class="line"></div>

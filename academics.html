@@ -91,10 +91,21 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <!-- <img src="assets/img/icons/logo" alt=""> -->
-        <!-- <i class="bi bi-house"></i> -->
-        <!-- <h1>Personal Website</h1> -->
+      <a href="index.html" class="logo d-flex align-items-center gap-2 me-auto me-lg-0" aria-label="Shrenik Jain — Home">
+        <span class="header-brand" aria-hidden="true">
+          <span class="header-brand-flip">
+            <span class="header-brand-flip-inner">
+              <span class="header-brand-face header-brand-face--front">
+                <span class="header-brand-name">
+                  <span class="header-brand-name__word">shrenik</span><span class="header-brand-name__sep">.</span><span class="header-brand-name__word header-brand-name__tld">jain</span>
+                </span>
+              </span>
+              <span class="header-brand-face header-brand-face--back">
+                <img class="header-brand-logo" src="assets/img/favicons/android-chrome-192x192.png" alt="" width="44" height="44" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -147,12 +158,12 @@
 
   </main><!- - End #main - -> -->
 
-  <main id="main" data-aos="fade" data-aos-delay="200"> 
+  <main id="main" data-aos="fade" data-aos-delay="200">
 
     <!-- Desktop row -->
     <div class="container my-5 deskrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
-        <div class="timeline-mode-tabs py-4 mb-4" role="tablist" aria-label="Academic sections">
+        <div class="timeline-mode-tabs" role="tablist" aria-label="Academic sections">
             <button type="button" id="schoolBtn" class="schoolbtn active">Education</button>
             <button type="button" id="cocurricularBtn" class="cocurricularbtn">Leadership</button>
         </div>
@@ -163,7 +174,7 @@
 
                     <div class="timeline-item active" onclick="showJobDetails('school', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Sep 2024 - Present</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Sep 2024 - Mar 2026</div></div>
                             <div class="timeline-bar"></div> <!-- Line next to date -->
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -181,7 +192,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('school', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Aug 2018 - May 2022</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Aug 2018 - May 2022</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -204,7 +215,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('cocurricular', 1)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Oct 2024 - Jun 2025</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Oct 2024 - Jun 2025</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -222,7 +233,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('cocurricular', 2)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Jun 2021 - Dec 2021</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Jun 2021 - Dec 2021</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -240,7 +251,7 @@
 
                     <div class="timeline-item" onclick="showJobDetails('cocurricular', 3)">
                         <div class="d-flex position-relative">
-                            <div class="timeline-date">Aug 2018 - Nov 2018</div>
+                            <div class="timeline-date-slot"><div class="timeline-date">Aug 2018 - Nov 2018</div></div>
                             <div class="timeline-bar"></div> 
                             <div class="timeline-content ms-3">
                                 <div class="d-flex align-items-start">
@@ -270,7 +281,7 @@
                                 </div>
                             </div>
                         <div class="date-range rounded-pill px-3 py-1">
-                            <span>Sep 2024 - Present</span>
+                            <span>Sep 2024 - Mar 2026</span>
                         </div>
                     </div>
                     <p class="mb-2 job-desc-pos">Electrical and Computer Engineering</p>
@@ -382,7 +393,7 @@
                             <img src="assets/img/logos/edc.png" alt="edc logo" class="me-2"> 
                             <div>
                                 <h5 class="company-name">Entrepreneurship Dev Cell</h5> 
-                                <a title="edcviit.com" href="https://edcviit.com/" class="view-website">Visit website &#8599;</a>
+                                <a title="edcviit.com" href="https://www.viit.ac.in/campus-life/entrepreneurship-development-cell1" class="view-website">Visit website &#8599;</a>
                             </div>
                         </div>
                         <div class="date-range rounded-pill px-3 py-1">
@@ -406,7 +417,7 @@
     <!-- Mobile row -->
     <div class="container my-5 mobrow">
         <h2 class="text-left fw-bold mb-4 work-title">Academics</h2>
-        <div class="timeline-mode-tabs py-4 mb-4" role="tablist" aria-label="Academic sections">
+        <div class="timeline-mode-tabs" role="tablist" aria-label="Academic sections">
             <button type="button" id="schoolBtnmob" class="schoolbtnmob active">Education</button>
             <button type="button" id="cocurricularBtnmob" class="cocurricularbtnmob">Leadership</button>
         </div>
@@ -423,7 +434,7 @@
                                     <img src="assets/img/logos/ucsd.png" class="company-logo" alt="ucsd logo">
                                 </div>
                                 <div class="header-info">
-                                    <h2>Sep 2024 - Present</h2>
+                                    <h2>Sep 2024 - Mar 2026</h2>
                                     <p>UC San Diego</p>
                                     <h5>Master of Science</h5>
                                     <a title="ucsd.edu" href="https://ucsd.edu/" class="view-website">Visit website &#8599;</a>
@@ -561,7 +572,7 @@
                                     <h2>Aug 2018 - Nov 2018</h2>
                                     <p>Member, Sponsorship Team</p>
                                     <h5>Entrepreneurship Dev Cell</h5>
-                                    <a title="edcviit.com" href="https://edcviit.com/" class="view-website">Visit website &#8599;</a>
+                                    <a title="edcviit.com" href="https://www.viit.ac.in/campus-life/entrepreneurship-development-cell1" class="view-website">Visit website &#8599;</a>
                                 </div>
                             </div>
                             <div class="work-section-content">
@@ -604,17 +615,14 @@
 
     <!-- ======= Certifications ======= -->
     <section id="certifications" class="certifications-section" aria-labelledby="certifications-heading">
-      <div class="container certifications-section__inner">
-        <header class="certifications-section__header text-center text-lg-start mx-auto ms-lg-0 me-lg-0">
-          <h2 id="certifications-heading" class="certifications-section__title">Certifications</h2>
-          <p class="certifications-section__lede">Selected courses and credentials in ML, NLP, LLM tooling, and AI foundations.</p>
-        </header>
+      <div class="container mb-5">
+        <h2 id="certifications-heading" class="text-left fw-bold mb-4 work-title">Certifications</h2>
 
         <div class="row g-3 g-md-4 cert-grid">
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-translate"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Advanced NLP</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">UMass Amherst</span></p>
@@ -624,7 +632,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="50">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-layers-half"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Deep Learning Specialization</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Coursera</span></p>
@@ -634,7 +642,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-gpu-card"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">TensorFlow in Practice</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Coursera</span></p>
@@ -644,7 +652,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-database"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">LangChain For Your Data</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Deeplearning.ai</span></p>
@@ -654,7 +662,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="50">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-stars"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">LangChain For LLM Apps</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Deeplearning.ai</span></p>
@@ -664,7 +672,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-motherboard"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Artificial Intelligence</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Dell Tech</span></p>
@@ -674,7 +682,7 @@
 
           <!-- <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">AI Classroom</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Microsoft</span></p>
@@ -684,7 +692,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="50">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-graph-up"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Introduction to Machine Learning</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Kaggle</span></p>
@@ -694,7 +702,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-sliders2"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Intermediate Machine Learning</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Kaggle</span></p>
@@ -704,7 +712,7 @@
 
           <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="0">
             <article class="cert-card h-100">
-              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-award"></i></div>
+              <div class="cert-card__icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div>
               <div class="cert-card__body">
                 <h3 class="cert-card__title">Introduction to Deep Learning</h3>
                 <p class="cert-card__issuer"><span class="cert-card__issuer-pill">Kaggle</span></p>
@@ -755,7 +763,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><span class="btn-cta-text"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></span></a>
 
   <div id="preloader">
     <div class="line"></div>

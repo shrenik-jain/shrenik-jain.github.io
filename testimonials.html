@@ -91,10 +91,21 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <!-- <i class="bi bi-house"></i>
-        <h1>Personal Website</h1> -->
+      <a href="index.html" class="logo d-flex align-items-center gap-2 me-auto me-lg-0" aria-label="Shrenik Jain — Home">
+        <span class="header-brand" aria-hidden="true">
+          <span class="header-brand-flip">
+            <span class="header-brand-flip-inner">
+              <span class="header-brand-face header-brand-face--front">
+                <span class="header-brand-name">
+                  <span class="header-brand-name__word">shrenik</span><span class="header-brand-name__sep">.</span><span class="header-brand-name__word header-brand-name__tld">jain</span>
+                </span>
+              </span>
+              <span class="header-brand-face header-brand-face--back">
+                <img class="header-brand-logo" src="assets/img/favicons/android-chrome-192x192.png" alt="" width="44" height="44" decoding="async" />
+              </span>
+            </span>
+          </span>
+        </span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -134,12 +145,13 @@
 
     <!-- ======= End Page Header ======= -->
     <div class="page-header d-flex align-items-center">
+      <div class="page-header-waves" aria-hidden="true"></div>
       <div class="container position-relative">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
             <h2>Testaments</h2>
             <p>A few words from people I've worked with, highlighting the outcomes I deliver and the trust I build along the way.</p>
-            <a class="cta-btn" href="https://www.linkedin.com/in/shrenik-jain9">Share Feedback</a>
+            <a class="cta-btn" href="https://www.linkedin.com/in/shrenik-jain9"><span class="btn-cta-text">Share Feedback</span></a>
           </div>
         </div>
       </div>
@@ -256,7 +268,7 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><span class="btn-cta-text"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></span></a>
 
   <div id="preloader">
     <div class="line"></div>
@@ -274,6 +286,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-waves.js"></script>
 
 </body>
 
