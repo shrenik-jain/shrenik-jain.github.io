@@ -1,5 +1,5 @@
 /**
- * Home hero: wire mesh warps from the cursor + soft ripples + pulsing node glows + subtle shooting stars.
+ * Home hero: wire mesh warps from the cursor + pulsing node glows + shooting stars.
  */
 (function () {
   var container = document.getElementById("dots");
@@ -27,7 +27,7 @@
   var rows = 0;
   var sparkles = [];
   var shootingStars = [];
-  var nextShootingStarIn = 90;
+  var nextShootingStarIn = 105;
 
   var cx = 0;
   var cy = 0;
@@ -93,7 +93,7 @@
     rows = Math.max(5, Math.min(32, Math.floor(h / 38)));
     initSparkles();
     shootingStars.length = 0;
-    nextShootingStarIn = 45 + Math.floor(Math.random() * 75);
+    nextShootingStarIn = 55 + Math.floor(Math.random() * 78);
     tx = cx = w * 0.5;
     ty = cy = h * 0.45;
   }
@@ -119,8 +119,8 @@
       vx: vx,
       vy: vy,
       age: 0,
-      maxAge: 140 + Math.floor(Math.random() * 100),
-      tailPx: 68 + Math.random() * 78,
+      maxAge: 160 + Math.floor(Math.random() * 120),
+      tailPx: 150 + Math.random() * 185,
     });
   }
 
@@ -128,7 +128,7 @@
     nextShootingStarIn--;
     if (nextShootingStarIn <= 0 && shootingStars.length < 3) {
       spawnShootingStar();
-      nextShootingStarIn = 40 + Math.floor(Math.random() * 85);
+      nextShootingStarIn = 52 + Math.floor(Math.random() * 88);
     }
     var i;
     var s;
@@ -153,6 +153,22 @@
     var sp;
     var nx;
     var ny;
+    var segs;
+    var j;
+    var t0;
+    var t1;
+    var t;
+    var taper;
+    var lw;
+    var fade;
+    var x0;
+    var y0;
+    var x1;
+    var y1;
+    var headW;
+    var gCol;
+    var bCol;
+    var aCol;
 
     ctx.globalCompositeOperation = "lighter";
 
@@ -168,28 +184,57 @@
       ax = s.x - nx * s.tailPx;
       ay = s.y - ny * s.tailPx;
 
-      alpha = 0.13 * life;
+      alpha = 0.17 * life;
+      headW = 2.05 + 4.1 * life;
+      segs = 42;
 
-      var g = ctx.createLinearGradient(s.x, s.y, ax, ay);
-      g.addColorStop(0, "rgba(255, 255, 255, " + (alpha * 1.15) + ")");
-      g.addColorStop(0.12, "rgba(220, 236, 255, " + (alpha * 0.92) + ")");
-      g.addColorStop(0.45, "rgba(140, 180, 250, " + (alpha * 0.45) + ")");
-      g.addColorStop(1, "rgba(84, 129, 237, 0)");
-
-      ctx.strokeStyle = g;
-      ctx.lineWidth = 1.55;
       ctx.lineCap = "round";
-      ctx.beginPath();
-      ctx.moveTo(s.x, s.y);
-      ctx.lineTo(ax, ay);
-      ctx.stroke();
+      ctx.lineJoin = "round";
 
-      ctx.strokeStyle = "rgba(255, 255, 255, " + (0.2 * life) + ")";
-      ctx.lineWidth = 0.82;
+      for (j = 0; j < segs; j++) {
+        t0 = j / segs;
+        t1 = (j + 1) / segs;
+        t = (t0 + t1) * 0.5;
+        taper = Math.pow(1 - t, 1.55);
+        lw = 0.18 + headW * taper;
+        x0 = s.x + (ax - s.x) * t0;
+        y0 = s.y + (ay - s.y) * t0;
+        x1 = s.x + (ax - s.x) * t1;
+        y1 = s.y + (ay - s.y) * t1;
+        fade = Math.pow(1 - t, 0.28);
+        gCol = Math.floor(210 + 45 * (1 - t));
+        bCol = Math.floor(248 - 55 * t);
+        aCol = alpha * fade * (0.35 + 0.65 * taper) * 0.9;
+        ctx.strokeStyle = "rgba(255, " + gCol + ", " + bCol + ", " + aCol + ")";
+        ctx.lineWidth = lw;
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x1, y1);
+        ctx.stroke();
+      }
+
+      for (j = 0; j < Math.min(8, segs); j++) {
+        t0 = j / segs;
+        t1 = (j + 1) / segs;
+        t = (t0 + t1) * 0.5;
+        taper = Math.pow(1 - t, 1.35);
+        lw = 0.12 + (0.85 + 2.2 * life) * taper;
+        x0 = s.x + (ax - s.x) * t0;
+        y0 = s.y + (ay - s.y) * t0;
+        x1 = s.x + (ax - s.x) * t1;
+        y1 = s.y + (ay - s.y) * t1;
+        ctx.strokeStyle = "rgba(255, 255, 255, " + (0.3 * life * Math.pow(1 - t, 0.2)) + ")";
+        ctx.lineWidth = lw;
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x1, y1);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = "rgba(255, 252, 255, " + (0.38 * life) + ")";
       ctx.beginPath();
-      ctx.moveTo(s.x, s.y);
-      ctx.lineTo(s.x - nx * Math.min(28, s.tailPx * 0.3), s.y - ny * Math.min(28, s.tailPx * 0.3));
-      ctx.stroke();
+      ctx.arc(s.x, s.y, 1.2 + 1.05 * life, 0, Math.PI * 2);
+      ctx.fill();
     }
 
     ctx.globalCompositeOperation = "source-over";
@@ -238,7 +283,7 @@
 
     if (!reduced) {
       drawShootingStars();
-      drawRipplesAndSparkles();
+      drawSparkles();
     }
 
     var g = ctx.createRadialGradient(w * 0.5, h * 0.45, 0, w * 0.5, h * 0.45, Math.max(w, h) * 0.75);
@@ -249,28 +294,13 @@
     ctx.fillRect(0, 0, w, h);
   }
 
-  function drawRipplesAndSparkles() {
+  function drawSparkles() {
     var k;
-    var rad;
-    var al;
     var p;
     var pulse;
     var grd;
 
     ctx.globalCompositeOperation = "lighter";
-
-    for (k = 0; k < 4; k++) {
-      rad = ((time * 0.125 + k * 68) % 270) + 22;
-      al = Math.max(0, (1 - rad / 310) * 0.16);
-      if (al < 0.025) {
-        continue;
-      }
-      ctx.strokeStyle = "rgba(100, 155, 255, " + al + ")";
-      ctx.lineWidth = 1.15;
-      ctx.beginPath();
-      ctx.arc(cx, cy, rad, 0, Math.PI * 2);
-      ctx.stroke();
-    }
 
     for (k = 0; k < sparkles.length; k++) {
       p = vertex(sparkles[k].i, sparkles[k].j);
