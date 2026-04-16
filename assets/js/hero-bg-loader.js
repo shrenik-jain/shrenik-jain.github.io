@@ -12,7 +12,7 @@
  *   "gradient"     Soft gradient orbs pulled toward cursor
  *                  → assets/js/hero-gradient-field.js
  *
- *   "mesh"         Wire grid + ripples + sparkles (default)
+ *   "mesh"         Wire grid + sparkles + shooting stars (default)
  *                  → assets/js/hero-mesh.js
  *
  *   "waves"        Layered sine-wave ribbons

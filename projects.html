@@ -80,6 +80,7 @@
 
 </head>
 
+<!-- Thumbnails: add class page-projects-thumbs-img on <body> to use screenshots; omit for abstract FN-style. -->
 <body>
 
   <!-- Google Tag Manager (noscript) -->
@@ -163,12 +164,21 @@
     <section id="gallery" class="gallery projects-page-gallery" aria-label="Project portfolio">
       <div class="container-fluid px-3 px-md-4">
 
-        <div class="row gy-4 gx-md-3 gx-lg-4 justify-content-center">
+        <div class="row gy-4 gy-lg-5 gx-md-3 gx-lg-4 justify-content-center">
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/face-physiognomy" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="Face Physiognomy — view repository on GitHub">
-                <img src="assets/img/projects/face_recognition.png" class="img-fluid" alt="Preview graphic for Face Physiognomy: stylized face with symbolic elements suggesting analysis" width="800" height="500" loading="eager">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="0" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/face-physiognomy">
+              <a href="https://github.com/shrenik-jain/face-physiognomy" class="project-card__media project-card__visual project-card__visual--1" target="_blank" rel="noopener noreferrer" aria-label="Face Physiognomy — view repository on GitHub">
+                <img src="assets/img/projects/face_recognition.png" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="eager" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">FP</span>
+                  <span class="project-card__micro">Vision</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">2</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">8</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
@@ -176,18 +186,26 @@
               <div class="project-card__body">
                 <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/face-physiognomy" target="_blank" rel="noopener noreferrer">Face Physiognomy</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">OpenCV</span>
-                  <span class="tech-tag">TensorFlow</span>
-                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Face Analysis</span>
+                  <span class="tech-tag">Neural Inference</span>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/vehicle-color-recognition" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="Vehicle Color Recognition — view repository on GitHub">
-                <img src="assets/img/projects/anpr.png" class="img-fluid" alt="Preview for Vehicle Color Recognition: vehicles on an urban street" width="800" height="500" loading="lazy">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="70" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/vehicle-color-recognition">
+              <a href="https://github.com/shrenik-jain/vehicle-color-recognition" class="project-card__media project-card__visual project-card__visual--2" target="_blank" rel="noopener noreferrer" aria-label="Vehicle Color Recognition — view repository on GitHub">
+                <img src="assets/img/projects/anpr.png" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">VC</span>
+                  <span class="project-card__micro">Recognition</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">1</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">9</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
@@ -195,37 +213,53 @@
               <div class="project-card__body">
                 <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/vehicle-color-recognition" target="_blank" rel="noopener noreferrer">Vehicle Color Recognition</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">OpenCV</span>
-                  <span class="tech-tag">SciPy</span>
+                  <span class="tech-tag">Street Scene Imagery</span>
+                  <span class="tech-tag">Vectors &amp; Signals</span>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/neetcode-solutions" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="NeetCode Solutions — view repository on GitHub">
-                <img src="assets/img/projects/data_structures.png" class="img-fluid" alt="Preview for NeetCode Solutions: diagrams of graphs, trees, and data structures" width="800" height="500" loading="lazy">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="140" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/DR-Agent">
+              <a href="https://github.com/shrenik-jain/DR-Agent" class="project-card__media project-card__visual project-card__visual--3" target="_blank" rel="noopener noreferrer" aria-label="DR Agent — view repository on GitHub">
+                <img src="assets/img/projects/DR_Agent.png" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">DR</span>
+                  <span class="project-card__micro">Agent</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">0</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">5</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
               </a>
               <div class="project-card__body">
-                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/neetcode-solutions" target="_blank" rel="noopener noreferrer">NeetCode Solutions</a></h3>
+                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/DR-Agent" target="_blank" rel="noopener noreferrer">DR Agent</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Data Structures</span>
-                  <span class="tech-tag">Algorithms</span>
+                  <span class="tech-tag">Agentic Workflows</span>
+                  <span class="tech-tag">LLM Reasoning</span>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/fourier_neural_operator" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="Fourier Neural Operator — view repository on GitHub">
-                <img src="assets/img/projects/fourier_series.webp" class="img-fluid" alt="Preview for Fourier Neural Operator: sine waves and frequency-domain visualization" width="800" height="500" loading="lazy">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="200" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/fourier_neural_operator">
+              <a href="https://github.com/shrenik-jain/fourier_neural_operator" class="project-card__media project-card__visual project-card__visual--4" target="_blank" rel="noopener noreferrer" aria-label="Fourier Neural Operator — view repository on GitHub">
+                <img src="assets/img/projects/fourier_series.webp" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">FN</span>
+                  <span class="project-card__micro">Operators</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">0</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">0</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
@@ -233,47 +267,63 @@
               <div class="project-card__body">
                 <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/fourier_neural_operator" target="_blank" rel="noopener noreferrer">Fourier Neural Operator</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">PyTorch</span>
-                  <span class="tech-tag">Fourier Transforms</span>
+                  <span class="tech-tag">Neural PDE Operators</span>
+                  <span class="tech-tag">Differentiable Solvers</span>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/shrenik-jain.github.io" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="Personal website — view repository on GitHub">
-                <img src="assets/img/projects/personal_portfolio.png" class="img-fluid" alt="Preview graphic for this personal portfolio website project" width="800" height="500" loading="lazy">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="270" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/Interaction-Aware-Motion-Prediction">
+              <a href="https://github.com/shrenik-jain/Interaction-Aware-Motion-Prediction" class="project-card__media project-card__visual project-card__visual--5" target="_blank" rel="noopener noreferrer" aria-label="Interaction-Aware Motion Prediction — view repository on GitHub">
+                <img src="assets/img/projects/personal_portfolio.png" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">MP</span>
+                  <span class="project-card__micro">Multi-Agent</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">0</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">1</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
               </a>
               <div class="project-card__body">
-                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/shrenik-jain.github.io" target="_blank" rel="noopener noreferrer">Personal Website</a></h3>
+                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/Interaction-Aware-Motion-Prediction" target="_blank" rel="noopener noreferrer">Multi-Agent Motion Planning</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">HTML</span>
-                  <span class="tech-tag">CSS</span>
-                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Multi Agent Planning</span>
+                  <span class="tech-tag">Trajectory Transformers</span>
                 </div>
               </div>
             </article>
           </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="project-card h-100">
-              <a href="https://github.com/shrenik-jain/vision-transformers" class="project-card__media" target="_blank" rel="noopener noreferrer" aria-label="Vision Transformers — view repository on GitHub">
-                <img src="assets/img/projects/vision_transformers.png" class="img-fluid" alt="Preview for Vision Transformers: abstract deep learning and attention-style visualization" width="800" height="500" loading="lazy">
+          <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="780" data-aos-delay="340" data-aos-easing="ease-out-cubic">
+            <article class="project-card h-100" data-github-repo="shrenik-jain/Efficient-Sequence-Modelling">
+              <a href="https://github.com/shrenik-jain/Efficient-Sequence-Modelling" class="project-card__media project-card__visual project-card__visual--6" target="_blank" rel="noopener noreferrer" aria-label="Efficient Sequence Modelling — view repository on GitHub">
+                <img src="assets/img/projects/vision_transformers.png" class="project-card__thumb img-fluid" alt="" width="800" height="500" loading="lazy" decoding="async">
+                <span class="project-card__figure" aria-hidden="true">
+                  <span class="project-card__glyph">ES</span>
+                  <span class="project-card__micro">Modelling</span>
+                </span>
+                <span class="project-card__stats" aria-label="Repository stats on GitHub">
+                  <span class="project-card__stat" title="Watchers"><i class="bi bi-eye" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="watchers">0</span></span>
+                  <span class="project-card__stat" title="Forks"><i class="bi bi-diagram-2" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="forks">0</span></span>
+                  <span class="project-card__stat" title="Stars"><i class="bi bi-star-fill" aria-hidden="true"></i><span class="project-card__stat-value" data-stat="stars">1</span></span>
+                </span>
                 <span class="project-card__overlay" aria-hidden="true">
                   <span class="project-card__cta"><i class="bi bi-github" aria-hidden="true"></i> View Repository</span>
                 </span>
               </a>
               <div class="project-card__body">
-                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/vision-transformers" target="_blank" rel="noopener noreferrer">Vision Transformers</a></h3>
+                <h3 class="project-card__title"><a href="https://github.com/shrenik-jain/Efficient-Sequence-Modelling" target="_blank" rel="noopener noreferrer">Efficient Sequence Modelling</a></h3>
                 <div class="tech-stack">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">PyTorch</span>
-                  <span class="tech-tag">Transformers</span>
+                  <span class="tech-tag">KV Cache</span>
+                  <span class="tech-tag">Attention Strategies</span>
+                  <span class="tech-tag">Llama</span>
                 </div>
               </div>
             </article>
@@ -294,11 +344,11 @@
       </div>
 
       <p>
-        Feel free to reach out about collaborations, employment opportunities, or just to say hello! 👋
-        <br>Visit the <a href="contact.html">contact</a> section, schedule a <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">meeting</a>, or drop me an <a href="mailto:shrenikkjain81@gmail.com">email</a> 📧
+        I&rsquo;m glad to connect&mdash;hiring, collaborations, or a quick hello
+        <br>Reach out on the <a href="contact.html">contact</a> page, book a <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">call</a>, or send me an <a href="mailto:shrenikkjain81@gmail.com">email</a>
       </p>
       <!-- <p class="resume">You can download my resume <a title="Download" href="https://drive.google.com/uc?export=download&id=1b2txcaQsT2c3mUk3gcKIe005fbxYo4-f">here</a></p> -->
-      <p class="resume">You can download my resume <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
+      <p class="resume">Prefer something printable? A PDF r&eacute;sum&eacute; is <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
       
       <div class="header-social-links">
         <!-- <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -307,17 +357,17 @@
         <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
         <a title="GitHub" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a> -->
 
-        <a title="𝕏" href="https://x.com/shrenik_jainn" class="github">
-          <img src="assets/img/icons/twitter.svg" alt="Twitter" width="40" height="40">
+        <a title="𝕏" href="https://x.com/shrenik_jainn" class="twitter" aria-label="X (Twitter)">
+          <img src="assets/img/icons/twitter.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram">
-            <img src="assets/img/icons/instagram.svg" alt="Instagram" width="40" height="40">
+        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram" aria-label="Instagram">
+            <img src="assets/img/icons/instagram.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin">
-            <img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="40" height="40">
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin" aria-label="LinkedIn">
+            <img src="assets/img/icons/linkedin.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="GitHub" href="https://github.com/shrenik-jain" class="github">
-            <img src="assets/img/icons/github.svg" alt="GitHub" width="40" height="40">
+        <a title="GitHub" href="https://github.com/shrenik-jain" class="github" aria-label="GitHub">
+            <img src="assets/img/icons/github.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
       </div>
     </div>
@@ -342,6 +392,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/hero-waves.js"></script>
+  <script src="assets/js/projects-github-stats.js"></script>
 
 </body>
 

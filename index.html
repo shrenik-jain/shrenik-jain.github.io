@@ -118,7 +118,8 @@
 
 </head>
 
-<body class="page-home">
+<!-- Lunar background: change data-hero-moon to "0" for the original mesh-only hero (no moon image). "1" = show moon. -->
+<body class="page-home" data-hero-moon="0">
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNTPXPHJ"
@@ -182,6 +183,16 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="200">
     <div id="dots"></div>
+    <div class="hero-moon" aria-hidden="true">
+      <img
+        src="assets/img/hero-moon-horizon.png"
+        alt=""
+        width="1920"
+        height="1080"
+        decoding="async"
+        fetchpriority="low"
+      >
+    </div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -208,11 +219,11 @@
       </div>
 
       <p>
-        Feel free to reach out about collaborations, employment opportunities, or just to say hello! 👋
-        <br>Visit the <a href="contact.html">contact</a> section, schedule a <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">meeting</a>, or drop me an <a href="mailto:shrenikkjain81@gmail.com">email</a> 📧
+        I&rsquo;m glad to connect&mdash;hiring, collaborations, or a quick hello
+        <br>Reach out on the <a href="contact.html">contact</a> page, book a <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/shrenikkjain/30min'});return false;">call</a>, or send me an <a href="mailto:shrenikkjain81@gmail.com">email</a>
       </p>
       <!-- <p class="resume">You can download my resume <a title="Download" href="https://drive.google.com/uc?export=download&id=1b2txcaQsT2c3mUk3gcKIe005fbxYo4-f">here</a></p> -->
-      <p class="resume">You can download my resume <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
+      <p class="resume">Prefer something printable? A PDF r&eacute;sum&eacute; is <a title="Download" href="https://raw.githubusercontent.com/shrenik-jain/shrenik-jain.github.io/master/resume/Shrenik_Jain%20-%20Resume.pdf" download><button>here</button></a></p>
       
       <div class="header-social-links">
         <!-- <a title="Twitter" href="https://x.com/shrenik_jainn" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -221,17 +232,17 @@
         <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
         <a title="GitHub" href="https://github.com/shrenik-jain" class="linkedin"><i class="bi bi-github"></i></i></a> -->
 
-        <a title="𝕏" href="https://x.com/shrenik_jainn" class="github">
-          <img src="assets/img/icons/twitter.svg" alt="Twitter" width="40" height="40">
+        <a title="𝕏" href="https://x.com/shrenik_jainn" class="twitter" aria-label="X (Twitter)">
+          <img src="assets/img/icons/twitter.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram">
-            <img src="assets/img/icons/instagram.svg" alt="Instagram" width="40" height="40">
+        <a title="Instagram" href="https://www.instagram.com/shrenik_jainn" class="instagram" aria-label="Instagram">
+            <img src="assets/img/icons/instagram.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin">
-            <img src="assets/img/icons/linkedin.svg" alt="LinkedIn" width="40" height="40">
+        <a title="LinkedIn" href="http://www.linkedin.com/in/shrenik-jain9" class="linkedin" aria-label="LinkedIn">
+            <img src="assets/img/icons/linkedin.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
-        <a title="GitHub" href="https://github.com/shrenik-jain" class="github">
-            <img src="assets/img/icons/github.svg" alt="GitHub" width="40" height="40">
+        <a title="GitHub" href="https://github.com/shrenik-jain" class="github" aria-label="GitHub">
+            <img src="assets/img/icons/github.svg" alt="" width="40" height="40" aria-hidden="true">
         </a>
       </div>
     </div>

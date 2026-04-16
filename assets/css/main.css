@@ -2058,10 +2058,44 @@ h5 {
 /*--------------------------------------------------------------
 # Projects page — card grid
 --------------------------------------------------------------*/
+/*
+ * Thumbnail mode — projects.html only:
+ *   Default (no body class)     → abstract FN-style; <img.project-card__thumb> stays in DOM but hidden
+ *   body.page-projects-thumbs-img → raster thumbnails; monograms + CSS paint off
+ */
+body:not(.page-projects-thumbs-img) .projects-page-gallery .project-card__thumb {
+  display: none !important;
+}
+
+body.page-projects-thumbs-img .projects-page-gallery .project-card__thumb {
+  position: relative;
+  z-index: 1;
+}
+
+body.page-projects-thumbs-img .projects-page-gallery .project-card__figure,
+body.page-projects-thumbs-img .projects-page-gallery .project-card__stats {
+  display: none !important;
+}
+
+body.page-projects-thumbs-img .projects-page-gallery .project-card__media.project-card__visual,
+body.page-projects-thumbs-img .projects-page-gallery .project-card:hover .project-card__media[class*="project-card__visual--"] {
+  background-image: none !important;
+  background-color: #1a1c1d !important;
+}
+
+body.page-projects-thumbs-img .projects-page-gallery .project-card__media.project-card__visual::before,
+body.page-projects-thumbs-img .projects-page-gallery .project-card__media.project-card__visual::after {
+  display: none !important;
+}
+
+body.page-projects-thumbs-img .projects-page-gallery .project-card:hover .project-card__media.project-card__visual {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
 .projects-page-gallery.gallery {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1400px;
+  max-width: 1180px;
   padding-bottom: 3.5rem;
 }
 
@@ -2069,6 +2103,24 @@ h5 {
   .projects-page-gallery.gallery {
     padding-bottom: 4rem;
   }
+}
+
+/* Smaller cards: 3 per row (col-xl-4) + shorter thumb + tighter type */
+.projects-page-gallery .project-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+.projects-page-gallery .project-card__body {
+  padding: 0.95rem 1.1rem 1.1rem;
+}
+
+.projects-page-gallery .tech-tag {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.projects-page-gallery .tech-stack {
+  gap: 6px 8px;
 }
 
 .project-card {
@@ -2112,9 +2164,279 @@ h5 {
   }
 }
 
+/*
+ * CSS-only thumbnails: .project-card__visual + .project-card__visual--1…6 (no images).
+ * All variants share the same “FN Operators” look (plum lines + mauve lift).
+ * Fallback without .project-card__visual matches the same palette.
+ */
+.project-card__media.project-card__visual {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition: box-shadow 0.45s ease;
+}
+
+.project-card__media:not(:has(> img)),
+.project-card__media.project-card__media--placeholder {
+  background-color: #0d1016;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 7px,
+      rgba(165, 113, 189, 0.055) 7px,
+      rgba(165, 113, 189, 0.055) 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.016) 20px,
+      rgba(255, 255, 255, 0.016) 21px
+    ),
+    radial-gradient(ellipse 85% 60% at 50% 100%, rgba(196, 106, 144, 0.1) 0%, transparent 50%),
+    linear-gradient(165deg, #171c25 0%, #0c0f14 100%);
+}
+
+.project-card__media:not(:has(> img)):not(.project-card__visual)::before,
+.project-card__media.project-card__media--placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.52;
+  background-image:
+    repeating-linear-gradient(
+      -16deg,
+      transparent 0,
+      transparent 26px,
+      rgba(255, 255, 255, 0.019) 26px,
+      rgba(255, 255, 255, 0.019) 27px
+    ),
+    repeating-linear-gradient(
+      104deg,
+      transparent 0,
+      transparent 26px,
+      rgba(255, 255, 255, 0.012) 26px,
+      rgba(255, 255, 255, 0.012) 27px
+    );
+}
+
+.project-card__media:not(:has(> img)):not(.project-card__visual)::after,
+.project-card__media.project-card__media--placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    118deg,
+    transparent 0%,
+    transparent 36%,
+    rgba(255, 255, 255, 0.04) 49%,
+    transparent 62%,
+    transparent 100%
+  );
+  mix-blend-mode: soft-light;
+}
+
+/* All thumbnails: same “FN Operators” treatment — plum lines + mauve lift */
+.project-card__media.project-card__visual--1,
+.project-card__media.project-card__visual--2,
+.project-card__media.project-card__visual--3,
+.project-card__media.project-card__visual--4,
+.project-card__media.project-card__visual--5,
+.project-card__media.project-card__visual--6 {
+  background-color: #0d1016;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 7px,
+      rgba(165, 113, 189, 0.055) 7px,
+      rgba(165, 113, 189, 0.055) 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 255, 255, 0.016) 20px,
+      rgba(255, 255, 255, 0.016) 21px
+    ),
+    radial-gradient(ellipse 85% 60% at 50% 100%, rgba(196, 106, 144, 0.1) 0%, transparent 50%),
+    linear-gradient(165deg, #171c25 0%, #0c0f14 100%);
+}
+
+.project-card__media.project-card__visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 0.45s ease;
+  background-image: none;
+}
+
+.project-card__media.project-card__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    118deg,
+    transparent 0%,
+    transparent 36%,
+    rgba(255, 255, 255, 0.04) 49%,
+    transparent 62%,
+    transparent 100%
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity 0.45s ease;
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-card__media.project-card__visual {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 0 72px rgba(255, 255, 255, 0.03);
+  }
+
+  .project-card:hover .project-card__media.project-card__visual::before {
+    opacity: 0.68;
+  }
+
+  .project-card:hover .project-card__media.project-card__visual--1,
+  .project-card:hover .project-card__media.project-card__visual--2,
+  .project-card:hover .project-card__media.project-card__visual--3,
+  .project-card:hover .project-card__media.project-card__visual--4,
+  .project-card:hover .project-card__media.project-card__visual--5,
+  .project-card:hover .project-card__media.project-card__visual--6 {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 7px,
+        rgba(165, 113, 189, 0.08) 7px,
+        rgba(165, 113, 189, 0.08) 8px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(255, 255, 255, 0.022) 20px,
+        rgba(255, 255, 255, 0.022) 21px
+      ),
+      radial-gradient(ellipse 85% 60% at 50% 100%, rgba(196, 106, 144, 0.13) 0%, transparent 50%),
+      linear-gradient(165deg, #1a202a 0%, #10151c 100%);
+  }
+}
+
+/* Monogram + label + index: gives the abstract thumb a clear focal point (under hover overlay) */
+.project-card__figure {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1rem;
+  text-align: center;
+}
+
+.project-card__glyph {
+  font-family: var(--font-primary);
+  font-size: clamp(1.65rem, 5vw, 2.45rem);
+  font-weight: 300;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.22);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: color 0.35s ease;
+}
+
+.project-card__micro {
+  font-family: var(--font-secondary);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(200, 130, 175, 0.52);
+  line-height: 1.25;
+  max-width: 14em;
+}
+
+.project-card__stats {
+  position: absolute;
+  bottom: 0.42rem;
+  right: 0.5rem;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: var(--font-secondary);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.28);
+  transition: opacity 0.3s ease;
+}
+
+.project-card__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  line-height: 1;
+}
+
+.project-card__stat .bi {
+  font-size: 1.4em;
+  opacity: 0.88;
+  vertical-align: -0.06em;
+}
+
+.project-card__stat-value {
+  font-variant-numeric: tabular-nums;
+  min-width: 0.85em;
+  text-align: left;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-card__glyph {
+    color: rgba(255, 255, 255, 0.14);
+  }
+
+  .project-card:hover .project-card__micro {
+    color: rgba(200, 130, 175, 0.36);
+  }
+
+  .project-card:hover .project-card__stats {
+    opacity: 0.55;
+  }
+}
+
+.projects-page-gallery .project-card__glyph {
+  font-size: clamp(1.4rem, 3.8vw, 2rem);
+}
+
+.projects-page-gallery .project-card__micro {
+  font-size: 0.54rem;
+  letter-spacing: 0.18em;
+}
+
 .project-card__overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2146,6 +2468,22 @@ h5 {
 
 .project-card__cta .bi-github {
   font-size: 1.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__media img,
+  .project-card__overlay {
+    transition-duration: 0.01ms !important;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__media img {
+    transform: none;
+  }
 }
 
 .project-card__body {
@@ -2195,6 +2533,215 @@ h5 {
 .projects-page-gallery .tech-tag:hover {
   background: rgba(85, 129, 237, 0.14);
   border-color: rgba(85, 129, 237, 0.35);
+}
+
+/* Projects page — visual polish (cards + overlay; gallery-scoped) */
+.projects-page-gallery .project-card {
+  --project-card-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 2px 6px rgba(0, 0, 0, 0.14),
+    0 14px 42px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 0.42s var(--project-card-ease),
+    box-shadow 0.42s var(--project-card-ease),
+    border-color 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects-page-gallery .project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(85, 129, 237, 0.65);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 6px 14px rgba(0, 0, 0, 0.2),
+      0 22px 56px rgba(0, 0, 0, 0.3),
+      0 0 22px rgba(85, 129, 237, 0.18);
+  }
+}
+
+.projects-page-gallery .project-card:focus-within {
+  border-color: rgba(85, 129, 237, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.14),
+    0 14px 42px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(85, 129, 237, 0.25);
+}
+
+.projects-page-gallery .project-card__body {
+  padding: 1.05rem 1.2rem 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, transparent 72%);
+}
+
+.projects-page-gallery .project-card__title {
+  position: relative;
+  font-size: 1.06rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.34;
+  margin-bottom: 0.75rem;
+  padding-left: 0.72rem;
+}
+
+/* Accent bar — same family as site section gradients */
+.projects-page-gallery .project-card__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  bottom: 0.1em;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    #d46678 0%,
+    #a571bd 48%,
+    #5481ed 100%
+  );
+  opacity: 0.92;
+}
+
+.projects-page-gallery .project-card__title a {
+  display: inline;
+  text-decoration: none;
+  transition:
+    filter 0.28s ease,
+    letter-spacing 0.28s ease;
+  /* Short light lead-in; most of the line reads blue */
+  background: linear-gradient(
+    92deg,
+    #f4f7ff 0%,
+    #d8e4ff 10%,
+    #b4c9ff 24%,
+    #8fabfa 42%,
+    #6b92f5 64%,
+    #5581ed 100%
+  );
+  background-size: 100% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+@supports not (background-clip: text) {
+  .projects-page-gallery .project-card__title a {
+    color: #7a9df5;
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    filter: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects-page-gallery .project-card__title a:hover {
+    background: linear-gradient(
+      92deg,
+      #a8c4ff 0%,
+      #7a9df5 38%,
+      #5581ed 72%,
+      #3d62d4 100%
+    );
+    background-size: 100% 100%;
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.015em;
+    filter: drop-shadow(0 1px 2px rgba(63, 106, 216, 0.35));
+  }
+}
+
+.projects-page-gallery .project-card__title a:focus-visible {
+  background: linear-gradient(
+    92deg,
+    #b8ccff 0%,
+    #7a9df5 45%,
+    #5581ed 100%
+  );
+  background-size: 100% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(84, 129, 237, 0.45));
+  outline: 2px solid rgba(132, 170, 255, 0.75);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.projects-page-gallery .tech-tag {
+  padding: 5px 11px;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects-page-gallery .tech-tag:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.projects-page-gallery .project-card__overlay {
+  background: rgba(7, 8, 10, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .projects-page-gallery .project-card__overlay {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+.projects-page-gallery .project-card__cta {
+  padding: 0.26rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  gap: 0.32rem;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.projects-page-gallery .project-card__cta .bi-github {
+  font-size: 0.95rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects-page-gallery .project-card:hover .project-card__cta {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.projects-page-gallery .project-card__media:focus-visible {
+  outline: 2px solid rgba(85, 129, 237, 0.75);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /*--------------------------------------------------------------
@@ -2959,54 +3506,172 @@ h5 {
 }
 
 /*--------------------------------------------------------------
-# Footer
+# Footer — subtle editorial band (quiet surface + fine type)
 --------------------------------------------------------------*/
 .footer {
+  position: relative;
   margin-top: 150px;
-  padding: 30px 100px;
+  padding: 2rem clamp(1.25rem, 5vw, 5rem) 2.45rem;
   font-size: 14px;
   background-color: var(--footer-bg-base);
-  background-image: var(--footer-bg-sheen), var(--footer-bg);
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.045) 50%,
+      transparent 100%
+    ),
+    var(--footer-bg-sheen),
+    var(--footer-bg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size:
+    100% 1px,
+    100% 100%,
+    100% 100%;
+  background-position:
+    top center,
+    center,
+    center;
   border-top: none;
-  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 -10px 48px rgba(0, 0, 0, 0.28);
+}
+
+.footer .container {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer .copyright {
   font-family: var(--font-header);
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 30px;
-  font-weight: 700;
+  font-size: clamp(1.05rem, 2.6vw, 1.5rem);
+  font-weight: 600;
   text-align: center;
-  letter-spacing: 5px;
-  margin-top: 10px;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0.75rem;
+  line-height: 1.35;
+  color: rgba(252, 252, 253, 0.94);
+}
+
+.footer .copyright::after {
+  content: "";
+  display: block;
+  width: min(7.5rem, 42vw);
+  height: 1px;
+  margin: 0.75rem auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
+}
+
+.footer p a {
+  color: rgba(200, 218, 248, 0.98);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: rgba(120, 165, 235, 0.65);
+  border-bottom: none;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .footer p a:hover {
-  text-decoration-line: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  color: rgba(235, 242, 255, 1);
+  text-decoration-color: rgba(170, 205, 255, 0.95);
 }
 
 .footer p {
   font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 300;
-  color: rgba(210, 210, 212, 0.82);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(168, 172, 182, 0.92);
   text-align: center;
-  padding-top: 20px;
+  padding-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36rem;
+}
+
+.footer .container > p:first-of-type {
+  padding-top: 0.45rem;
 }
 
 .footer .header-social-links {
-  padding-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.05rem 0.12rem;
+  padding-top: 1.5rem;
+  margin-top: 0;
   text-align: center;
-  font-size: 30px;
-  color: rgba(218, 218, 220, 0.76);
 }
 
+/* Icons only — no card / tile; hover uses motion + existing brand tint filters on <img> */
 .footer .header-social-links a {
-  padding-left: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  transition: transform 0.2s ease;
+}
+
+.footer .header-social-links a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.78;
+  transition: opacity 0.2s ease, filter 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer .header-social-links a:hover {
+    transform: translateY(-3px);
+  }
+
+  .footer .header-social-links a:hover img {
+    opacity: 1;
+  }
+}
+
+.footer .header-social-links a:active {
+  transform: translateY(-1px);
+}
+
+.footer .header-social-links a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(120, 165, 245, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer .header-social-links a {
+    transition: none;
+  }
+
+  .footer .header-social-links a:hover,
+  .footer .header-social-links a:active {
+    transform: none;
+  }
 }
 
 .twitter .github .linkedin img {
@@ -3031,28 +3696,46 @@ h5 {
 
 .footer .resume {
   font-family: var(--font-secondary);
-  font-size: 16px;
+  font-size: 0.9375rem;
   font-weight: 400;
+  text-align: center;
+  padding-top: 0.85rem;
+  margin-bottom: 0;
+  color: rgba(168, 172, 182, 0.92);
 }
 
-.resume button {
+.footer .resume a {
+  display: inline;
+}
+
+.footer .resume button {
   background: none;
   border: none;
-  color: #5581ED;
   padding: 0;
+  margin: 0;
   font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgba(200, 218, 248, 0.98);
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: rgba(120, 165, 235, 0.65);
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
-.resume button:hover {
-  text-decoration-line: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
+.footer .resume button:hover {
+  color: rgba(235, 242, 255, 1);
+  text-decoration-color: rgba(170, 205, 255, 0.95);
 }
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
   .footer {
-    padding: 30px 0;
+    padding: 1.85rem 1.25rem 2.25rem;
   }
 
   .footer-container {
@@ -3075,7 +3758,7 @@ h5 {
 @media all and (min-device-height: 1180px) and (max-device-height: 1368px) and (min-device-width: 820px) and (max-device-width: 1024px) {
   .footer {
     margin-top: 200px;
-    min-height: 32vh;
+    min-height: 0;
   }
 
   .hero {
@@ -3102,6 +3785,61 @@ canvas {
   height: 100%;
   z-index: 1;         /* Make 3 for on-click animation*/
   pointer-events: all;
+}
+
+/* Lunar horizon — toggled via <body data-hero-moon="1"|"0"> in index.html */
+body.page-home[data-hero-moon="0"] .hero-moon {
+  display: none !important;
+}
+
+/* Lunar horizon photo — above canvas, below copy; fuller height over hero */
+body.page-home .hero-moon {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: min(40vh, 400px);
+  overflow: hidden;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+body.page-home .hero-moon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 88%;
+  filter: brightness(0.9) contrast(1.06) blur(0.35px);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.55) 78%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 576px) {
+  body.page-home .hero-moon {
+    height: min(34vh, 280px);
+    opacity: 0.17;
+  }
+
+  body.page-home .hero-moon img {
+    object-position: center 85%;
+  }
 }
 
 #hero .container {
