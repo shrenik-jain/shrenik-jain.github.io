@@ -4029,6 +4029,23 @@ canvas {
   pointer-events: all;
 }
 
+/* Tetris hero — premium glass blocks, no pointer capture */
+body.page-home #dots.hero-tetris-host {
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 70% at 50% 38%, rgba(84, 129, 237, 0.06), transparent 68%);
+}
+
+body.page-home #dots.hero-tetris-host .hero-tetris-canvas {
+  opacity: 0.58;
+  filter: saturate(1.12) contrast(1.03);
+}
+
+@media (max-width: 768px) {
+  body.page-home #dots.hero-tetris-host .hero-tetris-canvas {
+    opacity: 0.5;
+  }
+}
+
 /* Lunar horizon — toggled via <body data-hero-moon="1"|"0"> in index.html */
 body.page-home[data-hero-moon="0"] .hero-moon {
   display: none !important;

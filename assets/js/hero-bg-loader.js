@@ -15,6 +15,9 @@
  *   "waves"        Layered sine-wave ribbons (aurora-like)
  *                  → assets/js/hero-waves.js
  *
+ *   "tetris"       Subtle multi-column Tetris field (brand colors, faint)
+ *                  → assets/js/hero-tetris.js
+ *
  * Unknown values fall back to "mesh".
  * =============================================================================
  */
@@ -43,11 +46,14 @@ var HERO_BACKGROUND = "mesh";
     case "waves":
       loadScript("assets/js/hero-waves.js");
       return;
+    case "tetris":
+      loadScript("assets/js/hero-tetris.js");
+      return;
     default:
       console.warn(
         'hero-bg-loader: unknown HERO_BACKGROUND "' +
           HERO_BACKGROUND +
-          '". Use: particles | flow | mesh | waves. Falling back to mesh.'
+          '". Use: particles | flow | mesh | waves | tetris. Falling back to mesh.'
       );
       loadScript("assets/js/hero-mesh.js");
       return;
