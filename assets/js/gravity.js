@@ -2143,7 +2143,7 @@ GravityPoint.prototype = (function(o) {
 			this.y,
 			this.radius * 5
 		);
-		grd.addColorStop(0, "rgba(0, 0, 0, 0.1)");
+		grd.addColorStop(0, "rgba(0, 0, 0, 0.15)");
 		grd.addColorStop(1, "rgba(0, 0, 0, 0)");
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.radius * 5, 0, Math.PI * 2, false);
@@ -2159,10 +2159,12 @@ GravityPoint.prototype = (function(o) {
 			this.y,
 			this.currentRadius
 		);
-		grd.addColorStop(0, "rgba(0, 0, 0, 1)");
+		grd.addColorStop(0, "rgba(4, 6, 14, 1)");
 		grd.addColorStop(
 			1,
-			Math.random() < 0.2 ? "rgba(255, 196, 0, 0.15)" : "rgba(103, 181, 191, 0.75)"
+			Math.random() < 0.35
+				? "rgba(196, 106, 144, 0.55)"
+				: "rgba(84, 129, 237, 0.72)"
 		);
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2, false);
@@ -2206,7 +2208,7 @@ Particle.prototype = (function(o) {
 (function() {
 	// Configs
 
-	var BACKGROUND_COLOR = "rgba(11, 51, 56, 1)",
+	var BACKGROUND_COLOR = "rgba(0, 0, 0, 1)",
 		PARTICLE_RADIUS = 1,
 		G_POINT_RADIUS = 10,
 		G_POINT_RADIUS_LIMITS = 65;
@@ -2247,8 +2249,9 @@ Particle.prototype = (function(o) {
 			cy,
 			Math.sqrt(cx * cx + cy * cy)
 		);
-		grad.addColorStop(0, "rgba(0, 0, 0, 0)");
-		grad.addColorStop(1, "rgba(0, 0, 0, 0.35)");
+		grad.addColorStop(0, "rgba(84, 129, 237, 0.06)");
+		grad.addColorStop(0.45, "rgba(0, 0, 0, 0)");
+		grad.addColorStop(1, "rgba(0, 0, 0, 0.55)");
 	}
 
 	function mouseMove(e) {
@@ -2347,10 +2350,42 @@ Particle.prototype = (function(o) {
 	canvas.addEventListener("mouseup", mouseUp, false);
 	canvas.addEventListener("dblclick", doubleClick, false);
 
+	canvas.addEventListener(
+		"touchstart",
+		function(e) {
+			var t = e.touches[0];
+			if (!t) return;
+			mouseMove({ clientX: t.clientX, clientY: t.clientY });
+			mouseDown({ clientX: t.clientX, clientY: t.clientY });
+		},
+		{ passive: true }
+	);
+	canvas.addEventListener(
+		"touchmove",
+		function(e) {
+			var t = e.touches[0];
+			if (!t) return;
+			mouseMove({ clientX: t.clientX, clientY: t.clientY });
+		},
+		{ passive: true }
+	);
+	canvas.addEventListener(
+		"touchend",
+		function() {
+			mouseUp({});
+		},
+		{ passive: true }
+	);
+
 	// GUI
-	var guiWidth = Math.min(window.innerWidth - 30, 600); 
-	var gui = new dat.GUI({ width: guiWidth });
-	// gui.domElement.classList.add('center-top');
+	var guiShell = document.getElementById("gravity-gui");
+	var guiWidth = Math.min(300, window.innerWidth - 32);
+	var gui = new dat.GUI({ width: guiWidth, autoPlace: false });
+	if (guiShell) {
+		guiShell.appendChild(gui.domElement);
+	} else {
+		document.body.appendChild(gui.domElement);
+	}
 
 	var f1 = gui.addFolder("Particles");
 	f1
@@ -2382,26 +2417,84 @@ Particle.prototype = (function(o) {
 
 	f2.add(GravityPoint, "interferenceToPoint").name("Interference Between Point");
 
-
-	var f3 = gui.addFolder("Usage");
-
-	f3
-		.add({ showInfo: function() {} }, 'showInfo')
-		.name("Single Click: Blackhole");
-
-	f3
-		.add({ showInfo: function() {} }, 'showInfo')
-		.name("Double Click: Destroy");
-
-
-	var f4 = gui.addFolder("Home");
-
-	f4
-		.add({ goToHomePage: function() { window.location.href = "index.html"; } }, 'goToHomePage')
-		.name("Go Back Home");
-	
-	// document.body.appendChild(gui.domElement);
 	gui.close();
+
+	// Unified HUD bar: Home | Secret lab | Controls
+	var hud = document.querySelector(".gravity-hud");
+	var hudBadge = hud && hud.querySelector(".gravity-hud__badge");
+	var controlsBtn = document.getElementById("gravity-controls-toggle");
+	var COMPACT_DELAY_MS = 12000;
+	var compactTimer;
+	var controlsOpen = false;
+
+	function setControlsOpen(open) {
+		controlsOpen = open;
+		if (controlsBtn) {
+			controlsBtn.setAttribute("aria-expanded", open ? "true" : "false");
+			controlsBtn.textContent = open ? "Close" : "Controls";
+		}
+		if (hud) {
+			hud.classList.toggle("gravity-hud--controls-open", open);
+		}
+		if (open) {
+			gui.open();
+		} else {
+			gui.close();
+		}
+	}
+
+	function scheduleCompact() {
+		window.clearTimeout(compactTimer);
+		compactTimer = window.setTimeout(function() {
+			if (hud) {
+				hud.classList.add("gravity-hud--compact");
+			}
+		}, COMPACT_DELAY_MS);
+	}
+
+	function expandHud() {
+		if (!hud) {
+			return;
+		}
+		hud.classList.remove("gravity-hud--compact", "gravity-hud--hidden");
+		scheduleCompact();
+	}
+
+	if (hud) {
+		scheduleCompact();
+
+		if (hudBadge) {
+			hudBadge.addEventListener("click", function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				expandHud();
+			});
+		}
+
+		if (controlsBtn) {
+			controlsBtn.addEventListener("click", function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				setControlsOpen(!controlsOpen);
+				hud.classList.add("gravity-hud--compact");
+				window.clearTimeout(compactTimer);
+			});
+		}
+
+		canvas.addEventListener("mousedown", function() {
+			hud.classList.add("gravity-hud--compact");
+			window.clearTimeout(compactTimer);
+		});
+
+		canvas.addEventListener(
+			"touchstart",
+			function() {
+				hud.classList.add("gravity-hud--compact");
+				window.clearTimeout(compactTimer);
+			},
+			{ passive: true }
+		);
+	}
 
 	// Start Update
 
@@ -2428,7 +2521,7 @@ Particle.prototype = (function(o) {
 
 		bufferCtx.save();
 		bufferCtx.globalCompositeOperation = "destination-out";
-		bufferCtx.globalAlpha = 0.35;
+		bufferCtx.globalAlpha = 0.42;
 		bufferCtx.fillRect(0, 0, screenWidth, screenHeight);
 		bufferCtx.restore();
 
@@ -2439,7 +2532,7 @@ Particle.prototype = (function(o) {
 
 		len = particles.length;
 		bufferCtx.save();
-		bufferCtx.fillStyle = bufferCtx.strokeStyle = "#fff";
+		bufferCtx.fillStyle = bufferCtx.strokeStyle = "rgba(122, 157, 245, 0.9)";
 		bufferCtx.lineCap = bufferCtx.lineJoin = "round";
 		bufferCtx.lineWidth = PARTICLE_RADIUS * 2;
 		bufferCtx.beginPath();

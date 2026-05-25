@@ -34,8 +34,6 @@
   <meta name="twitter:image" content="https://shrenik-jain.github.io/assets/img/favicons/android-chrome-512x512.png">
 
   <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
@@ -44,25 +42,56 @@
   <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Quicksand:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Quicksand:wght@500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/gravity.css" rel="stylesheet">
 </head>
 
-<body>
-    <canvas id="c"></canvas>
-    <div class="info">Welcome to the Secret Page! 🤫</div>
-    
-    <!-- Template Main JS File -->
-    <script src="assets/js/gravity.js"></script>
+<body class="gravity-page">
+  <canvas id="c" aria-label="Gravity simulation canvas"></canvas>
+
+  <div class="gravity-moon" aria-hidden="true">
+    <img
+      src="assets/img/hero-moon-horizon.png"
+      alt=""
+      width="1920"
+      height="1080"
+      decoding="async"
+      fetchpriority="low"
+    >
+  </div>
+
+  <div class="gravity-vignette" aria-hidden="true"></div>
+
+  <div class="gravity-hud">
+    <header class="gravity-hud__top">
+      <a href="index.html" class="gravity-hud__chip gravity-hud__back">
+        <span class="gravity-hud__back-icon" aria-hidden="true">←</span>
+        Home
+      </a>
+      <button type="button" class="gravity-hud__chip gravity-hud__badge" aria-label="Show instructions">Secret lab</button>
+      <button type="button" class="gravity-hud__chip gravity-hud__controls" id="gravity-controls-toggle" aria-expanded="false" aria-controls="gravity-gui">Controls</button>
+    </header>
+
+    <div class="gravity-hud__intro">
+      <h1 class="gravity-hud__title">Gravity</h1>
+      <p class="gravity-hud__lead">A playful particle field. Spawn black holes, drag them around, and watch the trails bend.</p>
+    </div>
+
+    <ul class="gravity-hud__hints">
+      <li><kbd>Click</kbd> Spawn</li>
+      <li><kbd>Drag</kbd> Move</li>
+      <li><kbd>2× click</kbd> Collapse</li>
+    </ul>
+
+    <div id="gravity-gui" class="gravity-gui-shell" aria-label="Simulation controls"></div>
+  </div>
+
+  <script src="assets/js/gravity.js"></script>
 </body>
 
 </html>
