@@ -947,77 +947,159 @@ h5.company-name {
 /*--------------------------------------------------------------
 # Scroll top button
 --------------------------------------------------------------*/
+@property --scroll-top-fill {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .scroll-top {
-  background: var(--gradient-cta-premium);
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: -15px;
+  right: max(1.15rem, env(safe-area-inset-right));
+  bottom: -1rem;
   z-index: 99999;
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
-  transition:
-    visibility 0.4s,
-    opacity 0.4s,
-    bottom 0.4s,
-    outline 0.35s ease;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(
+    155deg,
+    rgba(22, 24, 30, 0.94) 0%,
+    rgba(10, 11, 15, 0.9) 100%
+  );
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: none;
-  outline: 2px solid transparent;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.07) inset,
+    0 10px 32px rgba(0, 0, 0, 0.42),
+    0 0 24px rgba(84, 129, 237, 0.12);
+  transition:
+    visibility 0.35s ease,
+    opacity 0.35s ease,
+    bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    color 0.25s ease;
   overflow: hidden;
   isolation: isolate;
 }
 
+/* Gradient ring — fills clockwise once on hover, then stays full gradient */
 .scroll-top::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: #fff;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.5px;
+  --scroll-top-fill: 0deg;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.15) 0deg,
+    rgba(255, 255, 255, 0.06) 140deg,
+    rgba(255, 255, 255, 0.15) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
   z-index: 0;
+  animation: none;
 }
 
-.scroll-top .btn-cta-text {
+.scroll-top:not(:hover):not(:focus-visible)::before {
+  --scroll-top-fill: 0deg;
+}
+
+.scroll-top__chevron {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  transition: color 0.3s ease 0.12s;
-}
-
-.scroll-top .btn-cta-text i {
-  font-size: 24px;
-  line-height: 0;
-}
-
-.scroll-top:hover::before,
-.scroll-top:focus-visible::before {
-  transform: scaleX(1);
-}
-
-.scroll-top:hover .btn-cta-text,
-.scroll-top:focus-visible .btn-cta-text {
-  color: #333333;
-  transition-delay: 0.18s;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg) translateY(1px);
+  transition: color 0.25s ease;
 }
 
 .scroll-top:hover,
 .scroll-top:focus-visible {
-  outline: 2px solid var(--Gradient, var(--color-outline));
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 10px 32px rgba(0, 0, 0, 0.42),
+    0 0 28px rgba(84, 129, 237, 0.32);
+}
+
+.scroll-top:hover::before,
+.scroll-top:focus-visible::before {
+  background: conic-gradient(
+    from -90deg,
+    #5481ed 0deg,
+    #a571bd calc(var(--scroll-top-fill) * 0.33),
+    #c46a90 calc(var(--scroll-top-fill) * 0.66),
+    #d46678 var(--scroll-top-fill),
+    rgba(255, 255, 255, 0.1) calc(var(--scroll-top-fill) + 1deg),
+    rgba(255, 255, 255, 0.1) 360deg
+  );
+  filter: drop-shadow(0 0 6px rgba(84, 129, 237, 0.35));
+  animation: scroll-top-border-fill 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+}
+
+@keyframes scroll-top-border-fill {
+  from {
+    --scroll-top-fill: 0deg;
+  }
+
+  to {
+    --scroll-top-fill: 360deg;
+  }
+}
+
+.scroll-top:hover .scroll-top__chevron,
+.scroll-top:focus-visible .scroll-top__chevron {
+  color: #a8bfff;
+}
+
+.scroll-top:focus-visible {
+  outline: 2px solid rgba(84, 129, 237, 0.75);
+  outline-offset: 3px;
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  bottom: max(1.15rem, env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top:hover::before,
+  .scroll-top:focus-visible::before {
+    animation: none;
+    --scroll-top-fill: 360deg;
+    background: conic-gradient(
+      from -90deg,
+      #5481ed 0deg,
+      #a571bd 120deg,
+      #c46a90 240deg,
+      #d46678 360deg
+    );
+  }
+
+  .scroll-top__chevron {
+    transition: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -3715,7 +3797,7 @@ body.page-projects-thumbs-img .projects-page-gallery .project-card:hover .projec
   .page-header .cta-btn .btn-cta-text,
   .hero .btn-get-started .btn-cta-text,
   .contact .php-email-form button[type=submit] .btn-cta-text,
-  .scroll-top .btn-cta-text {
+  .scroll-top__chevron {
     transition: none;
   }
 }
