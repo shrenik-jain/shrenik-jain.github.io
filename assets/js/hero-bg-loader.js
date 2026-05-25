@@ -9,16 +9,11 @@
  *   "flow"         Flow-field streaks + pointer swirl / wake
  *                  → assets/js/hero-flow.js
  *
- *   "gradient"     Soft gradient orbs pulled toward cursor
- *                  → assets/js/hero-gradient-field.js
- *
- *   "mesh"         Wire grid + sparkles + shooting stars (default)
+ *   "mesh"         Wire grid + sparkles + click ripples through the mesh (default)
  *                  → assets/js/hero-mesh.js
  *
- *   "waves"        Layered sine-wave ribbons
+ *   "waves"        Layered sine-wave ribbons (aurora-like)
  *                  → assets/js/hero-waves.js
- *
- *   "aurora"       Same as "waves"
  *
  * Unknown values fall back to "mesh".
  * =============================================================================
@@ -35,19 +30,12 @@ var HERO_BACKGROUND = "mesh";
 
   var mode = String(HERO_BACKGROUND || "").toLowerCase().trim();
 
-  if (mode === "aurora") {
-    mode = "waves";
-  }
-
   switch (mode) {
     case "particles":
       loadParticles();
       return;
     case "flow":
       loadScript("assets/js/hero-flow.js");
-      return;
-    case "gradient":
-      loadScript("assets/js/hero-gradient-field.js");
       return;
     case "mesh":
       loadScript("assets/js/hero-mesh.js");
@@ -59,7 +47,7 @@ var HERO_BACKGROUND = "mesh";
       console.warn(
         'hero-bg-loader: unknown HERO_BACKGROUND "' +
           HERO_BACKGROUND +
-          '". Use: particles | flow | gradient | mesh | waves. Falling back to mesh.'
+          '". Use: particles | flow | mesh | waves. Falling back to mesh.'
       );
       loadScript("assets/js/hero-mesh.js");
       return;

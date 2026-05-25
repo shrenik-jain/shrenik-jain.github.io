@@ -222,11 +222,22 @@ canvas{
   font-size: 14px;
   font-weight: 400;
   color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 767px) {
   .work-section-header img {
     display: none;
+  }
+
+  .work-section-header .logo-container {
+    display: none;
+  }
+
+  .work-section-header .header-info {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -286,6 +297,24 @@ canvas{
     rgba(95, 130, 210, 0.38) 45%,
     rgba(130, 150, 195, 0.22) 100%
   );
+}
+
+/* Vertical line draws in when timeline scrolls into view (AOS) */
+.timeline[data-aos]::before {
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+}
+
+.timeline[data-aos].aos-animate::before {
+  transform: scaleY(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline[data-aos]::before {
+    transform: none;
+    transition: none;
+  }
 }
 
 .timeline-item {
@@ -475,9 +504,12 @@ canvas{
   margin-top: -2px;
 }
 
-.timeline-content .view-website,
-.header-info .view-website {
+.timeline-content .view-website {
   padding-left: 5px;
+}
+
+.header-info .view-website {
+  padding-left: 0;
 }
 
 .view-website {
@@ -646,7 +678,7 @@ canvas{
   margin-left: 5px;
 }
 
-h5 {
+h5.company-name {
   margin-top: 5px;
   margin-bottom: .2rem;
   font-weight: 500;
@@ -1137,6 +1169,7 @@ h5 {
 
 .header .logo {
   transition: 0.3s;
+  cursor: default;
 }
 
 /* Brand: pill + 3D flip (name ↔ logo). Perspective on .header-brand-flip so parent .header-brand stays transform-free (preserves 3D). */
@@ -1389,23 +1422,58 @@ h5 {
   text-align: right;
 }
 
-.header .header-social-links a {
-  color: rgba(255, 255, 255, 0.5);
-  padding-left: 8px;
-  display: inline-block;
-  line-height: 0px;
-  transition: 0.3s;
-  font-size: 20px;
+/* Shared icon link motion — header navbar + footer */
+.header-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  transition: transform 0.2s ease;
 }
 
-.header .header-social-links a:hover {
-  color: #fff;
+.header-social-links a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.78;
+  transition: opacity 0.2s ease, filter 0.25s ease;
 }
 
-@media (max-width: 575px) {
-  .header .header-social-links a {
-    padding-left: 10px;
-    font-size: 15px;
+@media (hover: hover) and (pointer: fine) {
+  .header-social-links a:hover {
+    transform: translateY(-3px);
+  }
+
+  .header-social-links a:hover img {
+    opacity: 1;
+  }
+}
+
+.header-social-links a:active {
+  transform: translateY(-1px);
+}
+
+.header-social-links a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(120, 165, 245, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-social-links a {
+    transition: none;
+  }
+
+  .header-social-links a:hover,
+  .header-social-links a:active {
+    transform: none;
   }
 }
 
@@ -1448,6 +1516,7 @@ h5 {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    gap: 0.05rem 0.12rem;
     padding-right: 0;
     margin-left: 0;
     text-align: right;
@@ -1762,18 +1831,18 @@ h5 {
 }
 
 /*--------------------------------------------------------------
-# Testimonials Section
+# Testaments Section
 --------------------------------------------------------------*/
 
-.testimonials-page {
+.testaments-page {
   padding: 0 0 4.5rem;
 }
 
-.testimonials-page__inner {
+.testaments-page__inner {
   max-width: 1320px;
 }
 
-.testimonials .testimonial-item {
+.testaments .testament-item {
   box-sizing: border-box;
   height: 100%;
   min-height: 280px;
@@ -1790,19 +1859,19 @@ h5 {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.testimonials .swiper-slide-active .testimonial-item {
+.testaments .swiper-slide-active .testament-item {
   border-color: rgba(85, 129, 237, 0.22);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
 }
 
-.testimonial-item__icon {
+.testament-item__icon {
   font-size: 1.65rem;
   color: rgba(85, 129, 237, 0.4);
   line-height: 1;
   margin-bottom: 1rem;
 }
 
-.testimonials .testimonial-item p {
+.testaments .testament-item p {
   font-family: var(--font-secondary);
   font-size: 0.9375rem;
   font-weight: 400;
@@ -1812,7 +1881,7 @@ h5 {
   flex: 1 1 auto;
 }
 
-.testimonial-item__footer {
+.testament-item__footer {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -1821,7 +1890,7 @@ h5 {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.testimonial-item__avatar {
+.testament-item__avatar {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
@@ -1838,13 +1907,13 @@ h5 {
   color: #7a9df5;
 }
 
-.testimonials .testimonial-item .profile {
+.testaments .testament-item .profile {
   text-align: left;
   margin: 0;
   min-width: 0;
 }
 
-.testimonials .testimonial-item h3 {
+.testaments .testament-item h3 {
   margin: 0 0 0.2rem 0;
   font-family: var(--font-primary);
   font-size: 1rem;
@@ -1853,7 +1922,7 @@ h5 {
   line-height: 1.3;
 }
 
-.testimonials .testimonial-item h4 {
+.testaments .testament-item h4 {
   font-size: 0.8125rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.52);
@@ -1862,24 +1931,24 @@ h5 {
   font-weight: 400;
 }
 
-.testimonials .testimonial-item .stars i {
+.testaments .testament-item .stars i {
   color: #ffc107;
   margin: 0 1px;
 }
 
-.testimonials .testimonial-item .testimonial-img {
+.testaments .testament-item .testament-img {
   width: 90px;
   border-radius: 50%;
   border: 5px solid #474a4d;
   margin: 0 auto;
 }
 
-.testimonials .swiper-pagination {
+.testaments .swiper-pagination {
   margin-top: 1.75rem;
   position: relative;
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet {
+.testaments .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   background-color: rgba(255, 255, 255, 0.22);
@@ -1887,66 +1956,66 @@ h5 {
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+.testaments .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #5581ed;
   transform: scale(1.15);
 }
 
-.testimonials-swiper .swiper-slide {
+.testaments-swiper .swiper-slide {
   display: flex;
   align-items: stretch;
 }
 
-.testimonials .swiper-slide {
+.testaments .swiper-slide {
   opacity: 0.42;
   transition: opacity 0.35s ease;
   height: auto;
 }
 
-.testimonials .swiper-slide-active {
+.testaments .swiper-slide-active {
   opacity: 1;
 }
 
 @media (min-width: 1200px) {
-  .testimonials .swiper-slide-next,
-  .testimonials .swiper-slide-prev {
+  .testaments .swiper-slide-next,
+  .testaments .swiper-slide-prev {
     opacity: 0.72;
   }
 
-  .testimonials .swiper-slide-active {
+  .testaments .swiper-slide-active {
     opacity: 1;
   }
 }
 
 @media (max-width: 1199px) {
-  .testimonials .swiper-slide {
+  .testaments .swiper-slide {
     opacity: 1;
   }
 
-  .testimonials .swiper-pagination {
+  .testaments .swiper-pagination {
     margin-top: 1.25rem;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonials .testimonial-item {
+  .testaments .testament-item {
     min-height: 0;
     padding: 1.35rem 1.2rem 1.2rem;
   }
 
-  .testimonials .testimonial-item p {
+  .testaments .testament-item p {
     font-size: 0.9rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .testimonials .testimonial-item,
-  .testimonials .swiper-slide,
-  .testimonials .swiper-pagination .swiper-pagination-bullet {
+  .testaments .testament-item,
+  .testaments .swiper-slide,
+  .testaments .swiper-pagination .swiper-pagination-bullet {
     transition: none;
   }
 
-  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  .testaments .swiper-pagination .swiper-pagination-bullet-active {
     transform: none;
   }
 }
@@ -3617,65 +3686,6 @@ body.page-projects-thumbs-img .projects-page-gallery .project-card:hover .projec
   padding-top: 1.5rem;
   margin-top: 0;
   text-align: center;
-}
-
-/* Icons only — no card / tile; hover uses motion + existing brand tint filters on <img> */
-.footer .header-social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-  padding: 0.35rem;
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: none;
-  opacity: 1;
-  transition: transform 0.2s ease;
-}
-
-.footer .header-social-links a img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  display: block;
-  opacity: 0.78;
-  transition: opacity 0.2s ease, filter 0.25s ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .footer .header-social-links a:hover {
-    transform: translateY(-3px);
-  }
-
-  .footer .header-social-links a:hover img {
-    opacity: 1;
-  }
-}
-
-.footer .header-social-links a:active {
-  transform: translateY(-1px);
-}
-
-.footer .header-social-links a:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(120, 165, 245, 0.45);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .footer .header-social-links a {
-    transition: none;
-  }
-
-  .footer .header-social-links a:hover,
-  .footer .header-social-links a:active {
-    transform: none;
-  }
-}
-
-.twitter .github .linkedin img {
-  transition: filter 0.3s ease;
 }
 
 .twitter:hover img {
