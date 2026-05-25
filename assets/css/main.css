@@ -1024,106 +1024,258 @@ h5.company-name {
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
-  display: flex;
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100vh;
   z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
 }
 
-#preloader:before,
-#preloader:after {
-  content: "";
-  background-color: var(--color-secondary);
+#preloader .preloader-curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  background: linear-gradient(180deg, #0a0a0c 0%, #050506 100%);
+  z-index: 2;
+  transition: transform 0.48s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+#preloader .preloader-curtain--left {
+  left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#preloader .preloader-curtain--right {
+  right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#preloader .preloader-glow {
   position: absolute;
   inset: 0;
-  width: 50%;
-  height: 100%;
-  transition: all 0.3s ease 0s;
-  z-index: -1;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(84, 129, 237, 0.16), transparent 62%),
+    radial-gradient(ellipse 45% 35% at 50% 58%, rgba(196, 106, 144, 0.08), transparent 58%);
+  animation: preloader-glow-pulse 2.8s ease-in-out infinite;
 }
 
-#preloader:after {
-  left: auto;
-  right: 0;
-}
-
-#preloader .line {
+#preloader .preloader-content {
   position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0 1.5rem;
+  animation: preloader-content-in 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#preloader .preloader-mark {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader .preloader-mark__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 210deg,
+    rgba(84, 129, 237, 0.08) 0deg,
+    rgba(84, 129, 237, 0.95) 72deg,
+    rgba(165, 113, 189, 0.85) 148deg,
+    rgba(212, 102, 120, 0.75) 220deg,
+    rgba(84, 129, 237, 0.08) 360deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+  animation: preloader-ring-spin 1.05s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(84, 129, 237, 0.35));
+}
+
+#preloader .preloader-mark__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: preloader-logo-breathe 2.2s ease-in-out infinite;
+}
+
+#preloader .preloader-brand {
+  margin: 0;
+  font-family: var(--font-header);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+#preloader .preloader-brand__word {
+  background: linear-gradient(115deg, #5481ed 27%, #a571bd 50%, #c46a90 71%, #d46678 87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#preloader .preloader-brand__sep {
+  color: rgba(255, 255, 255, 0.55);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.55);
+  margin: 0 0.02em;
+}
+
+#preloader .preloader-brand__tld {
+  background: linear-gradient(115deg, #7a9df5 0%, #5481ed 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#preloader .preloader-track {
+  width: min(220px, 72vw);
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  margin: auto;
-  width: 1px;
-  height: 280px;
-  transition: all 0.5s ease 0s; /* Updated transition duration */
+  position: relative;
 }
 
-#preloader .line:before {
-  content: "";
+#preloader .preloader-track__fill {
   position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 0%;
-  transform: translateY(-50%);
-  animation: lineincrease 500ms ease-in-out 0s forwards; /* Reduced to 500ms */
+  inset: 0 auto 0 0;
+  width: 38%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #5481ed 0%, #a571bd 52%, #d46678 100%);
+  box-shadow: 0 0 14px rgba(84, 129, 237, 0.45);
+  animation: preloader-track-sweep 0.9s cubic-bezier(0.45, 0, 0.2, 1) infinite;
 }
 
-#preloader .line:after {
-  content: "";
-  position: absolute;
-  background-color: #999;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  transform: translateY(-100%);
-  animation: linemove 600ms linear 0s infinite; /* Reduced to 600ms */
-  animation-delay: 500ms; /* Aligning with new animation duration */
+#preloader.loaded {
+  background: transparent;
+  pointer-events: none;
 }
 
-#preloader.loaded .line {
+#preloader.loaded .preloader-curtain--left {
+  transform: translateX(-102%);
+}
+
+#preloader.loaded .preloader-curtain--right {
+  transform: translateX(102%);
+}
+
+#preloader.loaded .preloader-content {
+  animation: preloader-content-out 0.38s cubic-bezier(0.55, 0, 0.85, 0.36) forwards;
+}
+
+#preloader.loaded .preloader-glow {
+  animation: none;
   opacity: 0;
-  height: 100% !important;
+  transition: opacity 0.22s ease;
 }
 
-#preloader.loaded .line:after {
-  opacity: 0;
-}
-
-#preloader.loaded:before,
-#preloader.loaded:after {
-  animation: preloaderfinish 150ms ease-in-out 150ms forwards; /* Reduced to 150ms */
-}
-
-@keyframes lineincrease {
+@keyframes preloader-content-in {
   0% {
-    height: 0%;
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+    filter: blur(6px);
   }
 
   100% {
-    height: 100%;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
-@keyframes linemove {
+@keyframes preloader-content-out {
   0% {
-    transform: translateY(200%);
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 
   100% {
-    transform: translateY(-100%);
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
+    filter: blur(8px);
   }
 }
 
-@keyframes preloaderfinish {
+@keyframes preloader-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-logo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes preloader-track-sweep {
   0% {
-    width: 50%;
+    transform: translateX(-120%);
+    opacity: 0.55;
+  }
+
+  45% {
+    opacity: 1;
   }
 
   100% {
-    width: 0%;
+    transform: translateX(320%);
+    opacity: 0.55;
+  }
+}
+
+@keyframes preloader-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader .preloader-curtain {
+    transition-duration: 0.01ms;
+  }
+
+  #preloader .preloader-content,
+  #preloader .preloader-mark__ring,
+  #preloader .preloader-mark__logo,
+  #preloader .preloader-track__fill,
+  #preloader .preloader-glow {
+    animation: none !important;
+  }
+
+  #preloader.loaded .preloader-content {
+    opacity: 0;
+    transition: opacity 0.12s ease;
   }
 }
 
