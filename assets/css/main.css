@@ -1129,12 +1129,10 @@ h5.company-name {
 
 #preloader .preloader-curtain--left {
   left: 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 #preloader .preloader-curtain--right {
   right: 0;
-  border-left: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 #preloader .preloader-glow {
