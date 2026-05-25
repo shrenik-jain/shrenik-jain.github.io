@@ -3784,7 +3784,114 @@ body.page-projects-thumbs-img .projects-page-gallery .project-card:hover .projec
   outline: 2px solid var(--Gradient, var(--color-outline));
 }
 
+/* Homepage — hidden link to gravity.html (secret lab) */
+.hero-secret-wrap {
+  margin: 1.35rem 0 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.hero-secret-lab {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  opacity: 0.38;
+  transform: scale(0.92);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.45s ease;
+  filter: saturate(0.85);
+}
+
+.hero-secret-lab:hover,
+.hero-secret-lab:focus-visible {
+  opacity: 1;
+  transform: scale(1.04);
+  filter: saturate(1.2) drop-shadow(0 2px 10px rgba(232, 184, 106, 0.25)) drop-shadow(0 0 16px rgba(196, 106, 144, 0.3));
+  outline: none;
+}
+
+.hero-secret-lab__glyph {
+  display: block;
+  line-height: 0;
+}
+
+.hero-secret-lab__svg {
+  display: block;
+  width: 32px;
+  height: 40px;
+}
+
+.hero-secret-lab__egg {
+  transform-origin: 18px 24px;
+  animation: hero-secret-egg-wobble 4.5s ease-in-out infinite;
+}
+
+.hero-secret-lab:hover .hero-secret-lab__egg,
+.hero-secret-lab:focus-visible .hero-secret-lab__egg {
+  animation-duration: 2.2s;
+}
+
+.hero-secret-lab__shadow {
+  transition: opacity 0.4s ease;
+}
+
+.hero-secret-lab:hover .hero-secret-lab__shadow,
+.hero-secret-lab:focus-visible .hero-secret-lab__shadow {
+  opacity: 0.85;
+}
+
+.hero-secret-lab__hint {
+  font-family: var(--font-secondary);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(168, 178, 210, 0.55);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.35s ease,
+    max-height 0.35s ease,
+    color 0.35s ease;
+}
+
+.hero-secret-lab:hover .hero-secret-lab__hint,
+.hero-secret-lab:focus-visible .hero-secret-lab__hint {
+  opacity: 1;
+  max-height: 1.5rem;
+  color: rgba(200, 212, 245, 0.92);
+}
+
+@keyframes hero-secret-egg-wobble {
+  0%,
+  100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(5deg) translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-secret-lab__svg {
+    width: 28px;
+    height: 35px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-secret-lab__egg {
+    animation: none;
+  }
+
+  .hero-secret-lab,
+  .hero-secret-lab__hint,
   .page-header .cta-btn::before,
   .hero .btn-get-started::before,
   .contact .php-email-form button[type=submit]::before,
