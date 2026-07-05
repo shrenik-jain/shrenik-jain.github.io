@@ -8,22 +8,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
-/**
- * Preloader
- */
-const preloader = document.querySelector('#preloader');
-if (preloader) {
-  window.addEventListener('load', () => {
-    preloader.classList.add('loaded');
-
-    // Use a slight delay to ensure the preloader animation completes smoothly
-    setTimeout(() => {
-      preloader.remove();
-    }, 300); // Adjust as needed to ensure smooth transition
-  });
-}
-
-
   /**
    * Mobile nav toggle
    */
@@ -90,10 +74,10 @@ if (preloader) {
     }
     window.addEventListener('load', togglescrollTop);
     document.addEventListener('scroll', togglescrollTop);
-    scrollTop.addEventListener('click', window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    }));
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   /**

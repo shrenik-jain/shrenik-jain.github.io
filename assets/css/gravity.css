@@ -1,43 +1,437 @@
+:root {
+  --gravity-bg: #000;
+  --gravity-font: "Inter", system-ui, sans-serif;
+  --gravity-font-display: "Quicksand", system-ui, sans-serif;
+  --gravity-font-brand: "Poppins", system-ui, sans-serif;
+  --gravity-accent: #5481ed;
+  --gravity-accent-soft: rgba(84, 129, 237, 0.14);
+  --gravity-rose: #c46a90;
+  --gravity-glass: rgba(8, 10, 16, 0.72);
+  --gravity-border: rgba(255, 255, 255, 0.1);
+  --gravity-text: rgba(255, 255, 255, 0.88);
+  --gravity-text-muted: rgba(255, 255, 255, 0.58);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-    font-family: Helvetica sans-serif;
-    padding: 0;
-    margin: 0;
-    background-color: #222;
-    overflow: hidden;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-         -o-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  height: 100%;
 }
 
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+body.gravity-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--gravity-bg);
+  color: var(--gravity-text);
+  font-family: var(--gravity-font);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 5px 15px;
-    color: #eee;
-    font-size: 13px;
-    font-family:Verdana;
-    background-color: rgba(0, 0, 0, .5);
+#c {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+/* Lunar horizon — same asset as home hero, blended over the simulation */
+.gravity-moon {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  line-height: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: min(44vh, 440px);
+  overflow: hidden;
+  opacity: 0.14;
+  mix-blend-mode: screen;
+}
+
+.gravity-moon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 88%;
+  filter: brightness(0.88) contrast(1.05) blur(0.4px);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0.5) 76%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0.5) 76%,
+    transparent 100%
+  );
+}
+
+.gravity-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 85% 65% at 50% 45%, transparent 42%, rgba(0, 0, 0, 0.45) 100%),
+    radial-gradient(ellipse 60% 40% at 15% 10%, rgba(84, 129, 237, 0.07), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 88% 85%, rgba(196, 106, 144, 0.06), transparent 50%);
+}
+
+/* ---- HUD ---- */
+.gravity-hud {
+  position: fixed;
+  z-index: 3;
+  top: 1.25rem;
+  left: 1.25rem;
+  max-width: min(26rem, calc(100vw - 2.5rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid var(--gravity-border);
+  background: var(--gravity-glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 16px 48px rgba(0, 0, 0, 0.38);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    max-width 0.45s ease,
+    padding 0.45s ease;
+}
+
+.gravity-hud__top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.gravity-hud__chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gravity-text);
+  font-family: var(--gravity-font);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.gravity-hud__back-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gravity-hud__chip:hover {
+    border-color: rgba(84, 129, 237, 0.45);
+    background: var(--gravity-accent-soft);
+    color: #fff;
+  }
+
+  .gravity-hud__back:hover {
+    transform: translateX(-1px);
+  }
+}
+
+.gravity-hud__chip:focus-visible {
+  outline: 2px solid rgba(84, 129, 237, 0.75);
+  outline-offset: 2px;
+}
+
+.gravity-hud__back:focus-visible {
+  outline: 2px solid rgba(84, 129, 237, 0.75);
+  outline-offset: 2px;
+}
+
+.gravity-hud__badge {
+  font-family: var(--gravity-font-brand);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(122deg, rgba(196, 122, 136, 0.22), rgba(84, 129, 237, 0.22));
+  border-color: rgba(84, 129, 237, 0.28);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gravity-hud__badge:hover {
+    border-color: rgba(84, 129, 237, 0.55);
+    background: linear-gradient(122deg, rgba(196, 122, 136, 0.32), rgba(84, 129, 237, 0.32));
+    transform: translateY(-1px);
+  }
+}
+
+.gravity-hud__controls[aria-expanded="true"] {
+  border-color: rgba(84, 129, 237, 0.45);
+  background: rgba(84, 129, 237, 0.18);
+  color: #fff;
+}
+
+.gravity-hud__title {
+  margin: 0;
+  font-family: var(--gravity-font-display);
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(115deg, #5481ed 27%, #a571bd 50%, #c46a90 71%, #d46678 87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gravity-hud__lead {
+  margin: 0.45rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--gravity-text-muted);
+}
+
+.gravity-hud__hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gravity-hud__hints li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.gravity-hud__hints kbd {
+  font-family: var(--gravity-font);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #a8bfff;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.gravity-hud--compact .gravity-hud__intro,
+.gravity-hud--compact .gravity-hud__hints {
+  display: none;
+}
+
+.gravity-hud--compact:not(.gravity-hud--controls-open) {
+  align-items: flex-start;
+  width: fit-content;
+  max-width: calc(100vw - 2.5rem);
+  padding: 0.65rem 0.75rem;
+  gap: 0;
+}
+
+.gravity-hud--controls-open {
+  width: min(300px, calc(100vw - 2.5rem));
+  max-height: min(72vh, 560px);
+  overflow: auto;
+}
+
+.gravity-hud--controls-open.gravity-hud--compact {
+  gap: 0.65rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.gravity-hud--hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+/* ---- dat.GUI panel (inside HUD) ---- */
+.gravity-gui-shell {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-height: min(50vh, 360px);
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.gravity-hud--controls-open .gravity-gui-shell {
+  display: block;
+}
+
+.gravity-gui-shell .dg.main .close-button {
+  display: none !important;
+}
+
+.gravity-gui-shell .dg {
+  color: var(--gravity-text) !important;
+  font-family: var(--gravity-font) !important;
+  font-size: 11px !important;
+  text-shadow: none !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.gravity-gui-shell .dg.main {
+  position: static !important;
+  opacity: 1 !important;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.gravity-gui-shell .dg li:not(.folder) {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.gravity-gui-shell .dg li.title {
+  background: rgba(0, 0, 0, 0.35) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%235481ed' d='M2 1l4 3-4 3z'/%3E%3C/svg%3E") 8px 50% no-repeat !important;
+  background-size: 8px 8px !important;
+  padding-left: 1.35rem !important;
+  font-family: var(--gravity-font-brand) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  border-bottom: 1px solid rgba(84, 129, 237, 0.2) !important;
+}
+
+.gravity-gui-shell .dg .closed li.title {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23a571bd' d='M1 2l3 2-3 2z'/%3E%3C/svg%3E") !important;
+}
+
+.gravity-gui-shell .dg .cr.number {
+  border-left: 3px solid rgba(84, 129, 237, 0.85) !important;
+}
+
+.gravity-gui-shell .dg .cr.number input[type="text"] {
+  color: #a8bfff !important;
+}
+
+.gravity-gui-shell .dg .cr.boolean {
+  border-left: 3px solid rgba(196, 106, 144, 0.85) !important;
+}
+
+.gravity-gui-shell .dg .cr.function {
+  border-left: 3px solid rgba(212, 102, 120, 0.85) !important;
+}
+
+.gravity-gui-shell .dg .c input[type="text"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px;
+  color: #fff !important;
+}
+
+.gravity-gui-shell .dg .c .slider {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 999px;
+}
+
+.gravity-gui-shell .dg .c .slider-fg {
+  background: linear-gradient(90deg, #5481ed, #a571bd) !important;
+  border-radius: 999px;
+}
+
+.gravity-gui-shell .dg .cr.function:hover,
+.gravity-gui-shell .dg .cr.boolean:hover {
+  background: rgba(84, 129, 237, 0.08) !important;
+}
+
+.gravity-gui-shell .dg.main::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+}
+
+.gravity-gui-shell .dg.main::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(84, 129, 237, 0.35);
 }
 
 @media (max-width: 767px) {
-    .info {
-        top: 30px;
-        left: 150px;
-    }
+  body.gravity-page {
+    --gravity-mobile-gutter: max(1rem, env(safe-area-inset-left));
+    --gravity-mobile-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .gravity-hud {
+    top: var(--gravity-mobile-top);
+    left: var(--gravity-mobile-gutter);
+    right: auto;
+    bottom: auto;
+    max-width: calc(100vw - 2 * var(--gravity-mobile-gutter));
+  }
+
+  .gravity-hud--controls-open {
+    width: min(300px, calc(100vw - 2 * var(--gravity-mobile-gutter)));
+    max-height: min(70vh, 520px);
+  }
 }
 
-@media (max-width: 430px) {
-    .info {
-        top: 30px;
-        left: 70px;
-    }
+@media (max-width: 576px) {
+  .gravity-moon {
+    height: min(36vh, 300px);
+    opacity: 0.11;
+  }
+
+  .gravity-moon img {
+    object-position: center 85%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gravity-moon {
+    opacity: 0.09;
+  }
+
+  .gravity-hud {
+    transition: none;
+  }
 }

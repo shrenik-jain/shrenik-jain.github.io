@@ -20,7 +20,7 @@ Most of what I build never gets a bookmark-friendly URL — it lives in notebook
 - **Projects** — selected work with links to repositories  
 - **Skills** — programming languages, ML stack, tooling, and platforms  
 - **Academics** — education and certifications  
-- **Testimonials** — recommendations from collaborators  
+- **Testaments** — recommendations from collaborators  
 - **Contact** — form, Calendly, email, and phone  
 <!-- - **Gravity** (`gravity.html`) — small interactive canvas demo, separate from the main portfolio -->
 

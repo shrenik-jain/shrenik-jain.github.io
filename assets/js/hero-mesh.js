@@ -1,5 +1,6 @@
 /**
- * Home hero: wire mesh warps from the cursor + pulsing node glows + shooting stars.
+ * Home hero: wire mesh warps from the cursor + pulsing node glows.
+ * Pointer clicks send a soft wave through the grid (displacement + light rings).
  */
 (function () {
   var container = document.getElementById("dots");
@@ -26,8 +27,13 @@
   var cols = 0;
   var rows = 0;
   var sparkles = [];
-  var shootingStars = [];
-  var nextShootingStarIn = 105;
+  var ripples = [];
+  var MAX_RIPPLES = 5;
+  /* Must match drawSparkles() — one full sin cycle ⇒ new mesh position */
+  var SPARKLE_WAVE_T = 0.00205;
+  var SPARKLE_WAVE_PH = 2.1;
+  var SPARKLE_TAU = Math.PI * 2;
+  var MAX_SPARKLES = 6;
 
   var cx = 0;
   var cy = 0;
@@ -40,13 +46,84 @@
     if (cols < 4 || rows < 4) {
       return;
     }
+    var cells = [];
+    var i;
+    var j;
+    var m;
+    var t;
+    var tmp;
+    var count;
+    for (j = 1; j <= rows - 2; j++) {
+      for (i = 1; i <= cols - 2; i++) {
+        cells.push({ i: i, j: j });
+      }
+    }
+    m = cells.length;
+    while (m > 1) {
+      m--;
+      t = Math.floor(Math.random() * (m + 1));
+      tmp = cells[m];
+      cells[m] = cells[t];
+      cells[t] = tmp;
+    }
+    count = Math.min(MAX_SPARKLES, cells.length);
+    for (m = 0; m < count; m++) {
+      var ph = Math.random() * SPARKLE_TAU;
+      sparkles.push({
+        i: cells[m].i,
+        j: cells[m].j,
+        phase: ph,
+        lastWaveCycle: Math.floor((time * SPARKLE_WAVE_T + ph * SPARKLE_WAVE_PH) / SPARKLE_TAU),
+      });
+    }
+  }
+
+  function sparkleWaveCycle(sp) {
+    return Math.floor((time * SPARKLE_WAVE_T + sp.phase * SPARKLE_WAVE_PH) / SPARKLE_TAU);
+  }
+
+  function moveSparkleToRandomCell(index) {
+    var used = Object.create(null);
+    var q;
+    var ii;
+    var jj;
+    var candidates = [];
+    var pick;
+    for (q = 0; q < sparkles.length; q++) {
+      if (q !== index) {
+        used[sparkles[q].i + "," + sparkles[q].j] = 1;
+      }
+    }
+    for (jj = 1; jj <= rows - 2; jj++) {
+      for (ii = 1; ii <= cols - 2; ii++) {
+        if (!used[ii + "," + jj]) {
+          candidates.push({ i: ii, j: jj });
+        }
+      }
+    }
+    if (candidates.length === 0) {
+      return;
+    }
+    pick = candidates[Math.floor(Math.random() * candidates.length)];
+    sparkles[index].i = pick.i;
+    sparkles[index].j = pick.j;
+    sparkles[index].phase = Math.random() * SPARKLE_TAU;
+    sparkles[index].lastWaveCycle = sparkleWaveCycle(sparkles[index]);
+  }
+
+  function relocateSparklesOnShineCycle() {
     var k;
-    var si;
-    var sj;
-    for (k = 0; k < 9; k++) {
-      si = 1 + Math.floor((cols - 2) * (((k * 37 + 13) % 97) / 97));
-      sj = 1 + Math.floor((rows - 2) * (((k * 53 + 19) % 89) / 89));
-      sparkles.push({ i: si, j: sj, phase: k * 1.23 });
+    var cyc;
+    for (k = 0; k < sparkles.length; k++) {
+      cyc = sparkleWaveCycle(sparkles[k]);
+      if (typeof sparkles[k].lastWaveCycle !== "number") {
+        sparkles[k].lastWaveCycle = cyc;
+        continue;
+      }
+      if (cyc > sparkles[k].lastWaveCycle) {
+        sparkles[k].lastWaveCycle = cyc;
+        moveSparkleToRandomCell(k);
+      }
     }
   }
 
@@ -57,6 +134,43 @@
       tx += (w * 0.5 - tx) * 0.02;
       ty += (h * 0.45 - ty) * 0.02;
     }
+  }
+
+  function rippleDisplacement(bx, by) {
+    var ox = 0;
+    var oy = 0;
+    var q;
+    var rp;
+    var rdx;
+    var rdy;
+    var rd;
+    var u;
+    var front;
+    var ring;
+    var damp;
+    var outward;
+    var cp;
+
+    for (q = 0; q < ripples.length; q++) {
+      rp = ripples[q];
+      u = (time - rp.start) * 0.00475;
+      if (u > 3.25) {
+        continue;
+      }
+      rdx = bx - rp.x;
+      rdy = by - rp.y;
+      rd = Math.sqrt(rdx * rdx + rdy * rdy) + 0.001;
+      front = u * 195;
+      ring = Math.exp(-((rd - front) * (rd - front)) / 4800);
+      damp = Math.exp(-u * 0.92);
+      outward = 12 * ring * damp;
+      ox += (rdx / rd) * outward;
+      oy += (rdy / rd) * outward;
+      cp = Math.exp(-rd / 52) * Math.exp(-u * 1.35) * Math.sin(u * 6.2831853) * 4.5;
+      ox += (rdx / rd) * cp;
+      oy += (rdy / rd) * cp;
+    }
+    return { ox: ox, oy: oy };
   }
 
   function vertex(i, j) {
@@ -73,9 +187,18 @@
     var falloff = Math.max(0, 1 - d / maxR);
     falloff *= falloff;
     var push = 26 * falloff;
+    var x = bx + (dx / d) * push;
+    var y = by + (dy / d) * push;
+
+    if (!reduced && ripples.length) {
+      var rp = rippleDisplacement(bx, by);
+      x += rp.ox;
+      y += rp.oy;
+    }
+
     return {
-      x: bx + (dx / d) * push,
-      y: by + (dy / d) * push,
+      x: x,
+      y: y,
     };
   }
 
@@ -92,148 +215,70 @@
     cols = Math.max(6, Math.min(44, Math.floor(w / 38)));
     rows = Math.max(5, Math.min(32, Math.floor(h / 38)));
     initSparkles();
-    shootingStars.length = 0;
-    nextShootingStarIn = 55 + Math.floor(Math.random() * 78);
+    ripples.length = 0;
     tx = cx = w * 0.5;
     ty = cy = h * 0.45;
   }
 
-  function spawnShootingStar() {
-    var fromTop = Math.random() > 0.4;
-    var x;
-    var y;
-    var speed = 5.5 + Math.random() * 4.5;
-    var angle = 0.52 + Math.random() * 0.42;
-    var vx = Math.cos(angle) * speed;
-    var vy = Math.sin(angle) * speed;
-    if (fromTop) {
-      x = Math.random() * w * 0.95;
-      y = -40 - Math.random() * 80;
-    } else {
-      x = -50 - Math.random() * 100;
-      y = Math.random() * h * 0.45;
-    }
-    shootingStars.push({
-      x: x,
-      y: y,
-      vx: vx,
-      vy: vy,
-      age: 0,
-      maxAge: 160 + Math.floor(Math.random() * 120),
-      tailPx: 150 + Math.random() * 185,
-    });
-  }
-
-  function updateShootingStars() {
-    nextShootingStarIn--;
-    if (nextShootingStarIn <= 0 && shootingStars.length < 3) {
-      spawnShootingStar();
-      nextShootingStarIn = 52 + Math.floor(Math.random() * 88);
-    }
+  function pruneRipples() {
     var i;
-    var s;
-    for (i = shootingStars.length - 1; i >= 0; i--) {
-      s = shootingStars[i];
-      s.x += s.vx;
-      s.y += s.vy;
-      s.age++;
-      if (s.age > s.maxAge || s.x > w + 80 || s.y > h + 80) {
-        shootingStars.splice(i, 1);
+    var u;
+    for (i = ripples.length - 1; i >= 0; i--) {
+      u = (time - ripples[i].start) * 0.00475;
+      if (u > 3.45) {
+        ripples.splice(i, 1);
       }
     }
   }
 
-  function drawShootingStars() {
-    var i;
-    var s;
-    var life;
-    var ax;
-    var ay;
-    var alpha;
-    var sp;
-    var nx;
-    var ny;
-    var segs;
-    var j;
-    var t0;
-    var t1;
-    var t;
-    var taper;
-    var lw;
-    var fade;
-    var x0;
-    var y0;
-    var x1;
-    var y1;
-    var headW;
-    var gCol;
-    var bCol;
-    var aCol;
+  function drawRippleRings() {
+    var q;
+    var rp;
+    var u;
+    var progress;
+    var rMain;
+    var rEcho;
+    var aMain;
+    var aEcho;
+    var g;
+    var maxSpan;
 
     ctx.globalCompositeOperation = "lighter";
+    maxSpan = Math.min(w, h) * 0.48;
 
-    for (i = 0; i < shootingStars.length; i++) {
-      s = shootingStars[i];
-      life = 1 - s.age / s.maxAge;
-      if (life < 0.05) {
+    for (q = 0; q < ripples.length; q++) {
+      rp = ripples[q];
+      u = (time - rp.start) * 0.00475;
+      if (u > 3.25) {
         continue;
       }
-      sp = Math.sqrt(s.vx * s.vx + s.vy * s.vy) || 1;
-      nx = s.vx / sp;
-      ny = s.vy / sp;
-      ax = s.x - nx * s.tailPx;
-      ay = s.y - ny * s.tailPx;
+      progress = u / 3.25;
+      rMain = 10 + u * maxSpan * 0.92;
+      rEcho = rMain * 0.38;
+      aMain = (1 - progress) * 0.11 * Math.exp(-u * 0.28);
+      aEcho = aMain * 0.55;
 
-      alpha = 0.17 * life;
-      headW = 2.05 + 4.1 * life;
-      segs = 42;
-
-      ctx.lineCap = "round";
-      ctx.lineJoin = "round";
-
-      for (j = 0; j < segs; j++) {
-        t0 = j / segs;
-        t1 = (j + 1) / segs;
-        t = (t0 + t1) * 0.5;
-        taper = Math.pow(1 - t, 1.55);
-        lw = 0.18 + headW * taper;
-        x0 = s.x + (ax - s.x) * t0;
-        y0 = s.y + (ay - s.y) * t0;
-        x1 = s.x + (ax - s.x) * t1;
-        y1 = s.y + (ay - s.y) * t1;
-        fade = Math.pow(1 - t, 0.28);
-        gCol = Math.floor(210 + 45 * (1 - t));
-        bCol = Math.floor(248 - 55 * t);
-        aCol = alpha * fade * (0.35 + 0.65 * taper) * 0.9;
-        ctx.strokeStyle = "rgba(255, " + gCol + ", " + bCol + ", " + aCol + ")";
-        ctx.lineWidth = lw;
-        ctx.beginPath();
-        ctx.moveTo(x0, y0);
-        ctx.lineTo(x1, y1);
-        ctx.stroke();
-      }
-
-      for (j = 0; j < Math.min(8, segs); j++) {
-        t0 = j / segs;
-        t1 = (j + 1) / segs;
-        t = (t0 + t1) * 0.5;
-        taper = Math.pow(1 - t, 1.35);
-        lw = 0.12 + (0.85 + 2.2 * life) * taper;
-        x0 = s.x + (ax - s.x) * t0;
-        y0 = s.y + (ay - s.y) * t0;
-        x1 = s.x + (ax - s.x) * t1;
-        y1 = s.y + (ay - s.y) * t1;
-        ctx.strokeStyle = "rgba(255, 255, 255, " + (0.3 * life * Math.pow(1 - t, 0.2)) + ")";
-        ctx.lineWidth = lw;
-        ctx.beginPath();
-        ctx.moveTo(x0, y0);
-        ctx.lineTo(x1, y1);
-        ctx.stroke();
-      }
-
-      ctx.fillStyle = "rgba(255, 252, 255, " + (0.38 * life) + ")";
+      g = ctx.createRadialGradient(rp.x, rp.y, rMain - 2.2, rp.x, rp.y, rMain + 2.2);
+      g.addColorStop(0, "rgba(0,0,0,0)");
+      g.addColorStop(0.45, "rgba(148, 188, 255, " + aMain + ")");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g;
       ctx.beginPath();
-      ctx.arc(s.x, s.y, 1.2 + 1.05 * life, 0, Math.PI * 2);
+      ctx.arc(rp.x, rp.y, rMain + 2.2, 0, Math.PI * 2);
+      ctx.fill();
+
+      g = ctx.createRadialGradient(rp.x, rp.y, rEcho - 1.4, rp.x, rp.y, rEcho + 1.4);
+      g.addColorStop(0, "rgba(0,0,0,0)");
+      g.addColorStop(0.5, "rgba(220, 232, 255, " + aEcho + ")");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(rp.x, rp.y, rEcho + 1.4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "rgba(240, 248, 255, " + (0.04 * (1 - progress) * Math.exp(-u * 0.5)) + ")";
+      ctx.beginPath();
+      ctx.arc(rp.x, rp.y, 2.2, 0, Math.PI * 2);
       ctx.fill();
     }
 
@@ -282,7 +327,7 @@
     }
 
     if (!reduced) {
-      drawShootingStars();
+      drawRippleRings();
       drawSparkles();
     }
 
@@ -299,20 +344,64 @@
     var p;
     var pulse;
     var grd;
+    var t;
+    var shine;
+    var rayLen;
+    var rayW;
+    var d;
 
     ctx.globalCompositeOperation = "lighter";
 
     for (k = 0; k < sparkles.length; k++) {
       p = vertex(sparkles[k].i, sparkles[k].j);
-      pulse = 0.45 + 0.55 * Math.sin(time * 0.0038 + sparkles[k].phase * 2.1);
-      grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 18);
-      grd.addColorStop(0, "rgba(170, 205, 255, " + 0.1 * pulse + ")");
-      grd.addColorStop(0.55, "rgba(84, 129, 237, " + 0.05 * pulse + ")");
+      t = time * SPARKLE_WAVE_T + sparkles[k].phase * SPARKLE_WAVE_PH;
+      pulse = 0.42 + 0.58 * (0.5 + 0.5 * Math.sin(t));
+      shine = pulse * pulse * 0.85;
+      /* Soft glints — slightly brighter at peaks, still restrained */
+      shine *= 0.82 + 0.18 * Math.pow(Math.max(0, Math.sin(t * 1.65)), 1.15);
+
+      grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 22);
+      grd.addColorStop(0, "rgba(245, 248, 255, " + (0.2 * shine) + ")");
+      grd.addColorStop(0.1, "rgba(200, 220, 255, " + (0.14 * pulse) + ")");
+      grd.addColorStop(0.4, "rgba(130, 170, 245, " + (0.075 * pulse) + ")");
+      grd.addColorStop(0.72, "rgba(84, 129, 237, " + (0.035 * pulse) + ")");
       grd.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = grd;
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 18, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, 22, 0, Math.PI * 2);
       ctx.fill();
+
+      grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 3.8);
+      grd.addColorStop(0, "rgba(255, 255, 255, " + (0.32 * shine) + ")");
+      grd.addColorStop(0.55, "rgba(190, 210, 255, " + (0.12 * pulse) + ")");
+      grd.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = grd;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 3.8, 0, Math.PI * 2);
+      ctx.fill();
+
+      rayLen = 3.5 + 7.5 * shine;
+      rayW = 0.32 + 0.55 * shine;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.strokeStyle = "rgba(250, 252, 255, " + (0.26 * shine) + ")";
+      ctx.lineWidth = rayW;
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y - rayLen);
+      ctx.lineTo(p.x, p.y + rayLen);
+      ctx.moveTo(p.x - rayLen, p.y);
+      ctx.lineTo(p.x + rayLen, p.y);
+      ctx.stroke();
+
+      d = rayLen * 0.65;
+      ctx.strokeStyle = "rgba(200, 218, 255, " + (0.14 * shine) + ")";
+      ctx.lineWidth = rayW * 0.5;
+      ctx.beginPath();
+      ctx.moveTo(p.x - d, p.y - d);
+      ctx.lineTo(p.x + d, p.y + d);
+      ctx.moveTo(p.x - d, p.y + d);
+      ctx.lineTo(p.x + d, p.y - d);
+      ctx.stroke();
     }
 
     ctx.globalCompositeOperation = "source-over";
@@ -325,7 +414,8 @@
     time += reduced ? 0 : 12;
     smoothPointer();
     if (!reduced) {
-      updateShootingStars();
+      pruneRipples();
+      relocateSparklesOnShineCycle();
     }
     drawFrame();
     if (!reduced) {
@@ -344,6 +434,26 @@
     hasPointer = false;
   }
 
+  function onPointerDownRipple(ev) {
+    if (ev.button !== undefined && ev.button !== 0) {
+      return;
+    }
+    if (ev.target.closest && ev.target.closest('a, button, input, textarea, select, [role="button"]')) {
+      return;
+    }
+    onPointer(ev);
+    var rect = container.getBoundingClientRect();
+    var px = ev.clientX - rect.left;
+    var py = ev.clientY - rect.top;
+    if (px < 0 || py < 0 || px > w || py > h || !w || !h) {
+      return;
+    }
+    ripples.push({ x: px, y: py, start: time });
+    while (ripples.length > MAX_RIPPLES) {
+      ripples.shift();
+    }
+  }
+
   if (reduced) {
     resize();
     drawFrame();
@@ -360,7 +470,7 @@
 
   var root = hero || container;
   root.addEventListener("pointermove", onPointer, { passive: true });
-  root.addEventListener("pointerdown", onPointer, { passive: true });
+  root.addEventListener("pointerdown", onPointerDownRipple, { passive: true });
   root.addEventListener("pointerleave", onLeave, { passive: true });
   root.addEventListener(
     "pointerup",
