@@ -2008,6 +2008,8 @@ function GravityPoint(x, y, radius, targets) {
 	Vector.call(this, x, y);
 	this.radius = radius;
 	this.currentRadius = radius * 0.5;
+	this._spin = Math.random() * Math.PI * 2;
+	this._pulse = Math.random() * Math.PI * 2;
 
 	this._targets = {
 		particles: targets.particles || [],
@@ -2017,6 +2019,7 @@ function GravityPoint(x, y, radius, targets) {
 }
 
 GravityPoint.RADIUS_LIMIT = 100;
+GravityPoint.GRAVITY_MAX = 5;
 GravityPoint.interferenceToPoint = true;
 
 GravityPoint.prototype = (function(o) {
@@ -2025,7 +2028,7 @@ GravityPoint.prototype = (function(o) {
 	for (p in o) s[p] = o[p];
 	return s;
 })({
-	gravity: 0.1,
+	gravity: 0.14,
 	isMouseOver: false,
 	dragging: false,
 	destroyed: false,
@@ -2056,24 +2059,33 @@ GravityPoint.prototype = (function(o) {
 		this._speed = this._speed.add(d);
 	},
 
+	// Soft radial pull plus a light orbital swirl so motion ribbons instead of darts.
+	_attractionTo: function(point, strength) {
+		var delta = Vector.sub(this, point),
+			dist = delta.length();
+		if (!dist) return new Vector(0, 0);
+		var force = Math.min(strength, dist * 0.48);
+		var nx = delta.x / dist,
+			ny = delta.y / dist,
+			swirl = force * 0.2;
+		return new Vector(nx * force - ny * swirl, ny * force + nx * swirl);
+	},
+
 	collapse: function(e) {
 		this.currentRadius *= 1.75;
 		this._collapsing = true;
 	},
 
-	render: function(ctx) {
+	update: function() {
 		if (this.destroyed) return;
 
 		var particles = this._targets.particles,
 			i,
-			len;
+			len,
+			pull = Math.min(this.gravity, GravityPoint.GRAVITY_MAX);
 
 		for (i = 0, len = particles.length; i < len; i++) {
-			particles[i].addSpeed(
-				Vector.sub(this, particles[i])
-					.normalize()
-					.scale(this.gravity)
-			);
+			particles[i].addSpeed(this._attractionTo(particles[i], pull));
 		}
 
 		this._easeRadius =
@@ -2081,10 +2093,12 @@ GravityPoint.prototype = (function(o) {
 		this.currentRadius += this._easeRadius;
 		if (this.currentRadius < 0) this.currentRadius = 0;
 
+		this._spin += 0.018 + Math.min(this.gravity, GravityPoint.GRAVITY_MAX) * 0.01;
+		this._pulse += 0.04;
+
 		if (this._collapsing) {
 			this.radius *= 0.75;
 			if (this.currentRadius < 1) this.destroyed = true;
-			this._draw(ctx);
 			return;
 		}
 
@@ -2104,7 +2118,10 @@ GravityPoint.prototype = (function(o) {
 				this.distanceTo(g) < (this.currentRadius + g.radius) * 0.85
 			) {
 				g.destroyed = true;
-				this.gravity += g.gravity;
+				this.gravity = Math.min(
+					this.gravity + g.gravity,
+					GravityPoint.GRAVITY_MAX
+				);
 
 				absorp = Vector.sub(g, this).scale(g.radius / this.radius * 0.5);
 				this.addSpeed(absorp);
@@ -2114,11 +2131,7 @@ GravityPoint.prototype = (function(o) {
 				this.radius = Math.sqrt((area + garea) / Math.PI);
 			}
 
-			g.addSpeed(
-				Vector.sub(this, g)
-					.normalize()
-					.scale(this.gravity)
-			);
+			g.addSpeed(this._attractionTo(g, pull * 1.2));
 		}
 
 		if (GravityPoint.interferenceToPoint && !this.dragging) this.add(this._speed);
@@ -2126,50 +2139,122 @@ GravityPoint.prototype = (function(o) {
 		this._speed = new Vector();
 
 		if (this.currentRadius > GravityPoint.RADIUS_LIMIT) this.collapse();
+	},
 
-		this._draw(ctx);
+	render: function(ctx) {
+		this.update();
+		if (!this.destroyed) this._draw(ctx);
 	},
 
 	_draw: function(ctx) {
-		var grd, r;
+		var r = Math.max(this.currentRadius, 0.5),
+			pulse = 0.85 + Math.sin(this._pulse) * 0.15,
+			corona = r * (4.8 + pulse * 0.4),
+			diskOuter = r * 2.35,
+			diskInner = r * 1.12,
+			photon = r * 1.05,
+			horizon = r * 0.82,
+			grd,
+			intensity = Math.min(1, 0.35 + this.gravity * 0.2);
 
 		ctx.save();
 
-		grd = ctx.createRadialGradient(
-			this.x,
-			this.y,
-			this.radius,
-			this.x,
-			this.y,
-			this.radius * 5
-		);
-		grd.addColorStop(0, "rgba(0, 0, 0, 0.15)");
+		// Soft gravitational haze
+		grd = ctx.createRadialGradient(this.x, this.y, r * 0.6, this.x, this.y, corona);
+		grd.addColorStop(0, "rgba(8, 10, 18, 0.55)");
+		grd.addColorStop(0.35, "rgba(40, 60, 120, " + (0.16 * intensity) + ")");
+		grd.addColorStop(0.7, "rgba(120, 70, 40, " + (0.08 * intensity) + ")");
 		grd.addColorStop(1, "rgba(0, 0, 0, 0)");
 		ctx.beginPath();
-		ctx.arc(this.x, this.y, this.radius * 5, 0, Math.PI * 2, false);
+		ctx.arc(this.x, this.y, corona, 0, Math.PI * 2, false);
 		ctx.fillStyle = grd;
 		ctx.fill();
 
-		r = Math.random() * this.currentRadius * 0.7 + this.currentRadius * 0.3;
-		grd = ctx.createRadialGradient(
-			this.x,
-			this.y,
-			r,
-			this.x,
-			this.y,
-			this.currentRadius
-		);
-		grd.addColorStop(0, "rgba(4, 6, 14, 1)");
-		grd.addColorStop(
-			1,
-			Math.random() < 0.35
-				? "rgba(196, 106, 144, 0.55)"
-				: "rgba(84, 129, 237, 0.72)"
-		);
+		// Flattened accretion disk
+		ctx.save();
+		ctx.translate(this.x, this.y);
+		ctx.rotate(this._spin * 0.35);
+		ctx.scale(1, 0.42 + Math.sin(this._spin * 0.5) * 0.03);
+
+		grd = ctx.createRadialGradient(0, 0, diskInner, 0, 0, diskOuter);
+		grd.addColorStop(0, "rgba(255, 220, 160, 0)");
+		grd.addColorStop(0.18, "rgba(255, 196, 120, " + (0.15 * intensity) + ")");
+		grd.addColorStop(0.42, "rgba(255, 140, 60, " + (0.55 * intensity * pulse) + ")");
+		grd.addColorStop(0.62, "rgba(90, 140, 255, " + (0.42 * intensity) + ")");
+		grd.addColorStop(0.82, "rgba(40, 70, 160, " + (0.18 * intensity) + ")");
+		grd.addColorStop(1, "rgba(0, 0, 0, 0)");
 		ctx.beginPath();
-		ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2, false);
+		ctx.arc(0, 0, diskOuter, 0, Math.PI * 2, false);
 		ctx.fillStyle = grd;
 		ctx.fill();
+
+		// Hot inner disk shear streaks
+		ctx.globalCompositeOperation = "lighter";
+		ctx.strokeStyle = "rgba(255, 210, 150, " + (0.22 * intensity * pulse) + ")";
+		ctx.lineWidth = Math.max(1, r * 0.08);
+		ctx.beginPath();
+		ctx.arc(0, 0, (diskInner + diskOuter) * 0.5, this._spin, this._spin + Math.PI * 1.2, false);
+		ctx.stroke();
+		ctx.strokeStyle = "rgba(130, 170, 255, " + (0.16 * intensity) + ")";
+		ctx.beginPath();
+		ctx.arc(0, 0, (diskInner + diskOuter) * 0.58, -this._spin, -this._spin + Math.PI * 0.9, false);
+		ctx.stroke();
+		ctx.restore();
+
+		// Photon ring
+		ctx.globalCompositeOperation = "lighter";
+		grd = ctx.createRadialGradient(this.x, this.y, photon * 0.92, this.x, this.y, photon * 1.18);
+		grd.addColorStop(0, "rgba(255, 230, 190, 0)");
+		grd.addColorStop(0.45, "rgba(255, 210, 160, " + (0.55 * pulse) + ")");
+		grd.addColorStop(0.7, "rgba(170, 200, 255, 0.35)");
+		grd.addColorStop(1, "rgba(0, 0, 0, 0)");
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, photon * 1.18, 0, Math.PI * 2, false);
+		ctx.fillStyle = grd;
+		ctx.fill();
+
+		// Event horizon — true dark core
+		ctx.globalCompositeOperation = "source-over";
+		grd = ctx.createRadialGradient(
+			this.x - horizon * 0.15,
+			this.y - horizon * 0.2,
+			horizon * 0.05,
+			this.x,
+			this.y,
+			horizon
+		);
+		grd.addColorStop(0, "rgba(12, 14, 22, 1)");
+		grd.addColorStop(0.55, "rgba(0, 0, 0, 1)");
+		grd.addColorStop(0.88, "rgba(0, 0, 0, 1)");
+		grd.addColorStop(1, "rgba(30, 40, 70, 0.35)");
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, horizon, 0, Math.PI * 2, false);
+		ctx.fillStyle = grd;
+		ctx.fill();
+
+		// Collapse flash
+		if (this._collapsing) {
+			ctx.globalCompositeOperation = "lighter";
+			grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, r * 2.5);
+			grd.addColorStop(0, "rgba(255, 240, 210, 0.55)");
+			grd.addColorStop(0.4, "rgba(255, 140, 70, 0.25)");
+			grd.addColorStop(1, "rgba(0, 0, 0, 0)");
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, r * 2.5, 0, Math.PI * 2, false);
+			ctx.fillStyle = grd;
+			ctx.fill();
+		}
+
+		// Hover highlight
+		if (this.isMouseOver) {
+			ctx.globalCompositeOperation = "lighter";
+			ctx.strokeStyle = "rgba(180, 210, 255, 0.35)";
+			ctx.lineWidth = 1.5;
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, diskOuter * 0.95, 0, Math.PI * 2, false);
+			ctx.stroke();
+		}
+
 		ctx.restore();
 	}
 });
@@ -2196,7 +2281,9 @@ Particle.prototype = (function(o) {
 	},
 
 	update: function() {
-		if (this._speed.length() > 12) this._speed.normalize().scale(12);
+		// Mild drag keeps curves silky instead of snappy.
+		this._speed.scale(0.995);
+		if (this._speed.length() > 16) this._speed.normalize().scale(16);
 
 		this._latest.set(this);
 		this.add(this._speed);
@@ -2208,7 +2295,7 @@ Particle.prototype = (function(o) {
 (function() {
 	// Configs
 
-	var BACKGROUND_COLOR = "rgba(0, 0, 0, 1)",
+	var BACKGROUND_COLOR = "rgba(0, 0, 0, 0.42)",
 		PARTICLE_RADIUS = 1,
 		G_POINT_RADIUS = 10,
 		G_POINT_RADIUS_LIMITS = 65;
@@ -2332,7 +2419,7 @@ Particle.prototype = (function(o) {
 
 	control = {
 		particleNum: 100,
-		gravity: 0.05
+		gravity: 0.09
 	};
 
 	// Init
@@ -2402,17 +2489,21 @@ Particle.prototype = (function(o) {
 	var f2 = gui.addFolder("Gravity");
 
 	f2
-		.add(GravityPoint, "RADIUS_LIMIT", 0, 3000)
+		.add(GravityPoint, "RADIUS_LIMIT", 10, 200)
 		.step(1)
 		.name("Radius Limit Blackhole")
 		.onChange(function() {});
 
+	GravityPoint.prototype.gravity = control.gravity;
 	f2
-		.add(control, "gravity", 0, 500)
-		.step(1)
+		.add(control, "gravity", 0, GravityPoint.GRAVITY_MAX)
+		.step(0.01)
 		.name("Gravity")
 		.onChange(function() {
-			GravityPoint.prototype.gravity = control.gravity;
+			GravityPoint.prototype.gravity = Math.min(
+				control.gravity,
+				GravityPoint.GRAVITY_MAX
+			);
 		});
 
 	f2.add(GravityPoint, "interferenceToPoint").name("Interference Between Point");
@@ -2501,6 +2592,7 @@ Particle.prototype = (function(o) {
 	var loop = function() {
 		var i, len, g, p;
 
+		context.clearRect(0, 0, screenWidth, screenHeight);
 		context.save();
 		context.fillStyle = BACKGROUND_COLOR;
 		context.fillRect(0, 0, screenWidth, screenHeight);
@@ -2508,10 +2600,11 @@ Particle.prototype = (function(o) {
 		context.fillRect(0, 0, screenWidth, screenHeight);
 		context.restore();
 
+		// Physics first
 		for (i = 0, len = gravities.length; i < len; i++) {
 			g = gravities[i];
 			if (g.dragging) g.drag(mouse);
-			g.render(context);
+			g.update();
 			if (g.destroyed) {
 				gravities.splice(i, 1);
 				len--;
@@ -2521,20 +2614,18 @@ Particle.prototype = (function(o) {
 
 		bufferCtx.save();
 		bufferCtx.globalCompositeOperation = "destination-out";
-		bufferCtx.globalAlpha = 0.42;
+		bufferCtx.globalAlpha = 0.38;
 		bufferCtx.fillRect(0, 0, screenWidth, screenHeight);
 		bufferCtx.restore();
 
-		// Draw particles to buffer
-		// for (i = 0, len = particles.length; i < len; i++) {
-		//     particles[i].render(bufferCtx);
-		// }
-
 		len = particles.length;
 		bufferCtx.save();
-		bufferCtx.fillStyle = bufferCtx.strokeStyle = "rgba(122, 157, 245, 0.9)";
 		bufferCtx.lineCap = bufferCtx.lineJoin = "round";
-		bufferCtx.lineWidth = PARTICLE_RADIUS * 2;
+		bufferCtx.globalCompositeOperation = "lighter";
+
+		// Soft bloom trails
+		bufferCtx.strokeStyle = "rgba(140, 175, 255, 0.1)";
+		bufferCtx.lineWidth = PARTICLE_RADIUS * 3.2;
 		bufferCtx.beginPath();
 		for (i = 0; i < len; i++) {
 			p = particles[i];
@@ -2543,19 +2634,58 @@ Particle.prototype = (function(o) {
 			bufferCtx.lineTo(p._latest.x, p._latest.y);
 		}
 		bufferCtx.stroke();
+
+		// Bright cores of trails
+		bufferCtx.strokeStyle = "rgba(220, 235, 255, 0.35)";
+		bufferCtx.lineWidth = PARTICLE_RADIUS * 1.1;
 		bufferCtx.beginPath();
 		for (i = 0; i < len; i++) {
 			p = particles[i];
 			bufferCtx.moveTo(p.x, p.y);
-			bufferCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2, false);
+			bufferCtx.lineTo(p._latest.x, p._latest.y);
+		}
+		bufferCtx.stroke();
+
+		// Particle glow + hot core
+		bufferCtx.fillStyle = "rgba(150, 185, 255, 0.22)";
+		bufferCtx.beginPath();
+		for (i = 0; i < len; i++) {
+			p = particles[i];
+			bufferCtx.moveTo(p.x + p.radius * 2.2, p.y);
+			bufferCtx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2, false);
+		}
+		bufferCtx.fill();
+
+		bufferCtx.fillStyle = "rgba(245, 250, 255, 0.88)";
+		bufferCtx.beginPath();
+		for (i = 0; i < len; i++) {
+			p = particles[i];
+			bufferCtx.moveTo(p.x + p.radius * 0.75, p.y);
+			bufferCtx.arc(p.x, p.y, p.radius * 0.75, 0, Math.PI * 2, false);
 		}
 		bufferCtx.fill();
 		bufferCtx.restore();
 
-		// draw buffer to canvas
+		// Particles under black holes so the event horizon swallows them
 		context.drawImage(bufferCvs, 0, 0);
+
+		for (i = 0, len = gravities.length; i < len; i++) {
+			gravities[i]._draw(context);
+		}
 
 		requestAnimationFrame(loop);
 	};
 	loop();
+})();
+
+// Ensure muted backdrop video starts (some browsers delay autoplay).
+(function() {
+	var video = document.querySelector(".gravity-moon__video");
+	if (!video) return;
+	var play = function() {
+		var p = video.play();
+		if (p && typeof p.catch === "function") p.catch(function() {});
+	};
+	if (video.readyState >= 2) play();
+	else video.addEventListener("canplay", play, { once: true });
 })();
