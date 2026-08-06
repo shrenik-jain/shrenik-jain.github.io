@@ -55,14 +55,19 @@
   <canvas id="c" aria-label="Gravity simulation canvas"></canvas>
 
   <div class="gravity-moon" aria-hidden="true">
-    <img
-      src="assets/img/hero-moon-horizon.png"
-      alt=""
+    <video
+      class="gravity-moon__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
       width="1920"
-      height="1080"
-      decoding="async"
-      fetchpriority="low"
+      height="1078"
     >
+      <source src="assets/img/black_hole.webm" type="video/webm">
+      <source src="assets/img/black_hole.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="gravity-vignette" aria-hidden="true"></div>
